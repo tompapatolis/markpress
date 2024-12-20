@@ -1,0 +1,91 @@
+/**
+ * Vernetic Framework
+ * Website : https://vernetic.io
+ * GitHub: https://github.com/tompapatolis/vernetic
+ * Version : 2024
+ * Author  : Tom Papatolis
+ * ⎯⎯⎯⎯⎯⎯[ Grid Tables ] ⎯⎯⎯⎯⎯⎯
+ */
+
+@use '../abstracts/mixins' as m;
+
+/**
+ * Grid Table
+ */
+
+.grid-table {
+    display: grid;
+    font-family: var(--ff-heading);
+    font-size: var(--fs-200);
+
+    > * {
+        border-bottom: 1px solid rgba(255,255,255,.1);
+        padding: .375rem .5rem;
+        line-height: 1.25 !important;
+    }
+
+    &__head {
+        font-family: var(--ff-heading);
+        font-size: var(--fs-300);
+        font-weight: 500;
+    }
+}
+
+/**
+ * Grid Table Columns
+ */
+
+@for $i from 1 through 20 {
+	.grid-table-#{$i} {
+		grid-template-columns: repeat($i, auto);
+        >*:nth-last-child(-n + #{$i}) {
+            border-bottom: none;
+        }
+        >:nth-child(#{$i}n + #{$i}) {
+            text-align: right;
+        }
+	}
+}
+
+// @for $n from 1 through $i {
+//     >:nth-child(#{$i * 2}n - #{$n - 1}) {
+//         background: var(--color-800);
+//     }
+// }
+
+@include m.mq(medium) {
+    @for $i from 1 through 20 {
+        .grid-table-md-#{$i} {
+            grid-template-columns: repeat($i, auto);
+        }
+    }
+}
+
+@include m.mq(small) {
+    @for $i from 1 through 20 {
+        .grid-table-sm-#{$i} {
+            grid-template-columns: repeat($i, auto);
+        }
+    }
+}
+
+/**
+ * Striped
+ */
+
+.grid-table--striped {
+    &.grid-table-5 {
+        > * {
+            border-bottom: none;
+        }
+        >:nth-child(10n),
+        >:nth-child(10n - 1),
+        >:nth-child(10n - 2),
+        >:nth-child(10n - 3),
+        >:nth-child(10n - 4) {
+            background: rgba(0,0,0,.15);
+            background: var(--color-800);
+
+        }
+    }
+}

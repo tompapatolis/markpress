@@ -1,0 +1,59 @@
+/**
+ * VerdinCMS
+ * Website : https://verdincms.com
+ * Version : 2023
+ * Author  : Tom Papatolis
+ * ◌⎯⎯⎯⎯⎯⎯◖ APP :: Root ◗⎯⎯⎯⎯⎯⎯◌
+ */
+
+/**
+ * Import Partials
+ */
+
+@use 'frontpage';
+@use 'post';
+@use 'page';
+@use 'footer';
+@use 'members';
+
+/**
+ * Root
+ */
+
+:root {
+    // Fonts
+    --ff-body    : 'Arimo', sans-serif;
+    --ff-heading : 'Fira Sans Extra Condensed', sans-serif;
+}
+
+/**
+ * Global Styles
+ */
+
+body {
+    background-image: radial-gradient(
+        650px circle at 20% 0%,
+        var(--color-800),
+        transparent
+    );
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: var(--color-a200);
+}
+
+a:hover {
+    color: var(--color-a100);
+}
+
+/**
+ * Tagline
+ */
+
+.tagline {
+    width: clamp(300px, 30%, 500px);
+    height: auto;
+}
