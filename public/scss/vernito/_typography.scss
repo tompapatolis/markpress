@@ -1,0 +1,336 @@
+/******************************************************************************
+ * FONT SIZES
+ *****************************************************************************/
+
+/**
+ * Font Sizes for Default Screens
+ *
+ * Defines font sizes from extra small to extra large for desktop and tablet screens.
+ */
+ :root {
+    --fs-50: 0.625rem;  /* Extra small (10px) */
+    --fs-100: 0.75rem;  /* Small (12px) */
+    --fs-200: 0.875rem; /* Slightly smaller than base (14px) */
+    --fs-300: 1rem;     /* Base size (16px) */
+    --fs-400: 1.125rem; /* Slightly larger (18px) */
+    --fs-500: 1.25rem;  /* Medium (20px) */
+    --fs-600: 1.5rem;   /* Large (24px) */
+    --fs-700: 1.75rem;  /* Extra Large (28px) */
+    --fs-800: 2rem;     /* 2x base size (32px) */
+    --fs-900: 2.5rem;   /* Very large (40px) */
+    --fs-1000: 3rem;    /* Extra large (48px) */
+}
+
+/**
+ * Font Sizes for Small Screens
+ *
+ * Smaller font sizes optimized for screens with a max-width of 750px.
+ */
+@media (max-width: 750px) {
+    :root {
+        --fs-50: 0.5rem;    /* Extra small (8px) */
+        --fs-100: 0.625rem; /* Small (10px) */
+        --fs-200: 0.75rem;  /* Slightly smaller than base (12px) */
+        --fs-300: 0.875rem; /* Base size (14px) */
+        --fs-400: 1rem;     /* Slightly larger (16px) */
+        --fs-500: 1.125rem; /* Medium (18px) */
+        --fs-600: 1.25rem;  /* Large (20px) */
+        --fs-700: 1.5rem;   /* Extra Large (24px) */
+        --fs-800: 1.75rem;  /* 2x base size (28px) */
+        --fs-900: 2rem;     /* Very large (32px) */
+        --fs-1000: 2.5rem;  /* Extra large (40px) */
+    }
+}
+
+/**
+ * Font Size Utilities
+ *
+ * Generates utility classes for each font size.
+ */
+$font_sizes: (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000);
+
+@each $key in $font_sizes {
+    .fs-#{$key},
+    .fs-#{$key} p {
+        font-size: var(--fs-#{$key}) !important;
+        line-height: 2.7ex;
+    }
+}
+
+/******************************************************************************
+ * LINE HEIGHT UTILITIES
+ *****************************************************************************/
+
+/**
+ * Line Height Utilities
+ *
+ * Provides utility classes for line-height values.
+ */
+$line_heights: ("1": 1, "115": 1.15, "125": 1.25, "150": 1.5, "165": 1.65, "2": 2, "225": 2.25, "25": 2.5);
+
+@each $key, $value in $line_heights {
+    .lh-#{$key} {
+        line-height: #{$value};
+    }
+}
+
+/******************************************************************************
+ * LETTER SPACINGS
+ *****************************************************************************/
+
+.ls-0 {
+    letter-spacing: 0px;
+}
+.ls-1 {
+    letter-spacing: -1px;
+}
+.ls-2 {
+    letter-spacing: -2px;
+}
+
+/******************************************************************************
+ * TEXT TRANSFORMATIONS
+ *****************************************************************************/
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+.text-uppercase {
+    text-transform: uppercase;
+}
+.text-lowercase {
+    text-transform: lowercase;
+}
+.text-balance {
+    text-wrap: balance;
+}
+
+/******************************************************************************
+ * TEXT ALIGNMENT
+ *****************************************************************************/
+
+.text-left {
+    text-align: left !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.text-right {
+    text-align: right !important;
+}
+
+@media (max-width: 750px) {
+    .text-left-sm {
+        text-align: left !important;
+    }
+    .text-center-sm {
+        text-align: center !important;
+    }
+    .text-right-sm {
+        text-align: right !important;
+    }
+}
+
+/******************************************************************************
+ * TEXT STYLES
+ *****************************************************************************/
+
+.text-bold {
+    font-weight: bold !important;
+}
+.text-italic {
+    font-style: italic !important;
+}
+.text-line-through {
+    text-decoration: line-through !important;
+}
+
+/******************************************************************************
+ * FONT WEIGHT UTILITIES
+ *****************************************************************************/
+
+/**
+ * Font Weight Utilities
+ *
+ * Provides utility classes for font weights:
+ * - Values: 100, 200, 300, ..., 900
+ */
+@for $i from 1 through 9 {
+    .fw-#{$i * 100},
+    .fw-#{$i * 100} p {
+        font-weight: #{$i * 100} !important;
+    }
+}
+
+
+// h1, .h1,
+// h2, .h2,
+// h3, .h3,
+// h4, .h4,
+// h5, .h5,
+// h6, .h6 {
+//     font-family: var(--ff-heading);
+//     line-height: 1.25;
+//     margin-bottom: .75ex;
+//     font-weight: bold;
+// }
+
+// h1, .h1 {
+//     font-size: var(--fs-800em);
+// }
+// h2, .h2 {
+//     font-size: var(--fs-700em);
+// }
+// h3, .h3 {
+//     font-size: var(--fs-600em);
+//     font-weight: 600;
+// }
+// h4, .h4 {
+//     font-size: var(--fs-500em);
+//     font-weight: 500;
+// }
+// h5, .h5 {
+//     font-size: var(--fs-400em);
+//     font-weight: 500;
+// }
+// h6, .h6 {
+//     font-size: var(--fs-300em);
+//     font-weight: 500;
+// }
+
+
+
+// /**
+//  * Paragraphs
+//  */
+
+// p {
+//     font-size: var(--fs-400);
+//     line-height: var(--line-height);
+//     margin-bottom: 3ex;
+// }
+
+// .p-no-margin > p {
+//     margin-bottom: 0 !important;
+// }
+
+// .last-p-m0 p:last-child {
+//     margin-bottom:0 !important;
+// }
+
+// /**
+//  * Lists
+//  */
+
+// ol,
+// ul,
+// dl {
+//     margin: 1em 0 2em 0;
+//     padding: 0 0 0 2.5em;
+
+// }
+
+// ul,
+// dl {
+//     @include m.mq(small) {
+//         padding: 0 0 0 1.5em;
+//     }
+// }
+
+// li {
+//     margin-bottom: .5em;
+//     line-height: 1.5em;
+
+//     @include m.mq(small) {
+//         margin-bottom: .375em;
+//     }
+// }
+
+// ul li::marker {
+//     color: var(--color-red-300);
+// }
+
+// ol li::marker {
+//     color: var(--color-red-300);
+// }
+
+// ol ol,
+// ul ul,
+// ol ul,
+// ul ol {
+// 	margin-bottom: 0;
+// }
+
+// /**
+//  * Clear Lists
+//  */
+
+// ul.clear-list {
+// 	list-style: none;
+// 	margin: 0;
+// 	padding: 0;
+
+//     > li {
+//         margin: 0;
+//         padding: 0;
+//     }
+// }
+
+// /**
+//  * Blockquote
+//  */
+
+// blockquote {
+// 	border-left: 5px solid var(--color-a400);
+// 	padding: 1.5em;
+// 	font-style: italic;
+//     color: var(--color-200);
+// 	background: var(--color-950);
+// 	margin: 2rem 0;
+//     // font-size: var(--fs-300);
+
+// 	p {
+//         font-size: var(--fs-300);
+// 	}
+
+// 	p:last-child {
+// 		margin-bottom:0 !important;
+// 	}
+// }
+
+// /**
+//  * Raw HTML Embed for CKEditor
+//  */
+
+// .raw-html-embed:not(.ck-widget),
+// .raw-html-embed:not(.ck-widget) iframe {
+//     aspect-ratio: 16 / 9;
+// 	width: 100%;
+//     height: auto;
+//     overflow: hidden;
+// }
+
+// /**
+//  * Source Code
+//  */
+
+// .code {
+//     position: relative;
+//     border-radius: .5rem;
+//     overflow: hidden;
+//     border: 1px solid var(--color-700);
+
+//     pre {
+//         white-space: pre-wrap;
+//         overflow-x: auto;
+//         font-size: var(--fs-100);
+//         line-height: 1.25;
+//         padding: 1rem 1.5rem;
+//         tab-size: 4;
+//         font-weight: 400;
+//     }
+
+//     code {
+//         font-family: var(--ff-monospace);
+//     }
+// }
