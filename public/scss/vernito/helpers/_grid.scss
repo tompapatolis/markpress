@@ -1,0 +1,226 @@
+/******************************************************************************
+ * GRID DISPLAY UTILITIES
+ *****************************************************************************/
+
+.grid {
+    display: grid;
+}
+
+.grid-inline {
+    display: inline-grid;
+}
+
+.grid-dense {
+    grid-auto-flow: dense;
+}
+
+/******************************************************************************
+ * GRID TEMPLATE UTILITIES
+ *****************************************************************************/
+
+@for $i from 1 through 10 {
+    .grid-col-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+    }
+    .grid-col-span-#{$i} {
+        grid-column: span $i;
+    }
+    .grid-row-span-#{$i} {
+        grid-row: span $i;
+    }
+}
+
+/******************************************************************************
+ * RESPONSIVE GRID UTILITIES
+ *****************************************************************************/
+
+@media (max-width: 990px) {
+    @for $i from 1 through 10 {
+        .grid-col-md-#{$i} {
+            grid-template-columns: repeat($i, 1fr);
+        }
+        .grid-col-span-md-#{$i} {
+            grid-column: span $i;
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    @for $i from 1 through 10 {
+        .grid-col-sm-#{$i} {
+            grid-template-columns: repeat($i, 1fr);
+        }
+    }
+    .grid-break-sm {
+        grid-template-columns: 1fr !important;
+        > * {
+            grid-column: span 1 !important;
+            grid-row: span 1 !important;
+        }
+    }
+    .grid-col-spread-sm {
+        grid-column: 1 / -1;
+    }
+}
+
+/******************************************************************************
+ * AUTO COLUMNS
+ *
+ * Available Values:
+ * - 25px, 50px, 75px, 100px, 125px, 150px, 175px, 200px, 225px, 250px
+ * - 275px, 300px, 325px, 350px, 375px, 400px, 425px, 450px, 475px, 500px
+ *****************************************************************************/
+
+@for $i from 1 through 20 {
+    .grid-col-auto-#{$i * 25} {
+        grid-template-columns: repeat(auto-fill, minmax(#{$i * 25}px, 1fr));
+    }
+}
+
+
+/******************************************************************************
+ * COLUMN SPREAD
+ *****************************************************************************/
+
+.grid-col-spread {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 750px) {
+    .grid-col-spread-sm {
+        grid-column: 1 / -1;
+    }
+}
+
+/******************************************************************************
+ * ALIGNMENT UTILITIES
+ *****************************************************************************/
+
+.grid-center-v {
+    align-items: center;
+}
+
+.grid-top {
+    align-items: start;
+}
+
+.grid-bottom {
+    align-items: end;
+}
+
+.grid-center-h {
+    justify-content: center;
+}
+
+.grid-right {
+    justify-content: end;
+}
+
+.grid-left {
+    justify-content: start;
+}
+
+.grid-last-right {
+    grid-column-end: -1;
+}
+
+.grid-center {
+    place-content: center;
+}
+
+/******************************************************************************
+ * SELF-ALIGNMENT UTILITIES
+ *****************************************************************************/
+
+.grid-self-bottom {
+    align-self: end;
+}
+
+.grid-self-right {
+    justify-self: right;
+}
+
+.grid-self-center {
+    justify-self: center;
+}
+
+.grid-self-spread {
+    align-self: stretch;
+}
+
+/******************************************************************************
+ * GAP UTILITIES
+ *****************************************************************************/
+
+$gaps: (
+    "0125": .125,
+    "025": .25,
+    "0375": .375,
+    "05": .5,
+    "065": .65,
+    "075": .75,
+    "1": 1,
+    "15": 1.5,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7
+);
+
+@each $suffix, $value in $gaps {
+    .gap-#{$suffix} {
+        gap: #{$value}rem;
+    }
+    .gap-row-#{$suffix} {
+        row-gap: #{$value}rem;
+    }
+    .gap-col-#{$suffix} {
+        column-gap: #{$value}rem;
+    }
+}
+
+@media (max-width: 750px) {
+    @each $suffix, $value in $gaps {
+        .gap-sm-#{$suffix} {
+            gap: #{$value}rem !important;
+        }
+    }
+}
+
+@for $i from 1 through 10 {
+    .gap-#{$i}vw {
+        gap: #{$i}vw;
+    }
+    .gap-row-#{$i}vw {
+        row-gap: #{$i}vw;
+    }
+    .gap-col-#{$i}vw {
+        column-gap: #{$i}vw;
+    }
+}
+
+/******************************************************************************
+ * GRID FLOW UTILITIES
+ *****************************************************************************/
+
+.grid-flow-row {
+    grid-auto-flow: row;
+}
+
+.grid-flow-column {
+    grid-auto-flow: column;
+}
+
+/******************************************************************************
+ * GRID HELPERS
+ *****************************************************************************/
+
+.grid-equal-height {
+    grid-auto-rows: 1fr;
+}
+
+.grid-equal-width {
+    grid-auto-columns: 1fr;
+}
