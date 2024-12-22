@@ -1,4 +1,350 @@
 /******************************************************************************
+ * MODERN CSS RESET
+ *
+ * Purpose:
+ * - Normalize styles across browsers for consistent rendering.
+ * - Remove default browser inconsistencies in layout and appearance.
+ * - Provide a clean foundation for modern responsive websites.
+ ******************************************************************************/
+/*
+ * Box Model Reset
+ *
+ * - Includes padding and borders in the element's width and height calculations.
+ * - Removes default margins and paddings from all elements.
+ */
+*, *::before, *::after {
+  box-sizing: border-box; /* Standardize box model behavior */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default paddings */
+}
+
+/*
+ * HTML and Body Styles
+ *
+ * - Ensures full viewport height for root elements.
+ * - Provides a flexible base for responsive layouts.
+ */
+html, body {
+  min-height: 100vh; /* Full viewport height */
+}
+
+/*
+ * List Styles Reset
+ *
+ * - Removes default bullets and numbering from lists.
+ */
+ul, ol {
+  list-style: none; /* No bullets or numbers */
+}
+
+/*
+ * Typography and Font Styles
+ *
+ * - Sets a consistent font size and line height for better readability.
+ * - Optimizes text rendering for modern devices.
+ */
+html {
+  font-size: 16px; /* Base font size */
+  line-height: 1.5; /* Improves text readability */
+  -webkit-text-size-adjust: 100%; /* Prevents font scaling on mobile devices */
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #fff; /* Sets a clean white background */
+  color: #333; /* Neutral text color */
+  text-rendering: optimizeLegibility; /* Enhances font rendering */
+}
+
+/*
+ * Anchor Tag Reset
+ *
+ * - Removes default underlines.
+ * - Ensures anchors inherit the current text color.
+ */
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit parent text color */
+}
+
+a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/*
+ * Media Elements
+ *
+ * - Ensures images, videos, and other media scale within their container.
+ */
+img, video, canvas, svg {
+  display: block; /* Ensures consistent box model behavior */
+  max-width: 100%; /* Scale media to fit the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/*
+ * Form Elements Reset
+ *
+ * - Normalizes appearance across browsers.
+ * - Removes default styles for consistent customization.
+ */
+button, input, textarea, select {
+  font: inherit; /* Inherit font styles from parent */
+  color: inherit; /* Use parent text color */
+  background: none; /* Remove background */
+  border: none; /* Remove borders */
+  outline: none; /* Remove focus outlines */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+button {
+  cursor: pointer; /* Pointer cursor for buttons */
+}
+
+/*
+ * Textarea
+ *
+ * - Allows resizing only in the vertical direction.
+ */
+textarea {
+  resize: vertical; /* Vertical resizing only */
+}
+
+/*
+ * Table Styles Reset
+ *
+ * - Ensures consistent spacing and alignment for table elements.
+ */
+table {
+  border-collapse: collapse; /* Combine table borders */
+  border-spacing: 0; /* Remove spacing between table cells */
+  width: 100%; /* Full-width tables */
+}
+
+th, td {
+  text-align: left; /* Left-align text */
+  padding: 0.5rem; /* Add consistent padding */
+}
+
+/*
+ * Blockquote and Quote Styles
+ *
+ * - Removes default quotes around blockquote and q elements.
+ */
+blockquote, q {
+  quotes: none; /* Disable default quotes */
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: ""; /* Clear content */
+}
+
+/*
+ * Horizontal Rule (hr)
+ *
+ * - Standardizes appearance with minimal styling.
+ */
+hr {
+  border: none; /* Remove border styling */
+  height: 1px; /* Set height */
+  background-color: #ccc; /* Neutral separator color */
+}
+
+/*
+ * Focus Styles
+ *
+ * - Enhances focus visibility for accessibility.
+ */
+:focus {
+  outline: 2px solid #007BFF; /* Add visible focus outline */
+  outline-offset: 4px; /* Create spacing around the outline */
+}
+
+/*
+ * Blockquote Styling
+ *
+ * - Adds a left border and consistent padding for emphasis.
+ */
+blockquote {
+  margin-left: 0; /* Align with surrounding content */
+  padding-left: 1rem; /* Add left padding */
+  border-left: 4px solid #ccc; /* Left border for emphasis */
+}
+
+:root {
+  /* Color Scheme */
+  color-scheme: dark;
+  /* Neutral Colors */
+  --color-50: #f7fafc; /* Almost white */
+  --color-100: #edf2f7; /* Very light gray */
+  --color-200: #e2e8f0; /* Light gray */
+  --color-300: #cbd5e0; /* Medium light gray */
+  --color-400: #a0aec0; /* Soft gray */
+  --color-500: #718096; /* Neutral gray */
+  --color-600: #4a5568; /* Medium dark gray */
+  --color-700: #2d3748; /* Close to base background */
+  --color-800: #202a31; /* Base background color */
+  --color-900: #1a202c; /* Darker gray */
+  --color-1000: #171923; /* Almost black */
+  /* Blue Accent Colors */
+  --accent-50: #e7f5ff; /* Very light blue */
+  --accent-100: #d0ebff; /* Light blue */
+  --accent-200: #a5d8ff; /* Softer light blue */
+  --accent-300: #74c0fc; /* Soft and bright blue */
+  --accent-400: #4dabf7; /* Vibrant blue */
+  --accent-500: #339af0; /* Primary accent color */
+  --accent-600: #228be6; /* Slightly darker blue */
+  --accent-700: #1c7ed6; /* Rich dark blue */
+  --accent-800: #1971c2; /* Deep blue */
+  --accent-900: #1864ab; /* Very dark blue */
+  --accent-1000: #0b5394; /* Deepest blue */
+}
+
+.light-mode {
+  /* Color Scheme */
+  color-scheme: light;
+  /* Neutral Colors - Inverted for Light Mode */
+  --color-50: #171923; /* Almost black */
+  --color-100: #1a202c; /* Darker gray */
+  --color-200: #202a31; /* Base background color (dark mode) */
+  --color-300: #2d3748; /* Close to base background */
+  --color-400: #4a5568; /* Medium dark gray */
+  --color-500: #718096; /* Neutral gray */
+  --color-600: #a0aec0; /* Soft gray */
+  --color-700: #cbd5e0; /* Medium light gray */
+  --color-800: #e2e8f0; /* Light gray */
+  --color-900: #edf2f7; /* Very light gray */
+  --color-1000: #f7fafc; /* Almost white */
+  /* Blue Accent Colors - Inverted for Light Mode */
+  --accent-50: #0b5394; /* Deepest blue */
+  --accent-100: #1864ab; /* Very dark blue */
+  --accent-200: #1971c2; /* Deep blue */
+  --accent-300: #1c7ed6; /* Rich dark blue */
+  --accent-400: #228be6; /* Slightly darker blue */
+  --accent-500: #339af0; /* Primary accent color */
+  --accent-600: #4dabf7; /* Vibrant blue */
+  --accent-700: #74c0fc; /* Soft and bright blue */
+  --accent-800: #a5d8ff; /* Softer light blue */
+  --accent-900: #d0ebff; /* Light blue */
+  --accent-1000: #e7f5ff; /* Very light blue */
+}
+
+/******************************************************************************
+ * CONTAINER UTILITIES
+ *****************************************************************************/
+/**
+ * Container Sizes
+ *
+ * Define fixed container sizes for responsive layouts:
+ * - `xxs`: Very small devices (e.g., small phones).
+ * - `xs` : Small phones.
+ * - `sm` : Standard phones.
+ * - `md` : Tablets.
+ * - `d`  : Default size (larger tablets, small laptops).
+ * - `lg` : Laptops and desktops.
+ * - `xl` : Large desktops.
+ * - `2xl`: Extra large screens.
+ * - `3xl`: Ultra-wide monitors.
+ */
+/**
+ * Base Container Styles
+ *
+ * - `width`: Default container width.
+ * - `max-width`: Ensures container doesn't exceed viewport width.
+ * - `margin`: Centers the container horizontally.
+ * - `padding`: Adds horizontal spacing inside the container.
+ * - `overflow`: Hides overflow content by default.
+ */
+.container {
+  width: 1024px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  overflow: hidden;
+  /**
+   * Fluid Container
+   *
+   * - `&--fluid`: Enables full-width container with responsive padding.
+   */
+  /**
+   * Overflow Utility
+   *
+   * - `&--overflow`: Explicitly sets overflow to visible.
+   */
+  /**
+   * No Padding Utility
+   *
+   * - `&--p0`: Removes all padding from the container.
+   */
+}
+.container--fluid {
+  width: auto;
+  margin: 0;
+  padding: 0 2vw;
+  overflow: visible;
+}
+.container--overflow {
+  overflow: visible !important;
+}
+.container--p0 {
+  padding: 0;
+}
+
+/**
+ * Specific Container Sizes
+ *
+ * Generates container modifiers for each predefined size:
+ * - Example: `.container--xxs`, `.container--lg`, `.container--3xl`.
+ */
+.container--xxs {
+  width: 320px;
+}
+.container--xs {
+  width: 480px;
+}
+.container--sm {
+  width: 640px;
+}
+.container--md {
+  width: 768px;
+}
+.container--d {
+  width: 1024px;
+}
+.container--lg {
+  width: 1280px;
+}
+.container--xl {
+  width: 1440px;
+}
+.container--2xl {
+  width: 1600px;
+}
+.container--3xl {
+  width: 1920px;
+}
+
+/**
+ * Responsive Container Styles
+ *
+ * Ensures the container adapts to smaller screens:
+ * - Sets container to full width with no margin.
+ * - Includes utility class `.container--max` to remove horizontal padding.
+ */
+@media (max-width: 750px) {
+  .container {
+    width: 100% !important;
+    margin: 0;
+  }
+  .container--max {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+/******************************************************************************
  * MARGIN UTILITIES
  *****************************************************************************/
 /**
@@ -690,6 +1036,216 @@
   }
   .ml-sm-1 {
     margin-left: 1rem !important;
+  }
+  .m-sm-2 {
+    margin: 2rem;
+  }
+  .mt-sm-2 {
+    margin-top: 2rem !important;
+  }
+  .mr-sm-2 {
+    margin-right: 2rem !important;
+  }
+  .mb-sm-2 {
+    margin-bottom: 2rem !important;
+  }
+  .ml-sm-2 {
+    margin-left: 2rem !important;
+  }
+  .m-sm-3 {
+    margin: 3rem;
+  }
+  .mt-sm-3 {
+    margin-top: 3rem !important;
+  }
+  .mr-sm-3 {
+    margin-right: 3rem !important;
+  }
+  .mb-sm-3 {
+    margin-bottom: 3rem !important;
+  }
+  .ml-sm-3 {
+    margin-left: 3rem !important;
+  }
+  .m-sm-4 {
+    margin: 4rem;
+  }
+  .mt-sm-4 {
+    margin-top: 4rem !important;
+  }
+  .mr-sm-4 {
+    margin-right: 4rem !important;
+  }
+  .mb-sm-4 {
+    margin-bottom: 4rem !important;
+  }
+  .ml-sm-4 {
+    margin-left: 4rem !important;
+  }
+  .m-sm-5 {
+    margin: 5rem;
+  }
+  .mt-sm-5 {
+    margin-top: 5rem !important;
+  }
+  .mr-sm-5 {
+    margin-right: 5rem !important;
+  }
+  .mb-sm-5 {
+    margin-bottom: 5rem !important;
+  }
+  .ml-sm-5 {
+    margin-left: 5rem !important;
+  }
+  .m-sm-6 {
+    margin: 6rem;
+  }
+  .mt-sm-6 {
+    margin-top: 6rem !important;
+  }
+  .mr-sm-6 {
+    margin-right: 6rem !important;
+  }
+  .mb-sm-6 {
+    margin-bottom: 6rem !important;
+  }
+  .ml-sm-6 {
+    margin-left: 6rem !important;
+  }
+  .m-sm-7 {
+    margin: 7rem;
+  }
+  .mt-sm-7 {
+    margin-top: 7rem !important;
+  }
+  .mr-sm-7 {
+    margin-right: 7rem !important;
+  }
+  .mb-sm-7 {
+    margin-bottom: 7rem !important;
+  }
+  .ml-sm-7 {
+    margin-left: 7rem !important;
+  }
+  .m-sm-8 {
+    margin: 8rem;
+  }
+  .mt-sm-8 {
+    margin-top: 8rem !important;
+  }
+  .mr-sm-8 {
+    margin-right: 8rem !important;
+  }
+  .mb-sm-8 {
+    margin-bottom: 8rem !important;
+  }
+  .ml-sm-8 {
+    margin-left: 8rem !important;
+  }
+  .m-sm-9 {
+    margin: 9rem;
+  }
+  .mt-sm-9 {
+    margin-top: 9rem !important;
+  }
+  .mr-sm-9 {
+    margin-right: 9rem !important;
+  }
+  .mb-sm-9 {
+    margin-bottom: 9rem !important;
+  }
+  .ml-sm-9 {
+    margin-left: 9rem !important;
+  }
+  .m-sm-10 {
+    margin: 10rem;
+  }
+  .mt-sm-10 {
+    margin-top: 10rem !important;
+  }
+  .mr-sm-10 {
+    margin-right: 10rem !important;
+  }
+  .mb-sm-10 {
+    margin-bottom: 10rem !important;
+  }
+  .ml-sm-10 {
+    margin-left: 10rem !important;
+  }
+  .m-sm-11 {
+    margin: 11rem;
+  }
+  .mt-sm-11 {
+    margin-top: 11rem !important;
+  }
+  .mr-sm-11 {
+    margin-right: 11rem !important;
+  }
+  .mb-sm-11 {
+    margin-bottom: 11rem !important;
+  }
+  .ml-sm-11 {
+    margin-left: 11rem !important;
+  }
+  .m-sm-12 {
+    margin: 12rem;
+  }
+  .mt-sm-12 {
+    margin-top: 12rem !important;
+  }
+  .mr-sm-12 {
+    margin-right: 12rem !important;
+  }
+  .mb-sm-12 {
+    margin-bottom: 12rem !important;
+  }
+  .ml-sm-12 {
+    margin-left: 12rem !important;
+  }
+  .m-sm-13 {
+    margin: 13rem;
+  }
+  .mt-sm-13 {
+    margin-top: 13rem !important;
+  }
+  .mr-sm-13 {
+    margin-right: 13rem !important;
+  }
+  .mb-sm-13 {
+    margin-bottom: 13rem !important;
+  }
+  .ml-sm-13 {
+    margin-left: 13rem !important;
+  }
+  .m-sm-14 {
+    margin: 14rem;
+  }
+  .mt-sm-14 {
+    margin-top: 14rem !important;
+  }
+  .mr-sm-14 {
+    margin-right: 14rem !important;
+  }
+  .mb-sm-14 {
+    margin-bottom: 14rem !important;
+  }
+  .ml-sm-14 {
+    margin-left: 14rem !important;
+  }
+  .m-sm-15 {
+    margin: 15rem;
+  }
+  .mt-sm-15 {
+    margin-top: 15rem !important;
+  }
+  .mr-sm-15 {
+    margin-right: 15rem !important;
+  }
+  .mb-sm-15 {
+    margin-bottom: 15rem !important;
+  }
+  .ml-sm-15 {
+    margin-left: 15rem !important;
   }
   .m-sm-0125 {
     margin: 0.125rem;
@@ -1544,6 +2100,216 @@
   }
   .pl-sm-1 {
     padding-left: 1rem !important;
+  }
+  .p-sm-2 {
+    padding: 2rem;
+  }
+  .pt-sm-2 {
+    padding-top: 2rem !important;
+  }
+  .pr-sm-2 {
+    padding-right: 2rem !important;
+  }
+  .pb-sm-2 {
+    padding-bottom: 2rem !important;
+  }
+  .pl-sm-2 {
+    padding-left: 2rem !important;
+  }
+  .p-sm-3 {
+    padding: 3rem;
+  }
+  .pt-sm-3 {
+    padding-top: 3rem !important;
+  }
+  .pr-sm-3 {
+    padding-right: 3rem !important;
+  }
+  .pb-sm-3 {
+    padding-bottom: 3rem !important;
+  }
+  .pl-sm-3 {
+    padding-left: 3rem !important;
+  }
+  .p-sm-4 {
+    padding: 4rem;
+  }
+  .pt-sm-4 {
+    padding-top: 4rem !important;
+  }
+  .pr-sm-4 {
+    padding-right: 4rem !important;
+  }
+  .pb-sm-4 {
+    padding-bottom: 4rem !important;
+  }
+  .pl-sm-4 {
+    padding-left: 4rem !important;
+  }
+  .p-sm-5 {
+    padding: 5rem;
+  }
+  .pt-sm-5 {
+    padding-top: 5rem !important;
+  }
+  .pr-sm-5 {
+    padding-right: 5rem !important;
+  }
+  .pb-sm-5 {
+    padding-bottom: 5rem !important;
+  }
+  .pl-sm-5 {
+    padding-left: 5rem !important;
+  }
+  .p-sm-6 {
+    padding: 6rem;
+  }
+  .pt-sm-6 {
+    padding-top: 6rem !important;
+  }
+  .pr-sm-6 {
+    padding-right: 6rem !important;
+  }
+  .pb-sm-6 {
+    padding-bottom: 6rem !important;
+  }
+  .pl-sm-6 {
+    padding-left: 6rem !important;
+  }
+  .p-sm-7 {
+    padding: 7rem;
+  }
+  .pt-sm-7 {
+    padding-top: 7rem !important;
+  }
+  .pr-sm-7 {
+    padding-right: 7rem !important;
+  }
+  .pb-sm-7 {
+    padding-bottom: 7rem !important;
+  }
+  .pl-sm-7 {
+    padding-left: 7rem !important;
+  }
+  .p-sm-8 {
+    padding: 8rem;
+  }
+  .pt-sm-8 {
+    padding-top: 8rem !important;
+  }
+  .pr-sm-8 {
+    padding-right: 8rem !important;
+  }
+  .pb-sm-8 {
+    padding-bottom: 8rem !important;
+  }
+  .pl-sm-8 {
+    padding-left: 8rem !important;
+  }
+  .p-sm-9 {
+    padding: 9rem;
+  }
+  .pt-sm-9 {
+    padding-top: 9rem !important;
+  }
+  .pr-sm-9 {
+    padding-right: 9rem !important;
+  }
+  .pb-sm-9 {
+    padding-bottom: 9rem !important;
+  }
+  .pl-sm-9 {
+    padding-left: 9rem !important;
+  }
+  .p-sm-10 {
+    padding: 10rem;
+  }
+  .pt-sm-10 {
+    padding-top: 10rem !important;
+  }
+  .pr-sm-10 {
+    padding-right: 10rem !important;
+  }
+  .pb-sm-10 {
+    padding-bottom: 10rem !important;
+  }
+  .pl-sm-10 {
+    padding-left: 10rem !important;
+  }
+  .p-sm-11 {
+    padding: 11rem;
+  }
+  .pt-sm-11 {
+    padding-top: 11rem !important;
+  }
+  .pr-sm-11 {
+    padding-right: 11rem !important;
+  }
+  .pb-sm-11 {
+    padding-bottom: 11rem !important;
+  }
+  .pl-sm-11 {
+    padding-left: 11rem !important;
+  }
+  .p-sm-12 {
+    padding: 12rem;
+  }
+  .pt-sm-12 {
+    padding-top: 12rem !important;
+  }
+  .pr-sm-12 {
+    padding-right: 12rem !important;
+  }
+  .pb-sm-12 {
+    padding-bottom: 12rem !important;
+  }
+  .pl-sm-12 {
+    padding-left: 12rem !important;
+  }
+  .p-sm-13 {
+    padding: 13rem;
+  }
+  .pt-sm-13 {
+    padding-top: 13rem !important;
+  }
+  .pr-sm-13 {
+    padding-right: 13rem !important;
+  }
+  .pb-sm-13 {
+    padding-bottom: 13rem !important;
+  }
+  .pl-sm-13 {
+    padding-left: 13rem !important;
+  }
+  .p-sm-14 {
+    padding: 14rem;
+  }
+  .pt-sm-14 {
+    padding-top: 14rem !important;
+  }
+  .pr-sm-14 {
+    padding-right: 14rem !important;
+  }
+  .pb-sm-14 {
+    padding-bottom: 14rem !important;
+  }
+  .pl-sm-14 {
+    padding-left: 14rem !important;
+  }
+  .p-sm-15 {
+    padding: 15rem;
+  }
+  .pt-sm-15 {
+    padding-top: 15rem !important;
+  }
+  .pr-sm-15 {
+    padding-right: 15rem !important;
+  }
+  .pb-sm-15 {
+    padding-bottom: 15rem !important;
+  }
+  .pl-sm-15 {
+    padding-left: 15rem !important;
   }
   .p-sm-0125 {
     padding: 0.125rem;

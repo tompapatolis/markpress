@@ -1,0 +1,176 @@
+/******************************************************************************
+ * MODERN CSS RESET
+ *
+ * Purpose:
+ * - Normalize styles across browsers for consistent rendering.
+ * - Remove default browser inconsistencies in layout and appearance.
+ * - Provide a clean foundation for modern responsive websites.
+ ******************************************************************************/
+
+/*
+ * Box Model Reset
+ *
+ * - Includes padding and borders in the element's width and height calculations.
+ * - Removes default margins and paddings from all elements.
+ */
+ *, *::before, *::after {
+    box-sizing: border-box; /* Standardize box model behavior */
+    margin: 0;              /* Remove default margins */
+    padding: 0;             /* Remove default paddings */
+}
+
+/*
+ * HTML and Body Styles
+ *
+ * - Ensures full viewport height for root elements.
+ * - Provides a flexible base for responsive layouts.
+ */
+html, body {
+    min-height: 100vh;  /* Full viewport height */
+}
+
+/*
+ * List Styles Reset
+ *
+ * - Removes default bullets and numbering from lists.
+ */
+ul, ol {
+    list-style: none; /* No bullets or numbers */
+}
+
+/*
+ * Typography and Font Styles
+ *
+ * - Sets a consistent font size and line height for better readability.
+ * - Optimizes text rendering for modern devices.
+ */
+html {
+    font-size: 16px;                /* Base font size */
+    line-height: 1.5;               /* Improves text readability */
+    -webkit-text-size-adjust: 100%; /* Prevents font scaling on mobile devices */
+    scroll-behavior: smooth;        /* Enables smooth scrolling */
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #fff;           /* Sets a clean white background */
+    color: #333;                      /* Neutral text color */
+    text-rendering: optimizeLegibility; /* Enhances font rendering */
+}
+
+/*
+ * Anchor Tag Reset
+ *
+ * - Removes default underlines.
+ * - Ensures anchors inherit the current text color.
+ */
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit;        /* Inherit parent text color */
+}
+
+a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/*
+ * Media Elements
+ *
+ * - Ensures images, videos, and other media scale within their container.
+ */
+img, video, canvas, svg {
+    display: block;        /* Ensures consistent box model behavior */
+    max-width: 100%;       /* Scale media to fit the container */
+    height: auto;          /* Maintain aspect ratio */
+}
+
+/*
+ * Form Elements Reset
+ *
+ * - Normalizes appearance across browsers.
+ * - Removes default styles for consistent customization.
+ */
+button, input, textarea, select {
+    font: inherit;         /* Inherit font styles from parent */
+    color: inherit;        /* Use parent text color */
+    background: none;      /* Remove background */
+    border: none;          /* Remove borders */
+    outline: none;         /* Remove focus outlines */
+    padding: 0;            /* Remove padding */
+    margin: 0;             /* Remove margins */
+}
+
+button {
+    cursor: pointer;       /* Pointer cursor for buttons */
+}
+
+/*
+ * Textarea
+ *
+ * - Allows resizing only in the vertical direction.
+ */
+textarea {
+    resize: vertical;      /* Vertical resizing only */
+}
+
+/*
+ * Table Styles Reset
+ *
+ * - Ensures consistent spacing and alignment for table elements.
+ */
+table {
+    border-collapse: collapse; /* Combine table borders */
+    border-spacing: 0;         /* Remove spacing between table cells */
+    width: 100%;               /* Full-width tables */
+}
+
+th, td {
+    text-align: left;          /* Left-align text */
+    padding: 0.5rem;           /* Add consistent padding */
+}
+
+/*
+ * Blockquote and Quote Styles
+ *
+ * - Removes default quotes around blockquote and q elements.
+ */
+blockquote, q {
+    quotes: none;              /* Disable default quotes */
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+    content: "";               /* Clear content */
+}
+
+/*
+ * Horizontal Rule (hr)
+ *
+ * - Standardizes appearance with minimal styling.
+ */
+hr {
+    border: none;              /* Remove border styling */
+    height: 1px;               /* Set height */
+    background-color: #ccc;    /* Neutral separator color */
+}
+
+/*
+ * Focus Styles
+ *
+ * - Enhances focus visibility for accessibility.
+ */
+:focus {
+    outline: 2px solid #007BFF; /* Add visible focus outline */
+    outline-offset: 4px;        /* Create spacing around the outline */
+}
+
+/*
+ * Blockquote Styling
+ *
+ * - Adds a left border and consistent padding for emphasis.
+ */
+blockquote {
+    margin-left: 0;            /* Align with surrounding content */
+    padding-left: 1rem;        /* Add left padding */
+    border-left: 4px solid #ccc; /* Left border for emphasis */
+}

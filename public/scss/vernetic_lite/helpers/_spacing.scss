@@ -80,7 +80,7 @@ $special-margins: (
  * - Special sizes (e.g., `.m-sm-05` for 0.5rem).
  */
 @media (max-width: 750px) {
-    @include generate-margin-classes(1, rem, "sm-"); // Small screen rem margins
+    @include generate-margin-classes(15, rem, "sm-"); // Small screen rem margins
     @include generate-special-margin-classes($special-margins, rem, "sm-"); // Small screen special margins
 }
 
@@ -181,6 +181,6 @@ $special-paddings: (
  * - Special sizes (e.g., `.p-sm-05` for 0.5rem).
  */
 @media (max-width: 750px) {
-    @include generate-padding-classes(1, rem, "sm-"); // Small screen rem paddings
+    @include generate-padding-classes(15, rem, "sm-"); // Small screen rem paddings
     @include generate-special-padding-classes($special-paddings, rem, "sm-"); // Small screen special paddings
 }

@@ -1,4 +1,7 @@
 :root {
+    /* Color Scheme */
+    color-scheme: dark;
+
     /* Neutral Colors */
     --color-50: #f7fafc;    /* Almost white */
     --color-100: #edf2f7;   /* Very light gray */
@@ -27,6 +30,9 @@
 }
 
 .light-mode {
+    /* Color Scheme */
+    color-scheme: light;
+
     /* Neutral Colors - Inverted for Light Mode */
     --color-50: #171923;    /* Almost black */
     --color-100: #1a202c;   /* Darker gray */
