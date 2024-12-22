@@ -56,9 +56,9 @@
 
         <!-- Fonts & CSS -->
         <link rel="stylesheet" href="<?=path_assets()?>fonts/roboto/stylesheet.css">
-        <link rel="stylesheet" href="<?=path_css()?>vernetic_lite.css?v=<?=setting('version')?>">
+        <link rel="stylesheet" href="<?=path_css()?>vernito.css?v=<?=setting('version')?>">
         <link rel="stylesheet" href="<?=path_css()?>app.css?v=<?=setting('version')?>">
-        <!--<script src="</?=path_js()?>app-dist.js?v=</?=setting('version')?>" defer></script>-->
+
     </head>
 
     <body class="<?=body_class()?>" id="<?=body_class()?>">
