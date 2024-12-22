@@ -1,4 +1,3352 @@
 /******************************************************************************
+ * MODERN CSS RESET
+ *
+ * Purpose:
+ * - Normalize styles across browsers for consistent rendering.
+ * - Remove default browser inconsistencies in layout and appearance.
+ * - Provide a clean foundation for modern responsive websites.
+ ******************************************************************************/
+/*
+ * Box Model Reset
+ *
+ * - Includes padding and borders in the element's width and height calculations.
+ * - Removes default margins and paddings from all elements.
+ */
+*, *::before, *::after {
+  box-sizing: border-box; /* Standardize box model behavior */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default paddings */
+}
+
+/*
+ * HTML and Body Styles
+ *
+ * - Ensures full viewport height for root elements.
+ * - Provides a flexible base for responsive layouts.
+ */
+html, body {
+  min-height: 100vh; /* Full viewport height */
+  overflow-x: hidden; /* Disable horizontal scrolling */
+}
+
+/*
+ * List Styles Reset
+ *
+ * - Removes default bullets and numbering from lists.
+ */
+ul, ol {
+  list-style: none; /* No bullets or numbers */
+}
+
+/*
+ * Typography and Font Styles
+ *
+ * - Sets a consistent font size and line height for better readability.
+ * - Optimizes text rendering for modern devices.
+ */
+html {
+  font-size: 16px; /* Base font size */
+  line-height: 1.5; /* Improves text readability */
+  -webkit-text-size-adjust: 100%; /* Prevents font scaling on mobile devices */
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #fff; /* Sets a clean white background */
+  color: #333; /* Neutral text color */
+  text-rendering: optimizeLegibility; /* Enhances font rendering */
+}
+
+/*
+ * Anchor Tag Reset
+ *
+ * - Removes default underlines.
+ * - Ensures anchors inherit the current text color.
+ */
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit parent text color */
+}
+
+a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/*
+ * Media Elements
+ *
+ * - Ensures images, videos, and other media scale within their container.
+ */
+img, video, canvas, svg {
+  display: block; /* Ensures consistent box model behavior */
+  max-width: 100%; /* Scale media to fit the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/*
+ * Form Elements Reset
+ *
+ * - Normalizes appearance across browsers.
+ * - Removes default styles for consistent customization.
+ */
+button, input, textarea, select {
+  font: inherit; /* Inherit font styles from parent */
+  color: inherit; /* Use parent text color */
+  background: none; /* Remove background */
+  border: none; /* Remove borders */
+  outline: none; /* Remove focus outlines */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+button {
+  cursor: pointer; /* Pointer cursor for buttons */
+}
+
+/*
+ * Textarea
+ *
+ * - Allows resizing only in the vertical direction.
+ */
+textarea {
+  resize: vertical; /* Vertical resizing only */
+}
+
+/*
+ * Table Styles Reset
+ *
+ * - Ensures consistent spacing and alignment for table elements.
+ */
+table {
+  border-collapse: collapse; /* Combine table borders */
+  border-spacing: 0; /* Remove spacing between table cells */
+  width: 100%; /* Full-width tables */
+}
+
+th, td {
+  text-align: left; /* Left-align text */
+  padding: 0.5rem; /* Add consistent padding */
+}
+
+/*
+ * Blockquote and Quote Styles
+ *
+ * - Removes default quotes around blockquote and q elements.
+ */
+blockquote, q {
+  quotes: none; /* Disable default quotes */
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: ""; /* Clear content */
+}
+
+/*
+ * Horizontal Rule (hr)
+ *
+ * - Standardizes appearance with minimal styling.
+ */
+hr {
+  border: none; /* Remove border styling */
+  height: 1px; /* Set height */
+  background-color: #ccc; /* Neutral separator color */
+}
+
+/*
+ * Focus Styles
+ *
+ * - Enhances focus visibility for accessibility.
+ */
+:focus {
+  outline: 2px solid #007BFF; /* Add visible focus outline */
+  outline-offset: 4px; /* Create spacing around the outline */
+}
+
+/*
+ * Blockquote Styling
+ *
+ * - Adds a left border and consistent padding for emphasis.
+ */
+blockquote {
+  margin-left: 0; /* Align with surrounding content */
+  padding-left: 1rem; /* Add left padding */
+  border-left: 4px solid #ccc; /* Left border for emphasis */
+}
+
+:root {
+  /* Color Scheme */
+  color-scheme: dark;
+  /* Neutral Colors */
+  --color-50: #f7fafc; /* Almost white */
+  --color-100: #edf2f7; /* Very light gray */
+  --color-200: #e2e8f0; /* Light gray */
+  --color-300: #cbd5e0; /* Medium light gray */
+  --color-400: #a0aec0; /* Soft gray */
+  --color-500: #718096; /* Neutral gray */
+  --color-600: #4a5568; /* Medium dark gray */
+  --color-700: #2d3748; /* Close to base background */
+  --color-800: #202a31; /* Base background color */
+  --color-900: #1a202c; /* Darker gray */
+  --color-1000: #171923; /* Almost black */
+  /* Blue Accent Colors */
+  --accent-50: #e7f5ff; /* Very light blue */
+  --accent-100: #d0ebff; /* Light blue */
+  --accent-200: #a5d8ff; /* Softer light blue */
+  --accent-300: #74c0fc; /* Soft and bright blue */
+  --accent-400: #4dabf7; /* Vibrant blue */
+  --accent-500: #339af0; /* Primary accent color */
+  --accent-600: #228be6; /* Slightly darker blue */
+  --accent-700: #1c7ed6; /* Rich dark blue */
+  --accent-800: #1971c2; /* Deep blue */
+  --accent-900: #1864ab; /* Very dark blue */
+  --accent-1000: #0b5394; /* Deepest blue */
+}
+
+.light-mode {
+  /* Color Scheme */
+  color-scheme: light;
+  /* Neutral Colors - Inverted for Light Mode */
+  --color-50: #171923; /* Almost black */
+  --color-100: #1a202c; /* Darker gray */
+  --color-200: #202a31; /* Base background color (dark mode) */
+  --color-300: #2d3748; /* Close to base background */
+  --color-400: #4a5568; /* Medium dark gray */
+  --color-500: #718096; /* Neutral gray */
+  --color-600: #a0aec0; /* Soft gray */
+  --color-700: #cbd5e0; /* Medium light gray */
+  --color-800: #e2e8f0; /* Light gray */
+  --color-900: #edf2f7; /* Very light gray */
+  --color-1000: #f7fafc; /* Almost white */
+  /* Blue Accent Colors - Inverted for Light Mode */
+  --accent-50: #0b5394; /* Deepest blue */
+  --accent-100: #1864ab; /* Very dark blue */
+  --accent-200: #1971c2; /* Deep blue */
+  --accent-300: #1c7ed6; /* Rich dark blue */
+  --accent-400: #228be6; /* Slightly darker blue */
+  --accent-500: #339af0; /* Primary accent color */
+  --accent-600: #4dabf7; /* Vibrant blue */
+  --accent-700: #74c0fc; /* Soft and bright blue */
+  --accent-800: #a5d8ff; /* Softer light blue */
+  --accent-900: #d0ebff; /* Light blue */
+  --accent-1000: #e7f5ff; /* Very light blue */
+}
+
+/******************************************************************************
+ * CONTAINER UTILITIES
+ *****************************************************************************/
+/**
+ * Container Sizes
+ *
+ * Define fixed container sizes for responsive layouts:
+ * - `xxs`: Very small devices (e.g., small phones).
+ * - `xs` : Small phones.
+ * - `sm` : Standard phones.
+ * - `md` : Tablets.
+ * - `d`  : Default size (larger tablets, small laptops).
+ * - `lg` : Laptops and desktops.
+ * - `xl` : Large desktops.
+ * - `2xl`: Extra large screens.
+ * - `3xl`: Ultra-wide monitors.
+ */
+/**
+ * Base Container Styles
+ *
+ * - `width`: Default container width.
+ * - `max-width`: Ensures container doesn't exceed viewport width.
+ * - `margin`: Centers the container horizontally.
+ * - `padding`: Adds horizontal spacing inside the container.
+ * - `overflow`: Hides overflow content by default.
+ */
+.container {
+  width: 1024px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  overflow: hidden;
+  /**
+   * Fluid Container
+   *
+   * - `&--fluid`: Enables full-width container with responsive padding.
+   */
+  /**
+   * Overflow Utility
+   *
+   * - `&--overflow`: Explicitly sets overflow to visible.
+   */
+  /**
+   * No Padding Utility
+   *
+   * - `&--p0`: Removes all padding from the container.
+   */
+}
+.container--fluid {
+  width: auto;
+  margin: 0;
+  padding: 0 2vw;
+  overflow: visible;
+}
+.container--overflow {
+  overflow: visible !important;
+}
+.container--p0 {
+  padding: 0;
+}
+
+/**
+ * Specific Container Sizes
+ *
+ * Generates container modifiers for each predefined size:
+ * - Example: `.container--xxs`, `.container--lg`, `.container--3xl`.
+ */
+.container--xxs {
+  width: 320px;
+}
+.container--xs {
+  width: 480px;
+}
+.container--sm {
+  width: 640px;
+}
+.container--md {
+  width: 768px;
+}
+.container--d {
+  width: 1024px;
+}
+.container--lg {
+  width: 1280px;
+}
+.container--xl {
+  width: 1440px;
+}
+.container--2xl {
+  width: 1600px;
+}
+.container--3xl {
+  width: 1920px;
+}
+
+/**
+ * Responsive Container Styles
+ *
+ * Ensures the container adapts to smaller screens:
+ * - Sets container to full width with no margin.
+ * - Includes utility class `.container--max` to remove horizontal padding.
+ */
+@media (max-width: 750px) {
+  .container {
+    width: 100% !important;
+    margin: 0;
+  }
+  .container--max {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+/******************************************************************************
+ * MARGIN UTILITIES
+ *****************************************************************************/
+/**
+ * Margin Utilities
+ *
+ * Generates:
+ * - Global margin classes in `rem` (no suffix) and `vw` (with suffix).
+ * - Responsive margin classes for small screens (prefix `sm-`).
+ * - Auto margin utilities for dynamic alignment.
+ */
+/**
+ * Mixin: Generate Margin Classes
+ *
+ * @param $range  Number of classes to generate (e.g., 0 through $range).
+ * @param $unit   Unit of measurement (default: rem).
+ * @param $prefix Optional prefix for responsive classes (e.g., "sm-").
+ * @param $suffix Optional suffix for unit-specific classes (e.g., "vw").
+ */
+/**
+ * Mixin: Generate Special Margin Classes
+ *
+ * @param $values A map of special sizes and their corresponding values.
+ * @param $unit   Unit of measurement (default: rem).
+ * @param $prefix Optional prefix for responsive classes (e.g., "sm-").
+ * @param $suffix Optional suffix for unit-specific classes (e.g., "vw").
+ */
+/**
+ * Global Margin Classes
+ *
+ * Generates margin utilities for:
+ * - `.m-{value}`: Margins in rem (e.g., `.m-1` for 1rem).
+ * - `.m-{value}vw`: Margins in vw (e.g., `.m-1vw` for 1vw).
+ * - Special values for precise margins (e.g., `.m-05` for 0.5rem).
+ */
+.m-0 {
+  margin: 0rem;
+}
+
+.mt-0 {
+  margin-top: 0rem !important;
+}
+
+.mr-0 {
+  margin-right: 0rem !important;
+}
+
+.mb-0 {
+  margin-bottom: 0rem !important;
+}
+
+.ml-0 {
+  margin-left: 0rem !important;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.mt-1 {
+  margin-top: 1rem !important;
+}
+
+.mr-1 {
+  margin-right: 1rem !important;
+}
+
+.mb-1 {
+  margin-bottom: 1rem !important;
+}
+
+.ml-1 {
+  margin-left: 1rem !important;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.mt-2 {
+  margin-top: 2rem !important;
+}
+
+.mr-2 {
+  margin-right: 2rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 2rem !important;
+}
+
+.ml-2 {
+  margin-left: 2rem !important;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.mt-3 {
+  margin-top: 3rem !important;
+}
+
+.mr-3 {
+  margin-right: 3rem !important;
+}
+
+.mb-3 {
+  margin-bottom: 3rem !important;
+}
+
+.ml-3 {
+  margin-left: 3rem !important;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.mt-4 {
+  margin-top: 4rem !important;
+}
+
+.mr-4 {
+  margin-right: 4rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 4rem !important;
+}
+
+.ml-4 {
+  margin-left: 4rem !important;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+.mt-5 {
+  margin-top: 5rem !important;
+}
+
+.mr-5 {
+  margin-right: 5rem !important;
+}
+
+.mb-5 {
+  margin-bottom: 5rem !important;
+}
+
+.ml-5 {
+  margin-left: 5rem !important;
+}
+
+.m-6 {
+  margin: 6rem;
+}
+
+.mt-6 {
+  margin-top: 6rem !important;
+}
+
+.mr-6 {
+  margin-right: 6rem !important;
+}
+
+.mb-6 {
+  margin-bottom: 6rem !important;
+}
+
+.ml-6 {
+  margin-left: 6rem !important;
+}
+
+.m-7 {
+  margin: 7rem;
+}
+
+.mt-7 {
+  margin-top: 7rem !important;
+}
+
+.mr-7 {
+  margin-right: 7rem !important;
+}
+
+.mb-7 {
+  margin-bottom: 7rem !important;
+}
+
+.ml-7 {
+  margin-left: 7rem !important;
+}
+
+.m-8 {
+  margin: 8rem;
+}
+
+.mt-8 {
+  margin-top: 8rem !important;
+}
+
+.mr-8 {
+  margin-right: 8rem !important;
+}
+
+.mb-8 {
+  margin-bottom: 8rem !important;
+}
+
+.ml-8 {
+  margin-left: 8rem !important;
+}
+
+.m-9 {
+  margin: 9rem;
+}
+
+.mt-9 {
+  margin-top: 9rem !important;
+}
+
+.mr-9 {
+  margin-right: 9rem !important;
+}
+
+.mb-9 {
+  margin-bottom: 9rem !important;
+}
+
+.ml-9 {
+  margin-left: 9rem !important;
+}
+
+.m-10 {
+  margin: 10rem;
+}
+
+.mt-10 {
+  margin-top: 10rem !important;
+}
+
+.mr-10 {
+  margin-right: 10rem !important;
+}
+
+.mb-10 {
+  margin-bottom: 10rem !important;
+}
+
+.ml-10 {
+  margin-left: 10rem !important;
+}
+
+.m-11 {
+  margin: 11rem;
+}
+
+.mt-11 {
+  margin-top: 11rem !important;
+}
+
+.mr-11 {
+  margin-right: 11rem !important;
+}
+
+.mb-11 {
+  margin-bottom: 11rem !important;
+}
+
+.ml-11 {
+  margin-left: 11rem !important;
+}
+
+.m-12 {
+  margin: 12rem;
+}
+
+.mt-12 {
+  margin-top: 12rem !important;
+}
+
+.mr-12 {
+  margin-right: 12rem !important;
+}
+
+.mb-12 {
+  margin-bottom: 12rem !important;
+}
+
+.ml-12 {
+  margin-left: 12rem !important;
+}
+
+.m-13 {
+  margin: 13rem;
+}
+
+.mt-13 {
+  margin-top: 13rem !important;
+}
+
+.mr-13 {
+  margin-right: 13rem !important;
+}
+
+.mb-13 {
+  margin-bottom: 13rem !important;
+}
+
+.ml-13 {
+  margin-left: 13rem !important;
+}
+
+.m-14 {
+  margin: 14rem;
+}
+
+.mt-14 {
+  margin-top: 14rem !important;
+}
+
+.mr-14 {
+  margin-right: 14rem !important;
+}
+
+.mb-14 {
+  margin-bottom: 14rem !important;
+}
+
+.ml-14 {
+  margin-left: 14rem !important;
+}
+
+.m-15 {
+  margin: 15rem;
+}
+
+.mt-15 {
+  margin-top: 15rem !important;
+}
+
+.mr-15 {
+  margin-right: 15rem !important;
+}
+
+.mb-15 {
+  margin-bottom: 15rem !important;
+}
+
+.ml-15 {
+  margin-left: 15rem !important;
+}
+
+.m-0vw {
+  margin: 0vw;
+}
+
+.mt-0vw {
+  margin-top: 0vw !important;
+}
+
+.mr-0vw {
+  margin-right: 0vw !important;
+}
+
+.mb-0vw {
+  margin-bottom: 0vw !important;
+}
+
+.ml-0vw {
+  margin-left: 0vw !important;
+}
+
+.m-1vw {
+  margin: 1vw;
+}
+
+.mt-1vw {
+  margin-top: 1vw !important;
+}
+
+.mr-1vw {
+  margin-right: 1vw !important;
+}
+
+.mb-1vw {
+  margin-bottom: 1vw !important;
+}
+
+.ml-1vw {
+  margin-left: 1vw !important;
+}
+
+.m-2vw {
+  margin: 2vw;
+}
+
+.mt-2vw {
+  margin-top: 2vw !important;
+}
+
+.mr-2vw {
+  margin-right: 2vw !important;
+}
+
+.mb-2vw {
+  margin-bottom: 2vw !important;
+}
+
+.ml-2vw {
+  margin-left: 2vw !important;
+}
+
+.m-3vw {
+  margin: 3vw;
+}
+
+.mt-3vw {
+  margin-top: 3vw !important;
+}
+
+.mr-3vw {
+  margin-right: 3vw !important;
+}
+
+.mb-3vw {
+  margin-bottom: 3vw !important;
+}
+
+.ml-3vw {
+  margin-left: 3vw !important;
+}
+
+.m-4vw {
+  margin: 4vw;
+}
+
+.mt-4vw {
+  margin-top: 4vw !important;
+}
+
+.mr-4vw {
+  margin-right: 4vw !important;
+}
+
+.mb-4vw {
+  margin-bottom: 4vw !important;
+}
+
+.ml-4vw {
+  margin-left: 4vw !important;
+}
+
+.m-5vw {
+  margin: 5vw;
+}
+
+.mt-5vw {
+  margin-top: 5vw !important;
+}
+
+.mr-5vw {
+  margin-right: 5vw !important;
+}
+
+.mb-5vw {
+  margin-bottom: 5vw !important;
+}
+
+.ml-5vw {
+  margin-left: 5vw !important;
+}
+
+.m-0125 {
+  margin: 0.125rem;
+}
+
+.mt-0125 {
+  margin-top: 0.125rem !important;
+}
+
+.mr-0125 {
+  margin-right: 0.125rem !important;
+}
+
+.mb-0125 {
+  margin-bottom: 0.125rem !important;
+}
+
+.ml-0125 {
+  margin-left: 0.125rem !important;
+}
+
+.m-025 {
+  margin: 0.25rem;
+}
+
+.mt-025 {
+  margin-top: 0.25rem !important;
+}
+
+.mr-025 {
+  margin-right: 0.25rem !important;
+}
+
+.mb-025 {
+  margin-bottom: 0.25rem !important;
+}
+
+.ml-025 {
+  margin-left: 0.25rem !important;
+}
+
+.m-0375 {
+  margin: 0.375rem;
+}
+
+.mt-0375 {
+  margin-top: 0.375rem !important;
+}
+
+.mr-0375 {
+  margin-right: 0.375rem !important;
+}
+
+.mb-0375 {
+  margin-bottom: 0.375rem !important;
+}
+
+.ml-0375 {
+  margin-left: 0.375rem !important;
+}
+
+.m-045 {
+  margin: 0.45rem;
+}
+
+.mt-045 {
+  margin-top: 0.45rem !important;
+}
+
+.mr-045 {
+  margin-right: 0.45rem !important;
+}
+
+.mb-045 {
+  margin-bottom: 0.45rem !important;
+}
+
+.ml-045 {
+  margin-left: 0.45rem !important;
+}
+
+.m-05 {
+  margin: 0.5rem;
+}
+
+.mt-05 {
+  margin-top: 0.5rem !important;
+}
+
+.mr-05 {
+  margin-right: 0.5rem !important;
+}
+
+.mb-05 {
+  margin-bottom: 0.5rem !important;
+}
+
+.ml-05 {
+  margin-left: 0.5rem !important;
+}
+
+.m-065 {
+  margin: 0.65rem;
+}
+
+.mt-065 {
+  margin-top: 0.65rem !important;
+}
+
+.mr-065 {
+  margin-right: 0.65rem !important;
+}
+
+.mb-065 {
+  margin-bottom: 0.65rem !important;
+}
+
+.ml-065 {
+  margin-left: 0.65rem !important;
+}
+
+.m-075 {
+  margin: 0.75rem;
+}
+
+.mt-075 {
+  margin-top: 0.75rem !important;
+}
+
+.mr-075 {
+  margin-right: 0.75rem !important;
+}
+
+.mb-075 {
+  margin-bottom: 0.75rem !important;
+}
+
+.ml-075 {
+  margin-left: 0.75rem !important;
+}
+
+.m-15 {
+  margin: 1.5rem;
+}
+
+.mt-15 {
+  margin-top: 1.5rem !important;
+}
+
+.mr-15 {
+  margin-right: 1.5rem !important;
+}
+
+.mb-15 {
+  margin-bottom: 1.5rem !important;
+}
+
+.ml-15 {
+  margin-left: 1.5rem !important;
+}
+
+.m-175 {
+  margin: 1.75rem;
+}
+
+.mt-175 {
+  margin-top: 1.75rem !important;
+}
+
+.mr-175 {
+  margin-right: 1.75rem !important;
+}
+
+.mb-175 {
+  margin-bottom: 1.75rem !important;
+}
+
+.ml-175 {
+  margin-left: 1.75rem !important;
+}
+
+/**
+ * Responsive Margin Classes for Small Screens
+ *
+ * Generates classes with `sm-` prefix:
+ * - `.m-sm-{value}`: Margins for small screens (e.g., `.m-sm-1` for 1rem).
+ * - Special sizes (e.g., `.m-sm-05` for 0.5rem).
+ */
+@media (max-width: 750px) {
+  .m-sm-0 {
+    margin: 0rem;
+  }
+  .mt-sm-0 {
+    margin-top: 0rem !important;
+  }
+  .mr-sm-0 {
+    margin-right: 0rem !important;
+  }
+  .mb-sm-0 {
+    margin-bottom: 0rem !important;
+  }
+  .ml-sm-0 {
+    margin-left: 0rem !important;
+  }
+  .m-sm-1 {
+    margin: 1rem;
+  }
+  .mt-sm-1 {
+    margin-top: 1rem !important;
+  }
+  .mr-sm-1 {
+    margin-right: 1rem !important;
+  }
+  .mb-sm-1 {
+    margin-bottom: 1rem !important;
+  }
+  .ml-sm-1 {
+    margin-left: 1rem !important;
+  }
+  .m-sm-2 {
+    margin: 2rem;
+  }
+  .mt-sm-2 {
+    margin-top: 2rem !important;
+  }
+  .mr-sm-2 {
+    margin-right: 2rem !important;
+  }
+  .mb-sm-2 {
+    margin-bottom: 2rem !important;
+  }
+  .ml-sm-2 {
+    margin-left: 2rem !important;
+  }
+  .m-sm-3 {
+    margin: 3rem;
+  }
+  .mt-sm-3 {
+    margin-top: 3rem !important;
+  }
+  .mr-sm-3 {
+    margin-right: 3rem !important;
+  }
+  .mb-sm-3 {
+    margin-bottom: 3rem !important;
+  }
+  .ml-sm-3 {
+    margin-left: 3rem !important;
+  }
+  .m-sm-4 {
+    margin: 4rem;
+  }
+  .mt-sm-4 {
+    margin-top: 4rem !important;
+  }
+  .mr-sm-4 {
+    margin-right: 4rem !important;
+  }
+  .mb-sm-4 {
+    margin-bottom: 4rem !important;
+  }
+  .ml-sm-4 {
+    margin-left: 4rem !important;
+  }
+  .m-sm-5 {
+    margin: 5rem;
+  }
+  .mt-sm-5 {
+    margin-top: 5rem !important;
+  }
+  .mr-sm-5 {
+    margin-right: 5rem !important;
+  }
+  .mb-sm-5 {
+    margin-bottom: 5rem !important;
+  }
+  .ml-sm-5 {
+    margin-left: 5rem !important;
+  }
+  .m-sm-6 {
+    margin: 6rem;
+  }
+  .mt-sm-6 {
+    margin-top: 6rem !important;
+  }
+  .mr-sm-6 {
+    margin-right: 6rem !important;
+  }
+  .mb-sm-6 {
+    margin-bottom: 6rem !important;
+  }
+  .ml-sm-6 {
+    margin-left: 6rem !important;
+  }
+  .m-sm-7 {
+    margin: 7rem;
+  }
+  .mt-sm-7 {
+    margin-top: 7rem !important;
+  }
+  .mr-sm-7 {
+    margin-right: 7rem !important;
+  }
+  .mb-sm-7 {
+    margin-bottom: 7rem !important;
+  }
+  .ml-sm-7 {
+    margin-left: 7rem !important;
+  }
+  .m-sm-8 {
+    margin: 8rem;
+  }
+  .mt-sm-8 {
+    margin-top: 8rem !important;
+  }
+  .mr-sm-8 {
+    margin-right: 8rem !important;
+  }
+  .mb-sm-8 {
+    margin-bottom: 8rem !important;
+  }
+  .ml-sm-8 {
+    margin-left: 8rem !important;
+  }
+  .m-sm-9 {
+    margin: 9rem;
+  }
+  .mt-sm-9 {
+    margin-top: 9rem !important;
+  }
+  .mr-sm-9 {
+    margin-right: 9rem !important;
+  }
+  .mb-sm-9 {
+    margin-bottom: 9rem !important;
+  }
+  .ml-sm-9 {
+    margin-left: 9rem !important;
+  }
+  .m-sm-10 {
+    margin: 10rem;
+  }
+  .mt-sm-10 {
+    margin-top: 10rem !important;
+  }
+  .mr-sm-10 {
+    margin-right: 10rem !important;
+  }
+  .mb-sm-10 {
+    margin-bottom: 10rem !important;
+  }
+  .ml-sm-10 {
+    margin-left: 10rem !important;
+  }
+  .m-sm-11 {
+    margin: 11rem;
+  }
+  .mt-sm-11 {
+    margin-top: 11rem !important;
+  }
+  .mr-sm-11 {
+    margin-right: 11rem !important;
+  }
+  .mb-sm-11 {
+    margin-bottom: 11rem !important;
+  }
+  .ml-sm-11 {
+    margin-left: 11rem !important;
+  }
+  .m-sm-12 {
+    margin: 12rem;
+  }
+  .mt-sm-12 {
+    margin-top: 12rem !important;
+  }
+  .mr-sm-12 {
+    margin-right: 12rem !important;
+  }
+  .mb-sm-12 {
+    margin-bottom: 12rem !important;
+  }
+  .ml-sm-12 {
+    margin-left: 12rem !important;
+  }
+  .m-sm-13 {
+    margin: 13rem;
+  }
+  .mt-sm-13 {
+    margin-top: 13rem !important;
+  }
+  .mr-sm-13 {
+    margin-right: 13rem !important;
+  }
+  .mb-sm-13 {
+    margin-bottom: 13rem !important;
+  }
+  .ml-sm-13 {
+    margin-left: 13rem !important;
+  }
+  .m-sm-14 {
+    margin: 14rem;
+  }
+  .mt-sm-14 {
+    margin-top: 14rem !important;
+  }
+  .mr-sm-14 {
+    margin-right: 14rem !important;
+  }
+  .mb-sm-14 {
+    margin-bottom: 14rem !important;
+  }
+  .ml-sm-14 {
+    margin-left: 14rem !important;
+  }
+  .m-sm-15 {
+    margin: 15rem;
+  }
+  .mt-sm-15 {
+    margin-top: 15rem !important;
+  }
+  .mr-sm-15 {
+    margin-right: 15rem !important;
+  }
+  .mb-sm-15 {
+    margin-bottom: 15rem !important;
+  }
+  .ml-sm-15 {
+    margin-left: 15rem !important;
+  }
+  .m-sm-0125 {
+    margin: 0.125rem;
+  }
+  .mt-sm-0125 {
+    margin-top: 0.125rem !important;
+  }
+  .mr-sm-0125 {
+    margin-right: 0.125rem !important;
+  }
+  .mb-sm-0125 {
+    margin-bottom: 0.125rem !important;
+  }
+  .ml-sm-0125 {
+    margin-left: 0.125rem !important;
+  }
+  .m-sm-025 {
+    margin: 0.25rem;
+  }
+  .mt-sm-025 {
+    margin-top: 0.25rem !important;
+  }
+  .mr-sm-025 {
+    margin-right: 0.25rem !important;
+  }
+  .mb-sm-025 {
+    margin-bottom: 0.25rem !important;
+  }
+  .ml-sm-025 {
+    margin-left: 0.25rem !important;
+  }
+  .m-sm-0375 {
+    margin: 0.375rem;
+  }
+  .mt-sm-0375 {
+    margin-top: 0.375rem !important;
+  }
+  .mr-sm-0375 {
+    margin-right: 0.375rem !important;
+  }
+  .mb-sm-0375 {
+    margin-bottom: 0.375rem !important;
+  }
+  .ml-sm-0375 {
+    margin-left: 0.375rem !important;
+  }
+  .m-sm-045 {
+    margin: 0.45rem;
+  }
+  .mt-sm-045 {
+    margin-top: 0.45rem !important;
+  }
+  .mr-sm-045 {
+    margin-right: 0.45rem !important;
+  }
+  .mb-sm-045 {
+    margin-bottom: 0.45rem !important;
+  }
+  .ml-sm-045 {
+    margin-left: 0.45rem !important;
+  }
+  .m-sm-05 {
+    margin: 0.5rem;
+  }
+  .mt-sm-05 {
+    margin-top: 0.5rem !important;
+  }
+  .mr-sm-05 {
+    margin-right: 0.5rem !important;
+  }
+  .mb-sm-05 {
+    margin-bottom: 0.5rem !important;
+  }
+  .ml-sm-05 {
+    margin-left: 0.5rem !important;
+  }
+  .m-sm-065 {
+    margin: 0.65rem;
+  }
+  .mt-sm-065 {
+    margin-top: 0.65rem !important;
+  }
+  .mr-sm-065 {
+    margin-right: 0.65rem !important;
+  }
+  .mb-sm-065 {
+    margin-bottom: 0.65rem !important;
+  }
+  .ml-sm-065 {
+    margin-left: 0.65rem !important;
+  }
+  .m-sm-075 {
+    margin: 0.75rem;
+  }
+  .mt-sm-075 {
+    margin-top: 0.75rem !important;
+  }
+  .mr-sm-075 {
+    margin-right: 0.75rem !important;
+  }
+  .mb-sm-075 {
+    margin-bottom: 0.75rem !important;
+  }
+  .ml-sm-075 {
+    margin-left: 0.75rem !important;
+  }
+  .m-sm-15 {
+    margin: 1.5rem;
+  }
+  .mt-sm-15 {
+    margin-top: 1.5rem !important;
+  }
+  .mr-sm-15 {
+    margin-right: 1.5rem !important;
+  }
+  .mb-sm-15 {
+    margin-bottom: 1.5rem !important;
+  }
+  .ml-sm-15 {
+    margin-left: 1.5rem !important;
+  }
+  .m-sm-175 {
+    margin: 1.75rem;
+  }
+  .mt-sm-175 {
+    margin-top: 1.75rem !important;
+  }
+  .mr-sm-175 {
+    margin-right: 1.75rem !important;
+  }
+  .mb-sm-175 {
+    margin-bottom: 1.75rem !important;
+  }
+  .ml-sm-175 {
+    margin-left: 1.75rem !important;
+  }
+}
+/**
+ * Auto Margin Utilities
+ *
+ * Generates:
+ * - `.mt-auto`: Automatically adjusts top margin.
+ * - `.mb-auto`: Automatically adjusts bottom margin.
+ * - `.ml-auto`: Automatically adjusts left margin.
+ * - `.mr-auto`: Automatically adjusts right margin.
+ */
+.mt-auto {
+  margin-top: auto !important;
+}
+
+.mb-auto {
+  margin-bottom: auto !important;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+/******************************************************************************
+ * PADDING UTILITIES
+ *****************************************************************************/
+/**
+ * Padding Utilities
+ *
+ * Generates:
+ * - Global padding classes in `rem` (no suffix) and `vw` (with suffix).
+ * - Responsive padding classes for small screens (prefix `sm-`).
+ * - Auto padding utilities for dynamic alignment.
+ */
+/**
+ * Mixin: Generate Padding Classes
+ *
+ * @param $range  Number of classes to generate (e.g., 0 through $range).
+ * @param $unit   Unit of measurement (default: rem).
+ * @param $prefix Optional prefix for responsive classes (e.g., "sm-").
+ * @param $suffix Optional suffix for unit-specific classes (e.g., "vw").
+ */
+/**
+ * Mixin: Generate Special Padding Classes
+ *
+ * @param $values A map of special sizes and their corresponding values.
+ * @param $unit   Unit of measurement (default: rem).
+ * @param $prefix Optional prefix for responsive classes (e.g., "sm-").
+ * @param $suffix Optional suffix for unit-specific classes (e.g., "vw").
+ */
+/**
+ * Global Padding Classes
+ *
+ * Generates padding utilities for:
+ * - `.p-{value}`: Padding in rem (e.g., `.p-1` for 1rem).
+ * - `.p-{value}vw`: Padding in vw (e.g., `.p-1vw` for 1vw).
+ * - Special values for precise padding (e.g., `.p-05` for 0.5rem).
+ */
+.p-0 {
+  padding: 0rem;
+}
+
+.pt-0 {
+  padding-top: 0rem !important;
+}
+
+.pr-0 {
+  padding-right: 0rem !important;
+}
+
+.pb-0 {
+  padding-bottom: 0rem !important;
+}
+
+.pl-0 {
+  padding-left: 0rem !important;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.pt-1 {
+  padding-top: 1rem !important;
+}
+
+.pr-1 {
+  padding-right: 1rem !important;
+}
+
+.pb-1 {
+  padding-bottom: 1rem !important;
+}
+
+.pl-1 {
+  padding-left: 1rem !important;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.pt-2 {
+  padding-top: 2rem !important;
+}
+
+.pr-2 {
+  padding-right: 2rem !important;
+}
+
+.pb-2 {
+  padding-bottom: 2rem !important;
+}
+
+.pl-2 {
+  padding-left: 2rem !important;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.pt-3 {
+  padding-top: 3rem !important;
+}
+
+.pr-3 {
+  padding-right: 3rem !important;
+}
+
+.pb-3 {
+  padding-bottom: 3rem !important;
+}
+
+.pl-3 {
+  padding-left: 3rem !important;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.pt-4 {
+  padding-top: 4rem !important;
+}
+
+.pr-4 {
+  padding-right: 4rem !important;
+}
+
+.pb-4 {
+  padding-bottom: 4rem !important;
+}
+
+.pl-4 {
+  padding-left: 4rem !important;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.pt-5 {
+  padding-top: 5rem !important;
+}
+
+.pr-5 {
+  padding-right: 5rem !important;
+}
+
+.pb-5 {
+  padding-bottom: 5rem !important;
+}
+
+.pl-5 {
+  padding-left: 5rem !important;
+}
+
+.p-6 {
+  padding: 6rem;
+}
+
+.pt-6 {
+  padding-top: 6rem !important;
+}
+
+.pr-6 {
+  padding-right: 6rem !important;
+}
+
+.pb-6 {
+  padding-bottom: 6rem !important;
+}
+
+.pl-6 {
+  padding-left: 6rem !important;
+}
+
+.p-7 {
+  padding: 7rem;
+}
+
+.pt-7 {
+  padding-top: 7rem !important;
+}
+
+.pr-7 {
+  padding-right: 7rem !important;
+}
+
+.pb-7 {
+  padding-bottom: 7rem !important;
+}
+
+.pl-7 {
+  padding-left: 7rem !important;
+}
+
+.p-8 {
+  padding: 8rem;
+}
+
+.pt-8 {
+  padding-top: 8rem !important;
+}
+
+.pr-8 {
+  padding-right: 8rem !important;
+}
+
+.pb-8 {
+  padding-bottom: 8rem !important;
+}
+
+.pl-8 {
+  padding-left: 8rem !important;
+}
+
+.p-9 {
+  padding: 9rem;
+}
+
+.pt-9 {
+  padding-top: 9rem !important;
+}
+
+.pr-9 {
+  padding-right: 9rem !important;
+}
+
+.pb-9 {
+  padding-bottom: 9rem !important;
+}
+
+.pl-9 {
+  padding-left: 9rem !important;
+}
+
+.p-10 {
+  padding: 10rem;
+}
+
+.pt-10 {
+  padding-top: 10rem !important;
+}
+
+.pr-10 {
+  padding-right: 10rem !important;
+}
+
+.pb-10 {
+  padding-bottom: 10rem !important;
+}
+
+.pl-10 {
+  padding-left: 10rem !important;
+}
+
+.p-11 {
+  padding: 11rem;
+}
+
+.pt-11 {
+  padding-top: 11rem !important;
+}
+
+.pr-11 {
+  padding-right: 11rem !important;
+}
+
+.pb-11 {
+  padding-bottom: 11rem !important;
+}
+
+.pl-11 {
+  padding-left: 11rem !important;
+}
+
+.p-12 {
+  padding: 12rem;
+}
+
+.pt-12 {
+  padding-top: 12rem !important;
+}
+
+.pr-12 {
+  padding-right: 12rem !important;
+}
+
+.pb-12 {
+  padding-bottom: 12rem !important;
+}
+
+.pl-12 {
+  padding-left: 12rem !important;
+}
+
+.p-13 {
+  padding: 13rem;
+}
+
+.pt-13 {
+  padding-top: 13rem !important;
+}
+
+.pr-13 {
+  padding-right: 13rem !important;
+}
+
+.pb-13 {
+  padding-bottom: 13rem !important;
+}
+
+.pl-13 {
+  padding-left: 13rem !important;
+}
+
+.p-14 {
+  padding: 14rem;
+}
+
+.pt-14 {
+  padding-top: 14rem !important;
+}
+
+.pr-14 {
+  padding-right: 14rem !important;
+}
+
+.pb-14 {
+  padding-bottom: 14rem !important;
+}
+
+.pl-14 {
+  padding-left: 14rem !important;
+}
+
+.p-15 {
+  padding: 15rem;
+}
+
+.pt-15 {
+  padding-top: 15rem !important;
+}
+
+.pr-15 {
+  padding-right: 15rem !important;
+}
+
+.pb-15 {
+  padding-bottom: 15rem !important;
+}
+
+.pl-15 {
+  padding-left: 15rem !important;
+}
+
+.p-0vw {
+  padding: 0vw;
+}
+
+.pt-0vw {
+  padding-top: 0vw !important;
+}
+
+.pr-0vw {
+  padding-right: 0vw !important;
+}
+
+.pb-0vw {
+  padding-bottom: 0vw !important;
+}
+
+.pl-0vw {
+  padding-left: 0vw !important;
+}
+
+.p-1vw {
+  padding: 1vw;
+}
+
+.pt-1vw {
+  padding-top: 1vw !important;
+}
+
+.pr-1vw {
+  padding-right: 1vw !important;
+}
+
+.pb-1vw {
+  padding-bottom: 1vw !important;
+}
+
+.pl-1vw {
+  padding-left: 1vw !important;
+}
+
+.p-2vw {
+  padding: 2vw;
+}
+
+.pt-2vw {
+  padding-top: 2vw !important;
+}
+
+.pr-2vw {
+  padding-right: 2vw !important;
+}
+
+.pb-2vw {
+  padding-bottom: 2vw !important;
+}
+
+.pl-2vw {
+  padding-left: 2vw !important;
+}
+
+.p-3vw {
+  padding: 3vw;
+}
+
+.pt-3vw {
+  padding-top: 3vw !important;
+}
+
+.pr-3vw {
+  padding-right: 3vw !important;
+}
+
+.pb-3vw {
+  padding-bottom: 3vw !important;
+}
+
+.pl-3vw {
+  padding-left: 3vw !important;
+}
+
+.p-4vw {
+  padding: 4vw;
+}
+
+.pt-4vw {
+  padding-top: 4vw !important;
+}
+
+.pr-4vw {
+  padding-right: 4vw !important;
+}
+
+.pb-4vw {
+  padding-bottom: 4vw !important;
+}
+
+.pl-4vw {
+  padding-left: 4vw !important;
+}
+
+.p-5vw {
+  padding: 5vw;
+}
+
+.pt-5vw {
+  padding-top: 5vw !important;
+}
+
+.pr-5vw {
+  padding-right: 5vw !important;
+}
+
+.pb-5vw {
+  padding-bottom: 5vw !important;
+}
+
+.pl-5vw {
+  padding-left: 5vw !important;
+}
+
+.p-0125 {
+  padding: 0.125rem;
+}
+
+.pt-0125 {
+  padding-top: 0.125rem !important;
+}
+
+.pr-0125 {
+  padding-right: 0.125rem !important;
+}
+
+.pb-0125 {
+  padding-bottom: 0.125rem !important;
+}
+
+.pl-0125 {
+  padding-left: 0.125rem !important;
+}
+
+.p-025 {
+  padding: 0.25rem;
+}
+
+.pt-025 {
+  padding-top: 0.25rem !important;
+}
+
+.pr-025 {
+  padding-right: 0.25rem !important;
+}
+
+.pb-025 {
+  padding-bottom: 0.25rem !important;
+}
+
+.pl-025 {
+  padding-left: 0.25rem !important;
+}
+
+.p-0375 {
+  padding: 0.375rem;
+}
+
+.pt-0375 {
+  padding-top: 0.375rem !important;
+}
+
+.pr-0375 {
+  padding-right: 0.375rem !important;
+}
+
+.pb-0375 {
+  padding-bottom: 0.375rem !important;
+}
+
+.pl-0375 {
+  padding-left: 0.375rem !important;
+}
+
+.p-045 {
+  padding: 0.45rem;
+}
+
+.pt-045 {
+  padding-top: 0.45rem !important;
+}
+
+.pr-045 {
+  padding-right: 0.45rem !important;
+}
+
+.pb-045 {
+  padding-bottom: 0.45rem !important;
+}
+
+.pl-045 {
+  padding-left: 0.45rem !important;
+}
+
+.p-05 {
+  padding: 0.5rem;
+}
+
+.pt-05 {
+  padding-top: 0.5rem !important;
+}
+
+.pr-05 {
+  padding-right: 0.5rem !important;
+}
+
+.pb-05 {
+  padding-bottom: 0.5rem !important;
+}
+
+.pl-05 {
+  padding-left: 0.5rem !important;
+}
+
+.p-065 {
+  padding: 0.65rem;
+}
+
+.pt-065 {
+  padding-top: 0.65rem !important;
+}
+
+.pr-065 {
+  padding-right: 0.65rem !important;
+}
+
+.pb-065 {
+  padding-bottom: 0.65rem !important;
+}
+
+.pl-065 {
+  padding-left: 0.65rem !important;
+}
+
+.p-075 {
+  padding: 0.75rem;
+}
+
+.pt-075 {
+  padding-top: 0.75rem !important;
+}
+
+.pr-075 {
+  padding-right: 0.75rem !important;
+}
+
+.pb-075 {
+  padding-bottom: 0.75rem !important;
+}
+
+.pl-075 {
+  padding-left: 0.75rem !important;
+}
+
+.p-15 {
+  padding: 1.5rem;
+}
+
+.pt-15 {
+  padding-top: 1.5rem !important;
+}
+
+.pr-15 {
+  padding-right: 1.5rem !important;
+}
+
+.pb-15 {
+  padding-bottom: 1.5rem !important;
+}
+
+.pl-15 {
+  padding-left: 1.5rem !important;
+}
+
+.p-175 {
+  padding: 1.75rem;
+}
+
+.pt-175 {
+  padding-top: 1.75rem !important;
+}
+
+.pr-175 {
+  padding-right: 1.75rem !important;
+}
+
+.pb-175 {
+  padding-bottom: 1.75rem !important;
+}
+
+.pl-175 {
+  padding-left: 1.75rem !important;
+}
+
+/**
+ * Responsive Padding Classes for Small Screens
+ *
+ * Generates classes with `sm-` prefix:
+ * - `.p-sm-{value}`: Padding for small screens (e.g., `.p-sm-1` for 1rem).
+ * - Special sizes (e.g., `.p-sm-05` for 0.5rem).
+ */
+@media (max-width: 750px) {
+  .p-sm-0 {
+    padding: 0rem;
+  }
+  .pt-sm-0 {
+    padding-top: 0rem !important;
+  }
+  .pr-sm-0 {
+    padding-right: 0rem !important;
+  }
+  .pb-sm-0 {
+    padding-bottom: 0rem !important;
+  }
+  .pl-sm-0 {
+    padding-left: 0rem !important;
+  }
+  .p-sm-1 {
+    padding: 1rem;
+  }
+  .pt-sm-1 {
+    padding-top: 1rem !important;
+  }
+  .pr-sm-1 {
+    padding-right: 1rem !important;
+  }
+  .pb-sm-1 {
+    padding-bottom: 1rem !important;
+  }
+  .pl-sm-1 {
+    padding-left: 1rem !important;
+  }
+  .p-sm-2 {
+    padding: 2rem;
+  }
+  .pt-sm-2 {
+    padding-top: 2rem !important;
+  }
+  .pr-sm-2 {
+    padding-right: 2rem !important;
+  }
+  .pb-sm-2 {
+    padding-bottom: 2rem !important;
+  }
+  .pl-sm-2 {
+    padding-left: 2rem !important;
+  }
+  .p-sm-3 {
+    padding: 3rem;
+  }
+  .pt-sm-3 {
+    padding-top: 3rem !important;
+  }
+  .pr-sm-3 {
+    padding-right: 3rem !important;
+  }
+  .pb-sm-3 {
+    padding-bottom: 3rem !important;
+  }
+  .pl-sm-3 {
+    padding-left: 3rem !important;
+  }
+  .p-sm-4 {
+    padding: 4rem;
+  }
+  .pt-sm-4 {
+    padding-top: 4rem !important;
+  }
+  .pr-sm-4 {
+    padding-right: 4rem !important;
+  }
+  .pb-sm-4 {
+    padding-bottom: 4rem !important;
+  }
+  .pl-sm-4 {
+    padding-left: 4rem !important;
+  }
+  .p-sm-5 {
+    padding: 5rem;
+  }
+  .pt-sm-5 {
+    padding-top: 5rem !important;
+  }
+  .pr-sm-5 {
+    padding-right: 5rem !important;
+  }
+  .pb-sm-5 {
+    padding-bottom: 5rem !important;
+  }
+  .pl-sm-5 {
+    padding-left: 5rem !important;
+  }
+  .p-sm-6 {
+    padding: 6rem;
+  }
+  .pt-sm-6 {
+    padding-top: 6rem !important;
+  }
+  .pr-sm-6 {
+    padding-right: 6rem !important;
+  }
+  .pb-sm-6 {
+    padding-bottom: 6rem !important;
+  }
+  .pl-sm-6 {
+    padding-left: 6rem !important;
+  }
+  .p-sm-7 {
+    padding: 7rem;
+  }
+  .pt-sm-7 {
+    padding-top: 7rem !important;
+  }
+  .pr-sm-7 {
+    padding-right: 7rem !important;
+  }
+  .pb-sm-7 {
+    padding-bottom: 7rem !important;
+  }
+  .pl-sm-7 {
+    padding-left: 7rem !important;
+  }
+  .p-sm-8 {
+    padding: 8rem;
+  }
+  .pt-sm-8 {
+    padding-top: 8rem !important;
+  }
+  .pr-sm-8 {
+    padding-right: 8rem !important;
+  }
+  .pb-sm-8 {
+    padding-bottom: 8rem !important;
+  }
+  .pl-sm-8 {
+    padding-left: 8rem !important;
+  }
+  .p-sm-9 {
+    padding: 9rem;
+  }
+  .pt-sm-9 {
+    padding-top: 9rem !important;
+  }
+  .pr-sm-9 {
+    padding-right: 9rem !important;
+  }
+  .pb-sm-9 {
+    padding-bottom: 9rem !important;
+  }
+  .pl-sm-9 {
+    padding-left: 9rem !important;
+  }
+  .p-sm-10 {
+    padding: 10rem;
+  }
+  .pt-sm-10 {
+    padding-top: 10rem !important;
+  }
+  .pr-sm-10 {
+    padding-right: 10rem !important;
+  }
+  .pb-sm-10 {
+    padding-bottom: 10rem !important;
+  }
+  .pl-sm-10 {
+    padding-left: 10rem !important;
+  }
+  .p-sm-11 {
+    padding: 11rem;
+  }
+  .pt-sm-11 {
+    padding-top: 11rem !important;
+  }
+  .pr-sm-11 {
+    padding-right: 11rem !important;
+  }
+  .pb-sm-11 {
+    padding-bottom: 11rem !important;
+  }
+  .pl-sm-11 {
+    padding-left: 11rem !important;
+  }
+  .p-sm-12 {
+    padding: 12rem;
+  }
+  .pt-sm-12 {
+    padding-top: 12rem !important;
+  }
+  .pr-sm-12 {
+    padding-right: 12rem !important;
+  }
+  .pb-sm-12 {
+    padding-bottom: 12rem !important;
+  }
+  .pl-sm-12 {
+    padding-left: 12rem !important;
+  }
+  .p-sm-13 {
+    padding: 13rem;
+  }
+  .pt-sm-13 {
+    padding-top: 13rem !important;
+  }
+  .pr-sm-13 {
+    padding-right: 13rem !important;
+  }
+  .pb-sm-13 {
+    padding-bottom: 13rem !important;
+  }
+  .pl-sm-13 {
+    padding-left: 13rem !important;
+  }
+  .p-sm-14 {
+    padding: 14rem;
+  }
+  .pt-sm-14 {
+    padding-top: 14rem !important;
+  }
+  .pr-sm-14 {
+    padding-right: 14rem !important;
+  }
+  .pb-sm-14 {
+    padding-bottom: 14rem !important;
+  }
+  .pl-sm-14 {
+    padding-left: 14rem !important;
+  }
+  .p-sm-15 {
+    padding: 15rem;
+  }
+  .pt-sm-15 {
+    padding-top: 15rem !important;
+  }
+  .pr-sm-15 {
+    padding-right: 15rem !important;
+  }
+  .pb-sm-15 {
+    padding-bottom: 15rem !important;
+  }
+  .pl-sm-15 {
+    padding-left: 15rem !important;
+  }
+  .p-sm-0125 {
+    padding: 0.125rem;
+  }
+  .pt-sm-0125 {
+    padding-top: 0.125rem !important;
+  }
+  .pr-sm-0125 {
+    padding-right: 0.125rem !important;
+  }
+  .pb-sm-0125 {
+    padding-bottom: 0.125rem !important;
+  }
+  .pl-sm-0125 {
+    padding-left: 0.125rem !important;
+  }
+  .p-sm-025 {
+    padding: 0.25rem;
+  }
+  .pt-sm-025 {
+    padding-top: 0.25rem !important;
+  }
+  .pr-sm-025 {
+    padding-right: 0.25rem !important;
+  }
+  .pb-sm-025 {
+    padding-bottom: 0.25rem !important;
+  }
+  .pl-sm-025 {
+    padding-left: 0.25rem !important;
+  }
+  .p-sm-0375 {
+    padding: 0.375rem;
+  }
+  .pt-sm-0375 {
+    padding-top: 0.375rem !important;
+  }
+  .pr-sm-0375 {
+    padding-right: 0.375rem !important;
+  }
+  .pb-sm-0375 {
+    padding-bottom: 0.375rem !important;
+  }
+  .pl-sm-0375 {
+    padding-left: 0.375rem !important;
+  }
+  .p-sm-045 {
+    padding: 0.45rem;
+  }
+  .pt-sm-045 {
+    padding-top: 0.45rem !important;
+  }
+  .pr-sm-045 {
+    padding-right: 0.45rem !important;
+  }
+  .pb-sm-045 {
+    padding-bottom: 0.45rem !important;
+  }
+  .pl-sm-045 {
+    padding-left: 0.45rem !important;
+  }
+  .p-sm-05 {
+    padding: 0.5rem;
+  }
+  .pt-sm-05 {
+    padding-top: 0.5rem !important;
+  }
+  .pr-sm-05 {
+    padding-right: 0.5rem !important;
+  }
+  .pb-sm-05 {
+    padding-bottom: 0.5rem !important;
+  }
+  .pl-sm-05 {
+    padding-left: 0.5rem !important;
+  }
+  .p-sm-065 {
+    padding: 0.65rem;
+  }
+  .pt-sm-065 {
+    padding-top: 0.65rem !important;
+  }
+  .pr-sm-065 {
+    padding-right: 0.65rem !important;
+  }
+  .pb-sm-065 {
+    padding-bottom: 0.65rem !important;
+  }
+  .pl-sm-065 {
+    padding-left: 0.65rem !important;
+  }
+  .p-sm-075 {
+    padding: 0.75rem;
+  }
+  .pt-sm-075 {
+    padding-top: 0.75rem !important;
+  }
+  .pr-sm-075 {
+    padding-right: 0.75rem !important;
+  }
+  .pb-sm-075 {
+    padding-bottom: 0.75rem !important;
+  }
+  .pl-sm-075 {
+    padding-left: 0.75rem !important;
+  }
+  .p-sm-15 {
+    padding: 1.5rem;
+  }
+  .pt-sm-15 {
+    padding-top: 1.5rem !important;
+  }
+  .pr-sm-15 {
+    padding-right: 1.5rem !important;
+  }
+  .pb-sm-15 {
+    padding-bottom: 1.5rem !important;
+  }
+  .pl-sm-15 {
+    padding-left: 1.5rem !important;
+  }
+  .p-sm-175 {
+    padding: 1.75rem;
+  }
+  .pt-sm-175 {
+    padding-top: 1.75rem !important;
+  }
+  .pr-sm-175 {
+    padding-right: 1.75rem !important;
+  }
+  .pb-sm-175 {
+    padding-bottom: 1.75rem !important;
+  }
+  .pl-sm-175 {
+    padding-left: 1.75rem !important;
+  }
+}
+/******************************************************************************
+ * FLEX CONTAINER TYPES
+ *****************************************************************************/
+.flex {
+  display: flex; /* Block-level flex container */
+}
+
+.flex-inline {
+  display: inline-flex; /* Inline-level flex container */
+}
+
+/******************************************************************************
+ * FLEX DIRECTION UTILITIES
+ *****************************************************************************/
+.flex-row {
+  flex-direction: row; /* Horizontal layout (default) */
+}
+
+.flex-column {
+  flex-direction: column; /* Vertical layout */
+}
+
+/******************************************************************************
+ * FLEX WRAPPING UTILITIES
+ *****************************************************************************/
+.flex-wrap {
+  flex-wrap: wrap; /* Items wrap onto multiple lines */
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap; /* Items remain on a single line */
+}
+
+/******************************************************************************
+ * FLEX ALIGNMENT (CROSS AXIS)
+ *****************************************************************************/
+/* Vertical alignment for all items */
+.flex-center-v {
+  align-items: center; /* Center items vertically */
+}
+
+.flex-top {
+  align-items: flex-start; /* Align items to the top */
+}
+
+.flex-bottom {
+  align-items: flex-end; /* Align items to the bottom */
+}
+
+/******************************************************************************
+ * FLEX JUSTIFICATION (MAIN AXIS)
+ *****************************************************************************/
+/* Horizontal alignment for all items */
+.flex-center-h {
+  justify-content: center; /* Center items horizontally */
+}
+
+.flex-left {
+  justify-content: flex-start; /* Align items to the left */
+}
+
+.flex-right {
+  justify-content: flex-end; /* Align items to the right */
+}
+
+.flex-space {
+  justify-content: space-between; /* Space between items */
+}
+
+/******************************************************************************
+ * FLEX COMBINED ALIGNMENT
+ *****************************************************************************/
+/* Combine horizontal and vertical alignment */
+.flex-center {
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+}
+
+.flex-top-center {
+  justify-content: center; /* Horizontal centering */
+  align-items: flex-start; /* Align items to the top */
+}
+
+.flex-bottom-center {
+  justify-content: center; /* Horizontal centering */
+  align-items: flex-end; /* Align items to the bottom */
+}
+
+.flex-top-left {
+  justify-content: flex-start; /* Align items to the left */
+  align-items: flex-start; /* Align items to the top */
+}
+
+.flex-top-right {
+  justify-content: flex-end; /* Align items to the right */
+  align-items: flex-start; /* Align items to the top */
+}
+
+.flex-bottom-left {
+  justify-content: flex-start; /* Align items to the left */
+  align-items: flex-end; /* Align items to the bottom */
+}
+
+.flex-bottom-right {
+  justify-content: flex-end; /* Align items to the right */
+  align-items: flex-end; /* Align items to the bottom */
+}
+
+/******************************************************************************
+ * FLEX SELF-ALIGNMENT
+ *****************************************************************************/
+/* Alignment for individual flex items */
+.flex-self-top {
+  align-self: flex-start; /* Align item to the top */
+}
+
+.flex-self-center {
+  align-self: center; /* Center item */
+}
+
+.flex-self-bottom {
+  align-self: flex-end; /* Align item to the bottom */
+}
+
+.flex-self-stretch {
+  align-self: stretch; /* Stretch item to fill container */
+}
+
+/******************************************************************************
+ * FLEX ITEM SIZING
+ *****************************************************************************/
+.flex-grow {
+  flex-grow: 1; /* Item grows to fill remaining space */
+}
+
+.flex-shrink {
+  flex-shrink: 0; /* Prevent shrinking below content size */
+}
+
+.flex-basis-auto {
+  flex-basis: auto; /* Use default size */
+}
+
+/******************************************************************************
+ * GRID DISPLAY UTILITIES
+ *****************************************************************************/
+.grid {
+  display: grid;
+}
+
+.grid-inline {
+  display: inline-grid;
+}
+
+.grid-dense {
+  grid-auto-flow: dense;
+}
+
+/******************************************************************************
+ * GRID TEMPLATE UTILITIES
+ *****************************************************************************/
+.grid-col-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-col-span-1 {
+  grid-column: span 1;
+}
+
+.grid-row-span-1 {
+  grid-row: span 1;
+}
+
+.grid-col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-col-span-2 {
+  grid-column: span 2;
+}
+
+.grid-row-span-2 {
+  grid-row: span 2;
+}
+
+.grid-col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-col-span-3 {
+  grid-column: span 3;
+}
+
+.grid-row-span-3 {
+  grid-row: span 3;
+}
+
+.grid-col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-col-span-4 {
+  grid-column: span 4;
+}
+
+.grid-row-span-4 {
+  grid-row: span 4;
+}
+
+.grid-col-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-col-span-5 {
+  grid-column: span 5;
+}
+
+.grid-row-span-5 {
+  grid-row: span 5;
+}
+
+.grid-col-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.grid-col-span-6 {
+  grid-column: span 6;
+}
+
+.grid-row-span-6 {
+  grid-row: span 6;
+}
+
+.grid-col-7 {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.grid-col-span-7 {
+  grid-column: span 7;
+}
+
+.grid-row-span-7 {
+  grid-row: span 7;
+}
+
+.grid-col-8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.grid-col-span-8 {
+  grid-column: span 8;
+}
+
+.grid-row-span-8 {
+  grid-row: span 8;
+}
+
+.grid-col-9 {
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.grid-col-span-9 {
+  grid-column: span 9;
+}
+
+.grid-row-span-9 {
+  grid-row: span 9;
+}
+
+.grid-col-10 {
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.grid-col-span-10 {
+  grid-column: span 10;
+}
+
+.grid-row-span-10 {
+  grid-row: span 10;
+}
+
+/******************************************************************************
+ * RESPONSIVE GRID UTILITIES
+ *****************************************************************************/
+@media (max-width: 990px) {
+  .grid-col-md-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .grid-col-span-md-1 {
+    grid-column: span 1;
+  }
+  .grid-col-md-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-col-span-md-2 {
+    grid-column: span 2;
+  }
+  .grid-col-md-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-col-span-md-3 {
+    grid-column: span 3;
+  }
+  .grid-col-md-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-col-span-md-4 {
+    grid-column: span 4;
+  }
+  .grid-col-md-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid-col-span-md-5 {
+    grid-column: span 5;
+  }
+  .grid-col-md-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .grid-col-span-md-6 {
+    grid-column: span 6;
+  }
+  .grid-col-md-7 {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .grid-col-span-md-7 {
+    grid-column: span 7;
+  }
+  .grid-col-md-8 {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .grid-col-span-md-8 {
+    grid-column: span 8;
+  }
+  .grid-col-md-9 {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .grid-col-span-md-9 {
+    grid-column: span 9;
+  }
+  .grid-col-md-10 {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .grid-col-span-md-10 {
+    grid-column: span 10;
+  }
+}
+@media (max-width: 750px) {
+  .grid-col-sm-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .grid-col-sm-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-col-sm-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-col-sm-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-col-sm-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid-col-sm-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .grid-col-sm-7 {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .grid-col-sm-8 {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .grid-col-sm-9 {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .grid-col-sm-10 {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .grid-break-sm {
+    grid-template-columns: 1fr !important;
+  }
+  .grid-break-sm > * {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+  .grid-col-spread-sm {
+    grid-column: 1/-1;
+  }
+}
+/******************************************************************************
+ * AUTO COLUMNS
+ *
+ * Available Values:
+ * - 25px, 50px, 75px, 100px, 125px, 150px, 175px, 200px, 225px, 250px
+ * - 275px, 300px, 325px, 350px, 375px, 400px, 425px, 450px, 475px, 500px
+ *****************************************************************************/
+.grid-col-auto-25 {
+  grid-template-columns: repeat(auto-fill, minmax(25px, 1fr));
+}
+
+.grid-col-auto-50 {
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+}
+
+.grid-col-auto-75 {
+  grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+}
+
+.grid-col-auto-100 {
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid-col-auto-125 {
+  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+}
+
+.grid-col-auto-150 {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.grid-col-auto-175 {
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+}
+
+.grid-col-auto-200 {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.grid-col-auto-225 {
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+}
+
+.grid-col-auto-250 {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.grid-col-auto-275 {
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+}
+
+.grid-col-auto-300 {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.grid-col-auto-325 {
+  grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+}
+
+.grid-col-auto-350 {
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+.grid-col-auto-375 {
+  grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+}
+
+.grid-col-auto-400 {
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.grid-col-auto-425 {
+  grid-template-columns: repeat(auto-fill, minmax(425px, 1fr));
+}
+
+.grid-col-auto-450 {
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+}
+
+.grid-col-auto-475 {
+  grid-template-columns: repeat(auto-fill, minmax(475px, 1fr));
+}
+
+.grid-col-auto-500 {
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+/******************************************************************************
+ * COLUMN SPREAD
+ *****************************************************************************/
+.grid-col-spread {
+  grid-column: 1/-1;
+}
+
+@media (max-width: 750px) {
+  .grid-col-spread-sm {
+    grid-column: 1/-1;
+  }
+}
+/******************************************************************************
+ * ALIGNMENT UTILITIES
+ *****************************************************************************/
+.grid-center-v {
+  align-items: center;
+}
+
+.grid-top {
+  align-items: start;
+}
+
+.grid-bottom {
+  align-items: end;
+}
+
+.grid-center-h {
+  justify-content: center;
+}
+
+.grid-right {
+  justify-content: end;
+}
+
+.grid-left {
+  justify-content: start;
+}
+
+.grid-last-right {
+  grid-column-end: -1;
+}
+
+.grid-center {
+  place-content: center;
+}
+
+/******************************************************************************
+ * SELF-ALIGNMENT UTILITIES
+ *****************************************************************************/
+.grid-self-bottom {
+  align-self: end;
+}
+
+.grid-self-right {
+  justify-self: right;
+}
+
+.grid-self-center {
+  justify-self: center;
+}
+
+.grid-self-spread {
+  align-self: stretch;
+}
+
+/******************************************************************************
+ * GAP UTILITIES
+ *****************************************************************************/
+.gap-0125 {
+  gap: 0.125rem;
+}
+
+.gap-row-0125 {
+  row-gap: 0.125rem;
+}
+
+.gap-col-0125 {
+  column-gap: 0.125rem;
+}
+
+.gap-025 {
+  gap: 0.25rem;
+}
+
+.gap-row-025 {
+  row-gap: 0.25rem;
+}
+
+.gap-col-025 {
+  column-gap: 0.25rem;
+}
+
+.gap-0375 {
+  gap: 0.375rem;
+}
+
+.gap-row-0375 {
+  row-gap: 0.375rem;
+}
+
+.gap-col-0375 {
+  column-gap: 0.375rem;
+}
+
+.gap-05 {
+  gap: 0.5rem;
+}
+
+.gap-row-05 {
+  row-gap: 0.5rem;
+}
+
+.gap-col-05 {
+  column-gap: 0.5rem;
+}
+
+.gap-065 {
+  gap: 0.65rem;
+}
+
+.gap-row-065 {
+  row-gap: 0.65rem;
+}
+
+.gap-col-065 {
+  column-gap: 0.65rem;
+}
+
+.gap-075 {
+  gap: 0.75rem;
+}
+
+.gap-row-075 {
+  row-gap: 0.75rem;
+}
+
+.gap-col-075 {
+  column-gap: 0.75rem;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-row-1 {
+  row-gap: 1rem;
+}
+
+.gap-col-1 {
+  column-gap: 1rem;
+}
+
+.gap-15 {
+  gap: 1.5rem;
+}
+
+.gap-row-15 {
+  row-gap: 1.5rem;
+}
+
+.gap-col-15 {
+  column-gap: 1.5rem;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.gap-row-2 {
+  row-gap: 2rem;
+}
+
+.gap-col-2 {
+  column-gap: 2rem;
+}
+
+.gap-3 {
+  gap: 3rem;
+}
+
+.gap-row-3 {
+  row-gap: 3rem;
+}
+
+.gap-col-3 {
+  column-gap: 3rem;
+}
+
+.gap-4 {
+  gap: 4rem;
+}
+
+.gap-row-4 {
+  row-gap: 4rem;
+}
+
+.gap-col-4 {
+  column-gap: 4rem;
+}
+
+.gap-5 {
+  gap: 5rem;
+}
+
+.gap-row-5 {
+  row-gap: 5rem;
+}
+
+.gap-col-5 {
+  column-gap: 5rem;
+}
+
+.gap-6 {
+  gap: 6rem;
+}
+
+.gap-row-6 {
+  row-gap: 6rem;
+}
+
+.gap-col-6 {
+  column-gap: 6rem;
+}
+
+.gap-7 {
+  gap: 7rem;
+}
+
+.gap-row-7 {
+  row-gap: 7rem;
+}
+
+.gap-col-7 {
+  column-gap: 7rem;
+}
+
+@media (max-width: 750px) {
+  .gap-sm-0125 {
+    gap: 0.125rem !important;
+  }
+  .gap-sm-025 {
+    gap: 0.25rem !important;
+  }
+  .gap-sm-0375 {
+    gap: 0.375rem !important;
+  }
+  .gap-sm-05 {
+    gap: 0.5rem !important;
+  }
+  .gap-sm-065 {
+    gap: 0.65rem !important;
+  }
+  .gap-sm-075 {
+    gap: 0.75rem !important;
+  }
+  .gap-sm-1 {
+    gap: 1rem !important;
+  }
+  .gap-sm-15 {
+    gap: 1.5rem !important;
+  }
+  .gap-sm-2 {
+    gap: 2rem !important;
+  }
+  .gap-sm-3 {
+    gap: 3rem !important;
+  }
+  .gap-sm-4 {
+    gap: 4rem !important;
+  }
+  .gap-sm-5 {
+    gap: 5rem !important;
+  }
+  .gap-sm-6 {
+    gap: 6rem !important;
+  }
+  .gap-sm-7 {
+    gap: 7rem !important;
+  }
+}
+.gap-1vw {
+  gap: 1vw;
+}
+
+.gap-row-1vw {
+  row-gap: 1vw;
+}
+
+.gap-col-1vw {
+  column-gap: 1vw;
+}
+
+.gap-2vw {
+  gap: 2vw;
+}
+
+.gap-row-2vw {
+  row-gap: 2vw;
+}
+
+.gap-col-2vw {
+  column-gap: 2vw;
+}
+
+.gap-3vw {
+  gap: 3vw;
+}
+
+.gap-row-3vw {
+  row-gap: 3vw;
+}
+
+.gap-col-3vw {
+  column-gap: 3vw;
+}
+
+.gap-4vw {
+  gap: 4vw;
+}
+
+.gap-row-4vw {
+  row-gap: 4vw;
+}
+
+.gap-col-4vw {
+  column-gap: 4vw;
+}
+
+.gap-5vw {
+  gap: 5vw;
+}
+
+.gap-row-5vw {
+  row-gap: 5vw;
+}
+
+.gap-col-5vw {
+  column-gap: 5vw;
+}
+
+.gap-6vw {
+  gap: 6vw;
+}
+
+.gap-row-6vw {
+  row-gap: 6vw;
+}
+
+.gap-col-6vw {
+  column-gap: 6vw;
+}
+
+.gap-7vw {
+  gap: 7vw;
+}
+
+.gap-row-7vw {
+  row-gap: 7vw;
+}
+
+.gap-col-7vw {
+  column-gap: 7vw;
+}
+
+.gap-8vw {
+  gap: 8vw;
+}
+
+.gap-row-8vw {
+  row-gap: 8vw;
+}
+
+.gap-col-8vw {
+  column-gap: 8vw;
+}
+
+.gap-9vw {
+  gap: 9vw;
+}
+
+.gap-row-9vw {
+  row-gap: 9vw;
+}
+
+.gap-col-9vw {
+  column-gap: 9vw;
+}
+
+.gap-10vw {
+  gap: 10vw;
+}
+
+.gap-row-10vw {
+  row-gap: 10vw;
+}
+
+.gap-col-10vw {
+  column-gap: 10vw;
+}
+
+/******************************************************************************
+ * GRID FLOW UTILITIES
+ *****************************************************************************/
+.grid-flow-row {
+  grid-auto-flow: row;
+}
+
+.grid-flow-column {
+  grid-auto-flow: column;
+}
+
+/******************************************************************************
+ * GRID HELPERS
+ *****************************************************************************/
+.grid-equal-height {
+  grid-auto-rows: 1fr;
+}
+
+.grid-equal-width {
+  grid-auto-columns: 1fr;
+}
+
+/******************************************************************************
  * FONT SIZES
  *****************************************************************************/
 /**
