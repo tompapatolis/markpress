@@ -1,0 +1,59 @@
+:root {
+    /* Neutral Colors */
+    --color-50: #f7fafc;    /* Almost white */
+    --color-100: #edf2f7;   /* Very light gray */
+    --color-200: #e2e8f0;   /* Light gray */
+    --color-300: #cbd5e0;   /* Medium light gray */
+    --color-400: #a0aec0;   /* Soft gray */
+    --color-500: #718096;   /* Neutral gray */
+    --color-600: #4a5568;   /* Medium dark gray */
+    --color-700: #2d3748;   /* Close to base background */
+    --color-800: #202a31;   /* Base background color */
+    --color-900: #1a202c;   /* Darker gray */
+    --color-1000: #171923;  /* Almost black */
+
+    /* Blue Accent Colors */
+    --accent-50: #e7f5ff;    /* Very light blue */
+    --accent-100: #d0ebff;   /* Light blue */
+    --accent-200: #a5d8ff;   /* Softer light blue */
+    --accent-300: #74c0fc;   /* Soft and bright blue */
+    --accent-400: #4dabf7;   /* Vibrant blue */
+    --accent-500: #339af0;   /* Primary accent color */
+    --accent-600: #228be6;   /* Slightly darker blue */
+    --accent-700: #1c7ed6;   /* Rich dark blue */
+    --accent-800: #1971c2;   /* Deep blue */
+    --accent-900: #1864ab;   /* Very dark blue */
+    --accent-1000: #0b5394;  /* Deepest blue */
+}
+
+.light-mode {
+    /* Neutral Colors - Inverted for Light Mode */
+    --color-50: #171923;    /* Almost black */
+    --color-100: #1a202c;   /* Darker gray */
+    --color-200: #202a31;   /* Base background color (dark mode) */
+    --color-300: #2d3748;   /* Close to base background */
+    --color-400: #4a5568;   /* Medium dark gray */
+    --color-500: #718096;   /* Neutral gray */
+    --color-600: #a0aec0;   /* Soft gray */
+    --color-700: #cbd5e0;   /* Medium light gray */
+    --color-800: #e2e8f0;   /* Light gray */
+    --color-900: #edf2f7;   /* Very light gray */
+    --color-1000: #f7fafc;  /* Almost white */
+
+    /* Blue Accent Colors - Inverted for Light Mode */
+    --accent-50: #0b5394;    /* Deepest blue */
+    --accent-100: #1864ab;   /* Very dark blue */
+    --accent-200: #1971c2;   /* Deep blue */
+    --accent-300: #1c7ed6;   /* Rich dark blue */
+    --accent-400: #228be6;   /* Slightly darker blue */
+    --accent-500: #339af0;   /* Primary accent color */
+    --accent-600: #4dabf7;   /* Vibrant blue */
+    --accent-700: #74c0fc;   /* Soft and bright blue */
+    --accent-800: #a5d8ff;   /* Softer light blue */
+    --accent-900: #d0ebff;   /* Light blue */
+    --accent-1000: #e7f5ff;  /* Very light blue */
+}
+
+// <body class="light-mode">
+//     <!-- Add or remove 'light-mode' class dynamically -->
+// </body>

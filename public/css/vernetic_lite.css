@@ -1,0 +1,1683 @@
+/******************************************************************************
+ * MARGIN UTILITIES
+ *****************************************************************************/
+/**
+ * Margin Utilities
+ *
+ * Generates:
+ * - Global margin classes in `rem` (no suffix) and `vw` (with suffix).
+ * - Responsive margin classes for small screens (prefix `sm-`).
+ * - Auto margin utilities for dynamic alignment.
+ */
+/**
+ * Mixin: Generate Margin Classes
+ *
+ * @param $range  Number of classes to generate (e.g., 0 through $range).
+ * @param $unit   Unit of measurement (default: rem).
+ * @param $prefix Optional prefix for responsive classes (e.g., "sm-").
+ * @param $suffix Optional suffix for unit-specific classes (e.g., "vw").
+ */
+/**
+ * Mixin: Generate Special Margin Classes
+ *
+ * @param $values A map of special sizes and their corresponding values.
+ * @param $unit   Unit of measurement (default: rem).
+ * @param $prefix Optional prefix for responsive classes (e.g., "sm-").
+ * @param $suffix Optional suffix for unit-specific classes (e.g., "vw").
+ */
+/**
+ * Global Margin Classes
+ *
+ * Generates margin utilities for:
+ * - `.m-{value}`: Margins in rem (e.g., `.m-1` for 1rem).
+ * - `.m-{value}vw`: Margins in vw (e.g., `.m-1vw` for 1vw).
+ * - Special values for precise margins (e.g., `.m-05` for 0.5rem).
+ */
+.m-0 {
+  margin: 0rem;
+}
+
+.mt-0 {
+  margin-top: 0rem !important;
+}
+
+.mr-0 {
+  margin-right: 0rem !important;
+}
+
+.mb-0 {
+  margin-bottom: 0rem !important;
+}
+
+.ml-0 {
+  margin-left: 0rem !important;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.mt-1 {
+  margin-top: 1rem !important;
+}
+
+.mr-1 {
+  margin-right: 1rem !important;
+}
+
+.mb-1 {
+  margin-bottom: 1rem !important;
+}
+
+.ml-1 {
+  margin-left: 1rem !important;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.mt-2 {
+  margin-top: 2rem !important;
+}
+
+.mr-2 {
+  margin-right: 2rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 2rem !important;
+}
+
+.ml-2 {
+  margin-left: 2rem !important;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.mt-3 {
+  margin-top: 3rem !important;
+}
+
+.mr-3 {
+  margin-right: 3rem !important;
+}
+
+.mb-3 {
+  margin-bottom: 3rem !important;
+}
+
+.ml-3 {
+  margin-left: 3rem !important;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.mt-4 {
+  margin-top: 4rem !important;
+}
+
+.mr-4 {
+  margin-right: 4rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 4rem !important;
+}
+
+.ml-4 {
+  margin-left: 4rem !important;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+.mt-5 {
+  margin-top: 5rem !important;
+}
+
+.mr-5 {
+  margin-right: 5rem !important;
+}
+
+.mb-5 {
+  margin-bottom: 5rem !important;
+}
+
+.ml-5 {
+  margin-left: 5rem !important;
+}
+
+.m-6 {
+  margin: 6rem;
+}
+
+.mt-6 {
+  margin-top: 6rem !important;
+}
+
+.mr-6 {
+  margin-right: 6rem !important;
+}
+
+.mb-6 {
+  margin-bottom: 6rem !important;
+}
+
+.ml-6 {
+  margin-left: 6rem !important;
+}
+
+.m-7 {
+  margin: 7rem;
+}
+
+.mt-7 {
+  margin-top: 7rem !important;
+}
+
+.mr-7 {
+  margin-right: 7rem !important;
+}
+
+.mb-7 {
+  margin-bottom: 7rem !important;
+}
+
+.ml-7 {
+  margin-left: 7rem !important;
+}
+
+.m-8 {
+  margin: 8rem;
+}
+
+.mt-8 {
+  margin-top: 8rem !important;
+}
+
+.mr-8 {
+  margin-right: 8rem !important;
+}
+
+.mb-8 {
+  margin-bottom: 8rem !important;
+}
+
+.ml-8 {
+  margin-left: 8rem !important;
+}
+
+.m-9 {
+  margin: 9rem;
+}
+
+.mt-9 {
+  margin-top: 9rem !important;
+}
+
+.mr-9 {
+  margin-right: 9rem !important;
+}
+
+.mb-9 {
+  margin-bottom: 9rem !important;
+}
+
+.ml-9 {
+  margin-left: 9rem !important;
+}
+
+.m-10 {
+  margin: 10rem;
+}
+
+.mt-10 {
+  margin-top: 10rem !important;
+}
+
+.mr-10 {
+  margin-right: 10rem !important;
+}
+
+.mb-10 {
+  margin-bottom: 10rem !important;
+}
+
+.ml-10 {
+  margin-left: 10rem !important;
+}
+
+.m-11 {
+  margin: 11rem;
+}
+
+.mt-11 {
+  margin-top: 11rem !important;
+}
+
+.mr-11 {
+  margin-right: 11rem !important;
+}
+
+.mb-11 {
+  margin-bottom: 11rem !important;
+}
+
+.ml-11 {
+  margin-left: 11rem !important;
+}
+
+.m-12 {
+  margin: 12rem;
+}
+
+.mt-12 {
+  margin-top: 12rem !important;
+}
+
+.mr-12 {
+  margin-right: 12rem !important;
+}
+
+.mb-12 {
+  margin-bottom: 12rem !important;
+}
+
+.ml-12 {
+  margin-left: 12rem !important;
+}
+
+.m-13 {
+  margin: 13rem;
+}
+
+.mt-13 {
+  margin-top: 13rem !important;
+}
+
+.mr-13 {
+  margin-right: 13rem !important;
+}
+
+.mb-13 {
+  margin-bottom: 13rem !important;
+}
+
+.ml-13 {
+  margin-left: 13rem !important;
+}
+
+.m-14 {
+  margin: 14rem;
+}
+
+.mt-14 {
+  margin-top: 14rem !important;
+}
+
+.mr-14 {
+  margin-right: 14rem !important;
+}
+
+.mb-14 {
+  margin-bottom: 14rem !important;
+}
+
+.ml-14 {
+  margin-left: 14rem !important;
+}
+
+.m-15 {
+  margin: 15rem;
+}
+
+.mt-15 {
+  margin-top: 15rem !important;
+}
+
+.mr-15 {
+  margin-right: 15rem !important;
+}
+
+.mb-15 {
+  margin-bottom: 15rem !important;
+}
+
+.ml-15 {
+  margin-left: 15rem !important;
+}
+
+.m-0vw {
+  margin: 0vw;
+}
+
+.mt-0vw {
+  margin-top: 0vw !important;
+}
+
+.mr-0vw {
+  margin-right: 0vw !important;
+}
+
+.mb-0vw {
+  margin-bottom: 0vw !important;
+}
+
+.ml-0vw {
+  margin-left: 0vw !important;
+}
+
+.m-1vw {
+  margin: 1vw;
+}
+
+.mt-1vw {
+  margin-top: 1vw !important;
+}
+
+.mr-1vw {
+  margin-right: 1vw !important;
+}
+
+.mb-1vw {
+  margin-bottom: 1vw !important;
+}
+
+.ml-1vw {
+  margin-left: 1vw !important;
+}
+
+.m-2vw {
+  margin: 2vw;
+}
+
+.mt-2vw {
+  margin-top: 2vw !important;
+}
+
+.mr-2vw {
+  margin-right: 2vw !important;
+}
+
+.mb-2vw {
+  margin-bottom: 2vw !important;
+}
+
+.ml-2vw {
+  margin-left: 2vw !important;
+}
+
+.m-3vw {
+  margin: 3vw;
+}
+
+.mt-3vw {
+  margin-top: 3vw !important;
+}
+
+.mr-3vw {
+  margin-right: 3vw !important;
+}
+
+.mb-3vw {
+  margin-bottom: 3vw !important;
+}
+
+.ml-3vw {
+  margin-left: 3vw !important;
+}
+
+.m-4vw {
+  margin: 4vw;
+}
+
+.mt-4vw {
+  margin-top: 4vw !important;
+}
+
+.mr-4vw {
+  margin-right: 4vw !important;
+}
+
+.mb-4vw {
+  margin-bottom: 4vw !important;
+}
+
+.ml-4vw {
+  margin-left: 4vw !important;
+}
+
+.m-5vw {
+  margin: 5vw;
+}
+
+.mt-5vw {
+  margin-top: 5vw !important;
+}
+
+.mr-5vw {
+  margin-right: 5vw !important;
+}
+
+.mb-5vw {
+  margin-bottom: 5vw !important;
+}
+
+.ml-5vw {
+  margin-left: 5vw !important;
+}
+
+.m-0125 {
+  margin: 0.125rem;
+}
+
+.mt-0125 {
+  margin-top: 0.125rem !important;
+}
+
+.mr-0125 {
+  margin-right: 0.125rem !important;
+}
+
+.mb-0125 {
+  margin-bottom: 0.125rem !important;
+}
+
+.ml-0125 {
+  margin-left: 0.125rem !important;
+}
+
+.m-025 {
+  margin: 0.25rem;
+}
+
+.mt-025 {
+  margin-top: 0.25rem !important;
+}
+
+.mr-025 {
+  margin-right: 0.25rem !important;
+}
+
+.mb-025 {
+  margin-bottom: 0.25rem !important;
+}
+
+.ml-025 {
+  margin-left: 0.25rem !important;
+}
+
+.m-0375 {
+  margin: 0.375rem;
+}
+
+.mt-0375 {
+  margin-top: 0.375rem !important;
+}
+
+.mr-0375 {
+  margin-right: 0.375rem !important;
+}
+
+.mb-0375 {
+  margin-bottom: 0.375rem !important;
+}
+
+.ml-0375 {
+  margin-left: 0.375rem !important;
+}
+
+.m-045 {
+  margin: 0.45rem;
+}
+
+.mt-045 {
+  margin-top: 0.45rem !important;
+}
+
+.mr-045 {
+  margin-right: 0.45rem !important;
+}
+
+.mb-045 {
+  margin-bottom: 0.45rem !important;
+}
+
+.ml-045 {
+  margin-left: 0.45rem !important;
+}
+
+.m-05 {
+  margin: 0.5rem;
+}
+
+.mt-05 {
+  margin-top: 0.5rem !important;
+}
+
+.mr-05 {
+  margin-right: 0.5rem !important;
+}
+
+.mb-05 {
+  margin-bottom: 0.5rem !important;
+}
+
+.ml-05 {
+  margin-left: 0.5rem !important;
+}
+
+.m-065 {
+  margin: 0.65rem;
+}
+
+.mt-065 {
+  margin-top: 0.65rem !important;
+}
+
+.mr-065 {
+  margin-right: 0.65rem !important;
+}
+
+.mb-065 {
+  margin-bottom: 0.65rem !important;
+}
+
+.ml-065 {
+  margin-left: 0.65rem !important;
+}
+
+.m-075 {
+  margin: 0.75rem;
+}
+
+.mt-075 {
+  margin-top: 0.75rem !important;
+}
+
+.mr-075 {
+  margin-right: 0.75rem !important;
+}
+
+.mb-075 {
+  margin-bottom: 0.75rem !important;
+}
+
+.ml-075 {
+  margin-left: 0.75rem !important;
+}
+
+.m-15 {
+  margin: 1.5rem;
+}
+
+.mt-15 {
+  margin-top: 1.5rem !important;
+}
+
+.mr-15 {
+  margin-right: 1.5rem !important;
+}
+
+.mb-15 {
+  margin-bottom: 1.5rem !important;
+}
+
+.ml-15 {
+  margin-left: 1.5rem !important;
+}
+
+.m-175 {
+  margin: 1.75rem;
+}
+
+.mt-175 {
+  margin-top: 1.75rem !important;
+}
+
+.mr-175 {
+  margin-right: 1.75rem !important;
+}
+
+.mb-175 {
+  margin-bottom: 1.75rem !important;
+}
+
+.ml-175 {
+  margin-left: 1.75rem !important;
+}
+
+/**
+ * Responsive Margin Classes for Small Screens
+ *
+ * Generates classes with `sm-` prefix:
+ * - `.m-sm-{value}`: Margins for small screens (e.g., `.m-sm-1` for 1rem).
+ * - Special sizes (e.g., `.m-sm-05` for 0.5rem).
+ */
+@media (max-width: 750px) {
+  .m-sm-0 {
+    margin: 0rem;
+  }
+  .mt-sm-0 {
+    margin-top: 0rem !important;
+  }
+  .mr-sm-0 {
+    margin-right: 0rem !important;
+  }
+  .mb-sm-0 {
+    margin-bottom: 0rem !important;
+  }
+  .ml-sm-0 {
+    margin-left: 0rem !important;
+  }
+  .m-sm-1 {
+    margin: 1rem;
+  }
+  .mt-sm-1 {
+    margin-top: 1rem !important;
+  }
+  .mr-sm-1 {
+    margin-right: 1rem !important;
+  }
+  .mb-sm-1 {
+    margin-bottom: 1rem !important;
+  }
+  .ml-sm-1 {
+    margin-left: 1rem !important;
+  }
+  .m-sm-0125 {
+    margin: 0.125rem;
+  }
+  .mt-sm-0125 {
+    margin-top: 0.125rem !important;
+  }
+  .mr-sm-0125 {
+    margin-right: 0.125rem !important;
+  }
+  .mb-sm-0125 {
+    margin-bottom: 0.125rem !important;
+  }
+  .ml-sm-0125 {
+    margin-left: 0.125rem !important;
+  }
+  .m-sm-025 {
+    margin: 0.25rem;
+  }
+  .mt-sm-025 {
+    margin-top: 0.25rem !important;
+  }
+  .mr-sm-025 {
+    margin-right: 0.25rem !important;
+  }
+  .mb-sm-025 {
+    margin-bottom: 0.25rem !important;
+  }
+  .ml-sm-025 {
+    margin-left: 0.25rem !important;
+  }
+  .m-sm-0375 {
+    margin: 0.375rem;
+  }
+  .mt-sm-0375 {
+    margin-top: 0.375rem !important;
+  }
+  .mr-sm-0375 {
+    margin-right: 0.375rem !important;
+  }
+  .mb-sm-0375 {
+    margin-bottom: 0.375rem !important;
+  }
+  .ml-sm-0375 {
+    margin-left: 0.375rem !important;
+  }
+  .m-sm-045 {
+    margin: 0.45rem;
+  }
+  .mt-sm-045 {
+    margin-top: 0.45rem !important;
+  }
+  .mr-sm-045 {
+    margin-right: 0.45rem !important;
+  }
+  .mb-sm-045 {
+    margin-bottom: 0.45rem !important;
+  }
+  .ml-sm-045 {
+    margin-left: 0.45rem !important;
+  }
+  .m-sm-05 {
+    margin: 0.5rem;
+  }
+  .mt-sm-05 {
+    margin-top: 0.5rem !important;
+  }
+  .mr-sm-05 {
+    margin-right: 0.5rem !important;
+  }
+  .mb-sm-05 {
+    margin-bottom: 0.5rem !important;
+  }
+  .ml-sm-05 {
+    margin-left: 0.5rem !important;
+  }
+  .m-sm-065 {
+    margin: 0.65rem;
+  }
+  .mt-sm-065 {
+    margin-top: 0.65rem !important;
+  }
+  .mr-sm-065 {
+    margin-right: 0.65rem !important;
+  }
+  .mb-sm-065 {
+    margin-bottom: 0.65rem !important;
+  }
+  .ml-sm-065 {
+    margin-left: 0.65rem !important;
+  }
+  .m-sm-075 {
+    margin: 0.75rem;
+  }
+  .mt-sm-075 {
+    margin-top: 0.75rem !important;
+  }
+  .mr-sm-075 {
+    margin-right: 0.75rem !important;
+  }
+  .mb-sm-075 {
+    margin-bottom: 0.75rem !important;
+  }
+  .ml-sm-075 {
+    margin-left: 0.75rem !important;
+  }
+  .m-sm-15 {
+    margin: 1.5rem;
+  }
+  .mt-sm-15 {
+    margin-top: 1.5rem !important;
+  }
+  .mr-sm-15 {
+    margin-right: 1.5rem !important;
+  }
+  .mb-sm-15 {
+    margin-bottom: 1.5rem !important;
+  }
+  .ml-sm-15 {
+    margin-left: 1.5rem !important;
+  }
+  .m-sm-175 {
+    margin: 1.75rem;
+  }
+  .mt-sm-175 {
+    margin-top: 1.75rem !important;
+  }
+  .mr-sm-175 {
+    margin-right: 1.75rem !important;
+  }
+  .mb-sm-175 {
+    margin-bottom: 1.75rem !important;
+  }
+  .ml-sm-175 {
+    margin-left: 1.75rem !important;
+  }
+}
+/**
+ * Auto Margin Utilities
+ *
+ * Generates:
+ * - `.mt-auto`: Automatically adjusts top margin.
+ * - `.mb-auto`: Automatically adjusts bottom margin.
+ * - `.ml-auto`: Automatically adjusts left margin.
+ * - `.mr-auto`: Automatically adjusts right margin.
+ */
+.mt-auto {
+  margin-top: auto !important;
+}
+
+.mb-auto {
+  margin-bottom: auto !important;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+/******************************************************************************
+ * PADDING UTILITIES
+ *****************************************************************************/
+/**
+ * Padding Utilities
+ *
+ * Generates:
+ * - Global padding classes in `rem` (no suffix) and `vw` (with suffix).
+ * - Responsive padding classes for small screens (prefix `sm-`).
+ * - Auto padding utilities for dynamic alignment.
+ */
+/**
+ * Mixin: Generate Padding Classes
+ *
+ * @param $range  Number of classes to generate (e.g., 0 through $range).
+ * @param $unit   Unit of measurement (default: rem).
+ * @param $prefix Optional prefix for responsive classes (e.g., "sm-").
+ * @param $suffix Optional suffix for unit-specific classes (e.g., "vw").
+ */
+/**
+ * Mixin: Generate Special Padding Classes
+ *
+ * @param $values A map of special sizes and their corresponding values.
+ * @param $unit   Unit of measurement (default: rem).
+ * @param $prefix Optional prefix for responsive classes (e.g., "sm-").
+ * @param $suffix Optional suffix for unit-specific classes (e.g., "vw").
+ */
+/**
+ * Global Padding Classes
+ *
+ * Generates padding utilities for:
+ * - `.p-{value}`: Padding in rem (e.g., `.p-1` for 1rem).
+ * - `.p-{value}vw`: Padding in vw (e.g., `.p-1vw` for 1vw).
+ * - Special values for precise padding (e.g., `.p-05` for 0.5rem).
+ */
+.p-0 {
+  padding: 0rem;
+}
+
+.pt-0 {
+  padding-top: 0rem !important;
+}
+
+.pr-0 {
+  padding-right: 0rem !important;
+}
+
+.pb-0 {
+  padding-bottom: 0rem !important;
+}
+
+.pl-0 {
+  padding-left: 0rem !important;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.pt-1 {
+  padding-top: 1rem !important;
+}
+
+.pr-1 {
+  padding-right: 1rem !important;
+}
+
+.pb-1 {
+  padding-bottom: 1rem !important;
+}
+
+.pl-1 {
+  padding-left: 1rem !important;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.pt-2 {
+  padding-top: 2rem !important;
+}
+
+.pr-2 {
+  padding-right: 2rem !important;
+}
+
+.pb-2 {
+  padding-bottom: 2rem !important;
+}
+
+.pl-2 {
+  padding-left: 2rem !important;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.pt-3 {
+  padding-top: 3rem !important;
+}
+
+.pr-3 {
+  padding-right: 3rem !important;
+}
+
+.pb-3 {
+  padding-bottom: 3rem !important;
+}
+
+.pl-3 {
+  padding-left: 3rem !important;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.pt-4 {
+  padding-top: 4rem !important;
+}
+
+.pr-4 {
+  padding-right: 4rem !important;
+}
+
+.pb-4 {
+  padding-bottom: 4rem !important;
+}
+
+.pl-4 {
+  padding-left: 4rem !important;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.pt-5 {
+  padding-top: 5rem !important;
+}
+
+.pr-5 {
+  padding-right: 5rem !important;
+}
+
+.pb-5 {
+  padding-bottom: 5rem !important;
+}
+
+.pl-5 {
+  padding-left: 5rem !important;
+}
+
+.p-6 {
+  padding: 6rem;
+}
+
+.pt-6 {
+  padding-top: 6rem !important;
+}
+
+.pr-6 {
+  padding-right: 6rem !important;
+}
+
+.pb-6 {
+  padding-bottom: 6rem !important;
+}
+
+.pl-6 {
+  padding-left: 6rem !important;
+}
+
+.p-7 {
+  padding: 7rem;
+}
+
+.pt-7 {
+  padding-top: 7rem !important;
+}
+
+.pr-7 {
+  padding-right: 7rem !important;
+}
+
+.pb-7 {
+  padding-bottom: 7rem !important;
+}
+
+.pl-7 {
+  padding-left: 7rem !important;
+}
+
+.p-8 {
+  padding: 8rem;
+}
+
+.pt-8 {
+  padding-top: 8rem !important;
+}
+
+.pr-8 {
+  padding-right: 8rem !important;
+}
+
+.pb-8 {
+  padding-bottom: 8rem !important;
+}
+
+.pl-8 {
+  padding-left: 8rem !important;
+}
+
+.p-9 {
+  padding: 9rem;
+}
+
+.pt-9 {
+  padding-top: 9rem !important;
+}
+
+.pr-9 {
+  padding-right: 9rem !important;
+}
+
+.pb-9 {
+  padding-bottom: 9rem !important;
+}
+
+.pl-9 {
+  padding-left: 9rem !important;
+}
+
+.p-10 {
+  padding: 10rem;
+}
+
+.pt-10 {
+  padding-top: 10rem !important;
+}
+
+.pr-10 {
+  padding-right: 10rem !important;
+}
+
+.pb-10 {
+  padding-bottom: 10rem !important;
+}
+
+.pl-10 {
+  padding-left: 10rem !important;
+}
+
+.p-11 {
+  padding: 11rem;
+}
+
+.pt-11 {
+  padding-top: 11rem !important;
+}
+
+.pr-11 {
+  padding-right: 11rem !important;
+}
+
+.pb-11 {
+  padding-bottom: 11rem !important;
+}
+
+.pl-11 {
+  padding-left: 11rem !important;
+}
+
+.p-12 {
+  padding: 12rem;
+}
+
+.pt-12 {
+  padding-top: 12rem !important;
+}
+
+.pr-12 {
+  padding-right: 12rem !important;
+}
+
+.pb-12 {
+  padding-bottom: 12rem !important;
+}
+
+.pl-12 {
+  padding-left: 12rem !important;
+}
+
+.p-13 {
+  padding: 13rem;
+}
+
+.pt-13 {
+  padding-top: 13rem !important;
+}
+
+.pr-13 {
+  padding-right: 13rem !important;
+}
+
+.pb-13 {
+  padding-bottom: 13rem !important;
+}
+
+.pl-13 {
+  padding-left: 13rem !important;
+}
+
+.p-14 {
+  padding: 14rem;
+}
+
+.pt-14 {
+  padding-top: 14rem !important;
+}
+
+.pr-14 {
+  padding-right: 14rem !important;
+}
+
+.pb-14 {
+  padding-bottom: 14rem !important;
+}
+
+.pl-14 {
+  padding-left: 14rem !important;
+}
+
+.p-15 {
+  padding: 15rem;
+}
+
+.pt-15 {
+  padding-top: 15rem !important;
+}
+
+.pr-15 {
+  padding-right: 15rem !important;
+}
+
+.pb-15 {
+  padding-bottom: 15rem !important;
+}
+
+.pl-15 {
+  padding-left: 15rem !important;
+}
+
+.p-0vw {
+  padding: 0vw;
+}
+
+.pt-0vw {
+  padding-top: 0vw !important;
+}
+
+.pr-0vw {
+  padding-right: 0vw !important;
+}
+
+.pb-0vw {
+  padding-bottom: 0vw !important;
+}
+
+.pl-0vw {
+  padding-left: 0vw !important;
+}
+
+.p-1vw {
+  padding: 1vw;
+}
+
+.pt-1vw {
+  padding-top: 1vw !important;
+}
+
+.pr-1vw {
+  padding-right: 1vw !important;
+}
+
+.pb-1vw {
+  padding-bottom: 1vw !important;
+}
+
+.pl-1vw {
+  padding-left: 1vw !important;
+}
+
+.p-2vw {
+  padding: 2vw;
+}
+
+.pt-2vw {
+  padding-top: 2vw !important;
+}
+
+.pr-2vw {
+  padding-right: 2vw !important;
+}
+
+.pb-2vw {
+  padding-bottom: 2vw !important;
+}
+
+.pl-2vw {
+  padding-left: 2vw !important;
+}
+
+.p-3vw {
+  padding: 3vw;
+}
+
+.pt-3vw {
+  padding-top: 3vw !important;
+}
+
+.pr-3vw {
+  padding-right: 3vw !important;
+}
+
+.pb-3vw {
+  padding-bottom: 3vw !important;
+}
+
+.pl-3vw {
+  padding-left: 3vw !important;
+}
+
+.p-4vw {
+  padding: 4vw;
+}
+
+.pt-4vw {
+  padding-top: 4vw !important;
+}
+
+.pr-4vw {
+  padding-right: 4vw !important;
+}
+
+.pb-4vw {
+  padding-bottom: 4vw !important;
+}
+
+.pl-4vw {
+  padding-left: 4vw !important;
+}
+
+.p-5vw {
+  padding: 5vw;
+}
+
+.pt-5vw {
+  padding-top: 5vw !important;
+}
+
+.pr-5vw {
+  padding-right: 5vw !important;
+}
+
+.pb-5vw {
+  padding-bottom: 5vw !important;
+}
+
+.pl-5vw {
+  padding-left: 5vw !important;
+}
+
+.p-0125 {
+  padding: 0.125rem;
+}
+
+.pt-0125 {
+  padding-top: 0.125rem !important;
+}
+
+.pr-0125 {
+  padding-right: 0.125rem !important;
+}
+
+.pb-0125 {
+  padding-bottom: 0.125rem !important;
+}
+
+.pl-0125 {
+  padding-left: 0.125rem !important;
+}
+
+.p-025 {
+  padding: 0.25rem;
+}
+
+.pt-025 {
+  padding-top: 0.25rem !important;
+}
+
+.pr-025 {
+  padding-right: 0.25rem !important;
+}
+
+.pb-025 {
+  padding-bottom: 0.25rem !important;
+}
+
+.pl-025 {
+  padding-left: 0.25rem !important;
+}
+
+.p-0375 {
+  padding: 0.375rem;
+}
+
+.pt-0375 {
+  padding-top: 0.375rem !important;
+}
+
+.pr-0375 {
+  padding-right: 0.375rem !important;
+}
+
+.pb-0375 {
+  padding-bottom: 0.375rem !important;
+}
+
+.pl-0375 {
+  padding-left: 0.375rem !important;
+}
+
+.p-045 {
+  padding: 0.45rem;
+}
+
+.pt-045 {
+  padding-top: 0.45rem !important;
+}
+
+.pr-045 {
+  padding-right: 0.45rem !important;
+}
+
+.pb-045 {
+  padding-bottom: 0.45rem !important;
+}
+
+.pl-045 {
+  padding-left: 0.45rem !important;
+}
+
+.p-05 {
+  padding: 0.5rem;
+}
+
+.pt-05 {
+  padding-top: 0.5rem !important;
+}
+
+.pr-05 {
+  padding-right: 0.5rem !important;
+}
+
+.pb-05 {
+  padding-bottom: 0.5rem !important;
+}
+
+.pl-05 {
+  padding-left: 0.5rem !important;
+}
+
+.p-065 {
+  padding: 0.65rem;
+}
+
+.pt-065 {
+  padding-top: 0.65rem !important;
+}
+
+.pr-065 {
+  padding-right: 0.65rem !important;
+}
+
+.pb-065 {
+  padding-bottom: 0.65rem !important;
+}
+
+.pl-065 {
+  padding-left: 0.65rem !important;
+}
+
+.p-075 {
+  padding: 0.75rem;
+}
+
+.pt-075 {
+  padding-top: 0.75rem !important;
+}
+
+.pr-075 {
+  padding-right: 0.75rem !important;
+}
+
+.pb-075 {
+  padding-bottom: 0.75rem !important;
+}
+
+.pl-075 {
+  padding-left: 0.75rem !important;
+}
+
+.p-15 {
+  padding: 1.5rem;
+}
+
+.pt-15 {
+  padding-top: 1.5rem !important;
+}
+
+.pr-15 {
+  padding-right: 1.5rem !important;
+}
+
+.pb-15 {
+  padding-bottom: 1.5rem !important;
+}
+
+.pl-15 {
+  padding-left: 1.5rem !important;
+}
+
+.p-175 {
+  padding: 1.75rem;
+}
+
+.pt-175 {
+  padding-top: 1.75rem !important;
+}
+
+.pr-175 {
+  padding-right: 1.75rem !important;
+}
+
+.pb-175 {
+  padding-bottom: 1.75rem !important;
+}
+
+.pl-175 {
+  padding-left: 1.75rem !important;
+}
+
+/**
+ * Responsive Padding Classes for Small Screens
+ *
+ * Generates classes with `sm-` prefix:
+ * - `.p-sm-{value}`: Padding for small screens (e.g., `.p-sm-1` for 1rem).
+ * - Special sizes (e.g., `.p-sm-05` for 0.5rem).
+ */
+@media (max-width: 750px) {
+  .p-sm-0 {
+    padding: 0rem;
+  }
+  .pt-sm-0 {
+    padding-top: 0rem !important;
+  }
+  .pr-sm-0 {
+    padding-right: 0rem !important;
+  }
+  .pb-sm-0 {
+    padding-bottom: 0rem !important;
+  }
+  .pl-sm-0 {
+    padding-left: 0rem !important;
+  }
+  .p-sm-1 {
+    padding: 1rem;
+  }
+  .pt-sm-1 {
+    padding-top: 1rem !important;
+  }
+  .pr-sm-1 {
+    padding-right: 1rem !important;
+  }
+  .pb-sm-1 {
+    padding-bottom: 1rem !important;
+  }
+  .pl-sm-1 {
+    padding-left: 1rem !important;
+  }
+  .p-sm-0125 {
+    padding: 0.125rem;
+  }
+  .pt-sm-0125 {
+    padding-top: 0.125rem !important;
+  }
+  .pr-sm-0125 {
+    padding-right: 0.125rem !important;
+  }
+  .pb-sm-0125 {
+    padding-bottom: 0.125rem !important;
+  }
+  .pl-sm-0125 {
+    padding-left: 0.125rem !important;
+  }
+  .p-sm-025 {
+    padding: 0.25rem;
+  }
+  .pt-sm-025 {
+    padding-top: 0.25rem !important;
+  }
+  .pr-sm-025 {
+    padding-right: 0.25rem !important;
+  }
+  .pb-sm-025 {
+    padding-bottom: 0.25rem !important;
+  }
+  .pl-sm-025 {
+    padding-left: 0.25rem !important;
+  }
+  .p-sm-0375 {
+    padding: 0.375rem;
+  }
+  .pt-sm-0375 {
+    padding-top: 0.375rem !important;
+  }
+  .pr-sm-0375 {
+    padding-right: 0.375rem !important;
+  }
+  .pb-sm-0375 {
+    padding-bottom: 0.375rem !important;
+  }
+  .pl-sm-0375 {
+    padding-left: 0.375rem !important;
+  }
+  .p-sm-045 {
+    padding: 0.45rem;
+  }
+  .pt-sm-045 {
+    padding-top: 0.45rem !important;
+  }
+  .pr-sm-045 {
+    padding-right: 0.45rem !important;
+  }
+  .pb-sm-045 {
+    padding-bottom: 0.45rem !important;
+  }
+  .pl-sm-045 {
+    padding-left: 0.45rem !important;
+  }
+  .p-sm-05 {
+    padding: 0.5rem;
+  }
+  .pt-sm-05 {
+    padding-top: 0.5rem !important;
+  }
+  .pr-sm-05 {
+    padding-right: 0.5rem !important;
+  }
+  .pb-sm-05 {
+    padding-bottom: 0.5rem !important;
+  }
+  .pl-sm-05 {
+    padding-left: 0.5rem !important;
+  }
+  .p-sm-065 {
+    padding: 0.65rem;
+  }
+  .pt-sm-065 {
+    padding-top: 0.65rem !important;
+  }
+  .pr-sm-065 {
+    padding-right: 0.65rem !important;
+  }
+  .pb-sm-065 {
+    padding-bottom: 0.65rem !important;
+  }
+  .pl-sm-065 {
+    padding-left: 0.65rem !important;
+  }
+  .p-sm-075 {
+    padding: 0.75rem;
+  }
+  .pt-sm-075 {
+    padding-top: 0.75rem !important;
+  }
+  .pr-sm-075 {
+    padding-right: 0.75rem !important;
+  }
+  .pb-sm-075 {
+    padding-bottom: 0.75rem !important;
+  }
+  .pl-sm-075 {
+    padding-left: 0.75rem !important;
+  }
+  .p-sm-15 {
+    padding: 1.5rem;
+  }
+  .pt-sm-15 {
+    padding-top: 1.5rem !important;
+  }
+  .pr-sm-15 {
+    padding-right: 1.5rem !important;
+  }
+  .pb-sm-15 {
+    padding-bottom: 1.5rem !important;
+  }
+  .pl-sm-15 {
+    padding-left: 1.5rem !important;
+  }
+  .p-sm-175 {
+    padding: 1.75rem;
+  }
+  .pt-sm-175 {
+    padding-top: 1.75rem !important;
+  }
+  .pr-sm-175 {
+    padding-right: 1.75rem !important;
+  }
+  .pb-sm-175 {
+    padding-bottom: 1.75rem !important;
+  }
+  .pl-sm-175 {
+    padding-left: 1.75rem !important;
+  }
+}
