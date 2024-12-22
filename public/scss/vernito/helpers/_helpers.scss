@@ -1,23 +1,39 @@
+/******************************************************************************
+ * ASPECT RATIO UTILITIES
+ *****************************************************************************/
+
+/**
+ * Fixed Aspect Ratios
+ *
+ * Provides utility classes for commonly used aspect ratios:
+ * - `.aspect-1`: Square (1:1).
+ * - `.aspect-169`: Widescreen (16:9), commonly used for video.
+ * - `.aspect-32`: Standard photo (3:2), common in photography.
+ * - `.aspect-43`: Legacy TV or image format (4:3).
+ * - `.aspect-74`: Wide format (7:4), used in presentations.
+ * - `.aspect-golden`: Golden ratio (1.618:1), aesthetically pleasing.
+ */
+
 .aspect-1 {
-    aspect-ratio: 1;
+    aspect-ratio: 1; /* Square (1:1) */
 }
 
 .aspect-169 {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 9; /* Widescreen video (16:9) */
 }
 
 .aspect-32 {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 3 / 2; /* Photography standard (3:2) */
 }
 
 .aspect-43 {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 3; /* Legacy TV or image format (4:3) */
 }
 
 .aspect-74 {
-    aspect-ratio: 7 / 4;
+    aspect-ratio: 7 / 4; /* Wide presentation format (7:4) */
 }
 
 .aspect-golden {
-    aspect-ratio: 1.618;
+    aspect-ratio: 1.618; /* Golden ratio (1.618:1) */
 }

@@ -234,6 +234,288 @@ blockquote {
 }
 
 /******************************************************************************
+ * FONT SIZES
+ *****************************************************************************/
+/**
+ * Font Sizes for Default Screens
+ *
+ * Defines font sizes from extra small to extra large for desktop and tablet screens.
+ */
+:root {
+  --fs-50: 0.625rem; /* Extra small (10px) */
+  --fs-100: 0.75rem; /* Small (12px) */
+  --fs-200: 0.875rem; /* Slightly smaller than base (14px) */
+  --fs-300: 1rem; /* Base size (16px) */
+  --fs-400: 1.125rem; /* Slightly larger (18px) */
+  --fs-500: 1.25rem; /* Medium (20px) */
+  --fs-600: 1.5rem; /* Large (24px) */
+  --fs-700: 1.75rem; /* Extra Large (28px) */
+  --fs-800: 2rem; /* 2x base size (32px) */
+  --fs-900: 2.5rem; /* Very large (40px) */
+  --fs-1000: 3rem; /* Extra large (48px) */
+}
+
+/**
+ * Font Sizes for Small Screens
+ *
+ * Smaller font sizes optimized for screens with a max-width of 750px.
+ */
+@media (max-width: 750px) {
+  :root {
+    --fs-50: 0.5rem; /* Extra small (8px) */
+    --fs-100: 0.625rem; /* Small (10px) */
+    --fs-200: 0.75rem; /* Slightly smaller than base (12px) */
+    --fs-300: 0.875rem; /* Base size (14px) */
+    --fs-400: 1rem; /* Slightly larger (16px) */
+    --fs-500: 1.125rem; /* Medium (18px) */
+    --fs-600: 1.25rem; /* Large (20px) */
+    --fs-700: 1.5rem; /* Extra Large (24px) */
+    --fs-800: 1.75rem; /* 2x base size (28px) */
+    --fs-900: 2rem; /* Very large (32px) */
+    --fs-1000: 2.5rem; /* Extra large (40px) */
+  }
+}
+/**
+ * Font Size Utilities
+ *
+ * Generates utility classes for each font size.
+ */
+.fs-50,
+.fs-50 p {
+  font-size: var(--fs-50) !important;
+  line-height: 2.7ex;
+}
+
+.fs-100,
+.fs-100 p {
+  font-size: var(--fs-100) !important;
+  line-height: 2.7ex;
+}
+
+.fs-200,
+.fs-200 p {
+  font-size: var(--fs-200) !important;
+  line-height: 2.7ex;
+}
+
+.fs-300,
+.fs-300 p {
+  font-size: var(--fs-300) !important;
+  line-height: 2.7ex;
+}
+
+.fs-400,
+.fs-400 p {
+  font-size: var(--fs-400) !important;
+  line-height: 2.7ex;
+}
+
+.fs-500,
+.fs-500 p {
+  font-size: var(--fs-500) !important;
+  line-height: 2.7ex;
+}
+
+.fs-600,
+.fs-600 p {
+  font-size: var(--fs-600) !important;
+  line-height: 2.7ex;
+}
+
+.fs-700,
+.fs-700 p {
+  font-size: var(--fs-700) !important;
+  line-height: 2.7ex;
+}
+
+.fs-800,
+.fs-800 p {
+  font-size: var(--fs-800) !important;
+  line-height: 2.7ex;
+}
+
+.fs-900,
+.fs-900 p {
+  font-size: var(--fs-900) !important;
+  line-height: 2.7ex;
+}
+
+.fs-1000,
+.fs-1000 p {
+  font-size: var(--fs-1000) !important;
+  line-height: 2.7ex;
+}
+
+/******************************************************************************
+ * LINE HEIGHT UTILITIES
+ *****************************************************************************/
+/**
+ * Line Height Utilities
+ *
+ * Provides utility classes for line-height values.
+ */
+.lh-1 {
+  line-height: 1;
+}
+
+.lh-115 {
+  line-height: 1.15;
+}
+
+.lh-125 {
+  line-height: 1.25;
+}
+
+.lh-150 {
+  line-height: 1.5;
+}
+
+.lh-165 {
+  line-height: 1.65;
+}
+
+.lh-2 {
+  line-height: 2;
+}
+
+.lh-225 {
+  line-height: 2.25;
+}
+
+.lh-25 {
+  line-height: 2.5;
+}
+
+/******************************************************************************
+ * LETTER SPACINGS
+ *****************************************************************************/
+.ls-0 {
+  letter-spacing: 0px;
+}
+
+.ls-1 {
+  letter-spacing: -1px;
+}
+
+.ls-2 {
+  letter-spacing: -2px;
+}
+
+/******************************************************************************
+ * TEXT TRANSFORMATIONS
+ *****************************************************************************/
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/******************************************************************************
+ * TEXT ALIGNMENT
+ *****************************************************************************/
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+@media (max-width: 750px) {
+  .text-left-sm {
+    text-align: left !important;
+  }
+  .text-center-sm {
+    text-align: center !important;
+  }
+  .text-right-sm {
+    text-align: right !important;
+  }
+}
+/******************************************************************************
+ * TEXT STYLES
+ *****************************************************************************/
+.text-bold {
+  font-weight: bold !important;
+}
+
+.text-italic {
+  font-style: italic !important;
+}
+
+.text-line-through {
+  text-decoration: line-through !important;
+}
+
+/******************************************************************************
+ * FONT WEIGHT UTILITIES
+ *****************************************************************************/
+/**
+ * Font Weight Utilities
+ *
+ * Provides utility classes for font weights:
+ * - Values: 100, 200, 300, ..., 900
+ */
+.fw-100,
+.fw-100 p {
+  font-weight: 100 !important;
+}
+
+.fw-200,
+.fw-200 p {
+  font-weight: 200 !important;
+}
+
+.fw-300,
+.fw-300 p {
+  font-weight: 300 !important;
+}
+
+.fw-400,
+.fw-400 p {
+  font-weight: 400 !important;
+}
+
+.fw-500,
+.fw-500 p {
+  font-weight: 500 !important;
+}
+
+.fw-600,
+.fw-600 p {
+  font-weight: 600 !important;
+}
+
+.fw-700,
+.fw-700 p {
+  font-weight: 700 !important;
+}
+
+.fw-800,
+.fw-800 p {
+  font-weight: 800 !important;
+}
+
+.fw-900,
+.fw-900 p {
+  font-weight: 900 !important;
+}
+
+/******************************************************************************
  * CONTAINER UTILITIES
  *****************************************************************************/
 /**
@@ -3347,283 +3629,39 @@ blockquote {
 }
 
 /******************************************************************************
- * FONT SIZES
+ * ASPECT RATIO UTILITIES
  *****************************************************************************/
 /**
- * Font Sizes for Default Screens
+ * Fixed Aspect Ratios
  *
- * Defines font sizes from extra small to extra large for desktop and tablet screens.
+ * Provides utility classes for commonly used aspect ratios:
+ * - `.aspect-1`: Square (1:1).
+ * - `.aspect-169`: Widescreen (16:9), commonly used for video.
+ * - `.aspect-32`: Standard photo (3:2), common in photography.
+ * - `.aspect-43`: Legacy TV or image format (4:3).
+ * - `.aspect-74`: Wide format (7:4), used in presentations.
+ * - `.aspect-golden`: Golden ratio (1.618:1), aesthetically pleasing.
  */
-:root {
-  --fs-50: 0.625rem; /* Extra small (10px) */
-  --fs-100: 0.75rem; /* Small (12px) */
-  --fs-200: 0.875rem; /* Slightly smaller than base (14px) */
-  --fs-300: 1rem; /* Base size (16px) */
-  --fs-400: 1.125rem; /* Slightly larger (18px) */
-  --fs-500: 1.25rem; /* Medium (20px) */
-  --fs-600: 1.5rem; /* Large (24px) */
-  --fs-700: 1.75rem; /* Extra Large (28px) */
-  --fs-800: 2rem; /* 2x base size (32px) */
-  --fs-900: 2.5rem; /* Very large (40px) */
-  --fs-1000: 3rem; /* Extra large (48px) */
+.aspect-1 {
+  aspect-ratio: 1; /* Square (1:1) */
 }
 
-/**
- * Font Sizes for Small Screens
- *
- * Smaller font sizes optimized for screens with a max-width of 750px.
- */
-@media (max-width: 750px) {
-  :root {
-    --fs-50: 0.5rem; /* Extra small (8px) */
-    --fs-100: 0.625rem; /* Small (10px) */
-    --fs-200: 0.75rem; /* Slightly smaller than base (12px) */
-    --fs-300: 0.875rem; /* Base size (14px) */
-    --fs-400: 1rem; /* Slightly larger (16px) */
-    --fs-500: 1.125rem; /* Medium (18px) */
-    --fs-600: 1.25rem; /* Large (20px) */
-    --fs-700: 1.5rem; /* Extra Large (24px) */
-    --fs-800: 1.75rem; /* 2x base size (28px) */
-    --fs-900: 2rem; /* Very large (32px) */
-    --fs-1000: 2.5rem; /* Extra large (40px) */
-  }
-}
-/**
- * Font Size Utilities
- *
- * Generates utility classes for each font size.
- */
-.fs-50,
-.fs-50 p {
-  font-size: var(--fs-50) !important;
-  line-height: 2.7ex;
+.aspect-169 {
+  aspect-ratio: 16/9; /* Widescreen video (16:9) */
 }
 
-.fs-100,
-.fs-100 p {
-  font-size: var(--fs-100) !important;
-  line-height: 2.7ex;
+.aspect-32 {
+  aspect-ratio: 3/2; /* Photography standard (3:2) */
 }
 
-.fs-200,
-.fs-200 p {
-  font-size: var(--fs-200) !important;
-  line-height: 2.7ex;
+.aspect-43 {
+  aspect-ratio: 4/3; /* Legacy TV or image format (4:3) */
 }
 
-.fs-300,
-.fs-300 p {
-  font-size: var(--fs-300) !important;
-  line-height: 2.7ex;
+.aspect-74 {
+  aspect-ratio: 7/4; /* Wide presentation format (7:4) */
 }
 
-.fs-400,
-.fs-400 p {
-  font-size: var(--fs-400) !important;
-  line-height: 2.7ex;
-}
-
-.fs-500,
-.fs-500 p {
-  font-size: var(--fs-500) !important;
-  line-height: 2.7ex;
-}
-
-.fs-600,
-.fs-600 p {
-  font-size: var(--fs-600) !important;
-  line-height: 2.7ex;
-}
-
-.fs-700,
-.fs-700 p {
-  font-size: var(--fs-700) !important;
-  line-height: 2.7ex;
-}
-
-.fs-800,
-.fs-800 p {
-  font-size: var(--fs-800) !important;
-  line-height: 2.7ex;
-}
-
-.fs-900,
-.fs-900 p {
-  font-size: var(--fs-900) !important;
-  line-height: 2.7ex;
-}
-
-.fs-1000,
-.fs-1000 p {
-  font-size: var(--fs-1000) !important;
-  line-height: 2.7ex;
-}
-
-/******************************************************************************
- * LINE HEIGHT UTILITIES
- *****************************************************************************/
-/**
- * Line Height Utilities
- *
- * Provides utility classes for line-height values.
- */
-.lh-1 {
-  line-height: 1;
-}
-
-.lh-115 {
-  line-height: 1.15;
-}
-
-.lh-125 {
-  line-height: 1.25;
-}
-
-.lh-150 {
-  line-height: 1.5;
-}
-
-.lh-165 {
-  line-height: 1.65;
-}
-
-.lh-2 {
-  line-height: 2;
-}
-
-.lh-225 {
-  line-height: 2.25;
-}
-
-.lh-25 {
-  line-height: 2.5;
-}
-
-/******************************************************************************
- * LETTER SPACINGS
- *****************************************************************************/
-.ls-0 {
-  letter-spacing: 0px;
-}
-
-.ls-1 {
-  letter-spacing: -1px;
-}
-
-.ls-2 {
-  letter-spacing: -2px;
-}
-
-/******************************************************************************
- * TEXT TRANSFORMATIONS
- *****************************************************************************/
-.text-capitalize {
-  text-transform: capitalize;
-}
-
-.text-uppercase {
-  text-transform: uppercase;
-}
-
-.text-lowercase {
-  text-transform: lowercase;
-}
-
-.text-balance {
-  text-wrap: balance;
-}
-
-/******************************************************************************
- * TEXT ALIGNMENT
- *****************************************************************************/
-.text-left {
-  text-align: left !important;
-}
-
-.text-center {
-  text-align: center !important;
-}
-
-.text-right {
-  text-align: right !important;
-}
-
-@media (max-width: 750px) {
-  .text-left-sm {
-    text-align: left !important;
-  }
-  .text-center-sm {
-    text-align: center !important;
-  }
-  .text-right-sm {
-    text-align: right !important;
-  }
-}
-/******************************************************************************
- * TEXT STYLES
- *****************************************************************************/
-.text-bold {
-  font-weight: bold !important;
-}
-
-.text-italic {
-  font-style: italic !important;
-}
-
-.text-line-through {
-  text-decoration: line-through !important;
-}
-
-/******************************************************************************
- * FONT WEIGHT UTILITIES
- *****************************************************************************/
-/**
- * Font Weight Utilities
- *
- * Provides utility classes for font weights:
- * - Values: 100, 200, 300, ..., 900
- */
-.fw-100,
-.fw-100 p {
-  font-weight: 100 !important;
-}
-
-.fw-200,
-.fw-200 p {
-  font-weight: 200 !important;
-}
-
-.fw-300,
-.fw-300 p {
-  font-weight: 300 !important;
-}
-
-.fw-400,
-.fw-400 p {
-  font-weight: 400 !important;
-}
-
-.fw-500,
-.fw-500 p {
-  font-weight: 500 !important;
-}
-
-.fw-600,
-.fw-600 p {
-  font-weight: 600 !important;
-}
-
-.fw-700,
-.fw-700 p {
-  font-weight: 700 !important;
-}
-
-.fw-800,
-.fw-800 p {
-  font-weight: 800 !important;
-}
-
-.fw-900,
-.fw-900 p {
-  font-weight: 900 !important;
+.aspect-golden {
+  aspect-ratio: 1.618; /* Golden ratio (1.618:1) */
 }
