@@ -90,4 +90,72 @@ greet('Markpress');
     </div>
 </section>
 
+<section class="grid gap-15">
+    <form class="display-contents">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+
+        <div class="form-group">
+            <label for="bio">Bio</label>
+            <textarea id="bio" placeholder="Tell us about yourself"></textarea>
+        </div>
+
+        <div class="form-actions">
+            <label>
+                <input type="checkbox"> Remember Me
+            </label>
+            <button type="submit">Sign In</button>
+        </div>
+
+        <div class="form-group">
+            <label for="dropdown">Select an Option</label>
+            <div class="form-select">
+                <select id="dropdown">
+                    <option value="disabled selected">Select an option...</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="toggle-dark-mode" class="toggle-description">Dark Mode</label>
+            <div class="toggle-switch">
+                <input type="checkbox" id="toggle-dark-mode" class="toggle-input">
+                <label for="toggle-dark-mode" class="toggle-label">
+                    <span class="toggle-circle"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="toggle-cache" class="toggle-description">Cache Page</label>
+            <div class="toggle-switch">
+                <input type="checkbox" id="toggle-cache" class="toggle-input">
+                <label for="toggle-cache" class="toggle-label">
+                    <span class="toggle-circle"></span>
+                </label>
+            </div>
+        </div>
+
+        <p class="form-error">An error occurred. Please try again.</p>
+        <p class="form-success">Form submitted successfully!</p>
+
+    </form>
+</section>
+
+
 <?= $this->endSection() ?>

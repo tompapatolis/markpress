@@ -1,5 +1,24 @@
 @charset "UTF-8";
 /******************************************************************************
+ *                                                                            *
+ *                               V E R N I T O                                *
+ *                                                                            *
+ *                      Lightweight. Smart. Blazing Fast.                     *
+ *                                                                            *
+ *----------------------------------------------------------------------------*
+ * Author       : Tom Papatolis                                               *
+ * Website      : https://verdindynamics.com                                  *
+ * Version      : 1.0                                                         *
+ *----------------------------------------------------------------------------*
+ *                                                                            *
+ *   ██    ██ ███████ ██████  ███    ██ ██ ████████  ██████                   *
+ *   ██    ██ ██      ██   ██ ████   ██ ██    ██    ██    ██                  *
+ *   ██    ██ █████   ██████  ██ ██  ██ ██    ██    ██    ██                  *
+ *   ██    ██ ██      ██   ██ ██  ██ ██ ██    ██    ██    ██                  *
+ *    ██████  ███████ ██   ██ ██   ████ ██    ██     ██████                   *
+ *                                                                            *
+ ******************************************************************************/
+/******************************************************************************
  * MODERN CSS RESET
  *
  * Purpose:
@@ -4734,4 +4753,210 @@ pre::-webkit-scrollbar-thumb:hover {
   border-color: #d78b4c;
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+/******************************************************************************
+ * FORM UTILITIES
+ *****************************************************************************/
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Space between label and input */
+}
+.form-group label {
+  font-size: var(--fs-300);
+  color: var(--color-100);
+}
+.form-group input[type=text],
+.form-group input[type=email],
+.form-group input[type=password],
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: var(--fs-300);
+  border: 1px solid var(--color-700);
+  border-radius: 0.5rem;
+  background-color: var(--color-900);
+  color: var(--color-50);
+  outline: none; /* Removes default browser focus outline */
+  box-shadow: none; /* Ensures no additional box-shadow is applied */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  /* Remove Chrome autofill background */
+}
+.form-group input[type=text]::placeholder,
+.form-group input[type=email]::placeholder,
+.form-group input[type=password]::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-400); /* Subtle placeholder color */
+}
+.form-group input[type=text]:focus,
+.form-group input[type=email]:focus,
+.form-group input[type=password]:focus,
+.form-group textarea:focus {
+  border-color: var(--accent-500);
+  box-shadow: 0 0 0 4px rgba(51, 154, 240, 0.2); /* Subtle focus ring */
+}
+.form-group input[type=text]:-webkit-autofill, .form-group input[type=text]:-webkit-autofill:hover, .form-group input[type=text]:-webkit-autofill:focus, .form-group input[type=text]:-webkit-autofill:active,
+.form-group input[type=email]:-webkit-autofill,
+.form-group input[type=email]:-webkit-autofill:hover,
+.form-group input[type=email]:-webkit-autofill:focus,
+.form-group input[type=email]:-webkit-autofill:active,
+.form-group input[type=password]:-webkit-autofill,
+.form-group input[type=password]:-webkit-autofill:hover,
+.form-group input[type=password]:-webkit-autofill:focus,
+.form-group input[type=password]:-webkit-autofill:active,
+.form-group textarea:-webkit-autofill,
+.form-group textarea:-webkit-autofill:hover,
+.form-group textarea:-webkit-autofill:focus,
+.form-group textarea:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px var(--color-900) inset !important; /* Matches input background */
+  -webkit-box-shadow: 0 0 0 30px var(--color-900) inset !important;
+  -webkit-text-fill-color: var(--color-50) !important; /* Matches input text color */
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.form-actions input[type=checkbox] {
+  margin-right: 0.5rem;
+  accent-color: var(--accent-500); /* Stylish checkbox accent color */
+}
+.form-actions button[type=submit] {
+  padding: 0.75rem 1rem;
+  font-size: var(--fs-300);
+  font-weight: bold;
+  color: var(--color-50);
+  background-color: var(--accent-500);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, filter 0.3s ease;
+}
+.form-actions button[type=submit]:hover {
+  background-color: var(--accent-600);
+  filter: brightness(1.1);
+}
+.form-actions button[type=submit]:active {
+  background-color: var(--accent-700);
+}
+.form-actions button[type=submit]:disabled {
+  background-color: var(--color-700);
+  color: var(--color-400);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-error {
+  color: var(--color-400);
+  font-size: var(--fs-200);
+  margin-top: 0.5rem;
+}
+
+.form-success {
+  color: var(--green); /* Use a green tone for success messages */
+  font-size: var(--fs-200);
+  margin-top: 0.5rem;
+}
+
+/******************************************************************************
+ * SELECT STYLING
+ *****************************************************************************/
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: var(--fs-300);
+  color: var(--color-50); /* Light text for contrast */
+  background-color: var(--color-900); /* Dark background */
+  border: 1px solid var(--color-700); /* Subtle border */
+  border-radius: 0.5rem;
+  appearance: none; /* Removes default browser styling */
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  /* Dropdown options */
+}
+.form-group select::placeholder {
+  color: var(--color-400); /* Subtle placeholder color */
+}
+.form-group select:focus {
+  border-color: var(--accent-500);
+  box-shadow: 0 0 0 4px rgba(51, 154, 240, 0.2); /* Custom focus ring */
+}
+.form-group select:hover {
+  border-color: var(--accent-300); /* Slightly lighter border on hover */
+}
+.form-group select option {
+  background-color: var(--color-900); /* Matches dropdown options with form styling */
+  color: var(--color-50);
+}
+.form-group .form-select {
+  position: relative;
+}
+.form-group .form-select::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 0.375rem solid transparent;
+  border-right: 0.375rem solid transparent;
+  border-top: 0.375rem solid var(--color-300);
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/******************************************************************************
+ * TOGGLE SWITCH STYLING
+ *****************************************************************************/
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 3rem; /* Width of the switch */
+  height: 1.5rem; /* Height of the switch */
+}
+.toggle-switch .toggle-input {
+  position: absolute;
+  opacity: 0; /* Hide the checkbox */
+  width: 0;
+  height: 0;
+}
+.toggle-switch .toggle-input:checked + .toggle-label {
+  background-color: var(--accent-500); /* Background color when active */
+}
+.toggle-switch .toggle-input:checked + .toggle-label .toggle-circle {
+  transform: translateX(1.5rem); /* Move the circle to the right */
+}
+.toggle-switch .toggle-input:focus + .toggle-label {
+  box-shadow: 0 0 0 4px rgba(51, 154, 240, 0.2); /* Focus ring for accessibility */
+}
+.toggle-switch .toggle-label {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-700); /* Default background color */
+  border-radius: 1rem; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.toggle-switch .toggle-label .toggle-circle {
+  position: absolute;
+  top: 0.25rem; /* Space from the top */
+  left: 0.25rem; /* Space from the left */
+  width: 1rem; /* Diameter of the circle */
+  height: 1rem; /* Diameter of the circle */
+  background-color: var(--color-50); /* Circle color */
+  border-radius: 50%; /* Make it circular */
+  transition: transform 0.3s ease; /* Smooth transition */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
