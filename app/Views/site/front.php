@@ -48,7 +48,7 @@ greet('Markpress');
         <button class="btn btn-xl btn-accent-800">Extra Large Button</button>
     </div>
 
-    <h1>Neutral Color Buttons</h1>
+    <h1 class="mt-2">Neutral Color Buttons</h1>
     <div class="grid grid-col-auto-150 gap-1 mb-2">
         <button class="btn btn-50">Neutral 50</button>
         <button class="btn btn-100">Neutral 100</button>
