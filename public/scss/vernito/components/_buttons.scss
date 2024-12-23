@@ -1,0 +1,169 @@
+/******************************************************************************
+ * BUTTON UTILITIES
+ *****************************************************************************/
+
+/**
+ * Shades Mapping
+ *
+ * - Map shades to their respective CSS variables for background and text colors.
+ * - Use numeric keys for proper comparison.
+ */
+ $shades: (
+    50: (var(--color-50), var(--color-900)),      /* Almost white, dark text */
+    100: (var(--color-100), var(--color-900)),    /* Very light gray, dark text */
+    200: (var(--color-200), var(--color-900)),    /* Light gray, dark text */
+    300: (var(--color-300), var(--color-900)),    /* Medium light gray, dark text */
+    400: (var(--color-400), var(--color-900)),    /* Soft gray, dark text */
+    500: (var(--color-500), var(--color-50)),     /* Neutral gray, light text */
+    600: (var(--color-600), var(--color-50)),     /* Medium dark gray, light text */
+    700: (var(--color-700), var(--color-50)),     /* Close to base, light text */
+    800: (var(--color-800), var(--color-50)),     /* Base background, light text */
+    900: (var(--color-900), var(--color-50)),     /* Darker gray, light text */
+    1000: (var(--color-1000), var(--color-50))    /* Almost black, light text */
+);
+
+$accents: (
+    50: (var(--accent-50), var(--color-900)),     /* Very light blue, dark text */
+    100: (var(--accent-100), var(--color-900)),   /* Light blue, dark text */
+    200: (var(--accent-200), var(--color-900)),   /* Softer light blue, dark text */
+    300: (var(--accent-300), var(--color-900)),   /* Soft and bright blue, dark text */
+    400: (var(--accent-400), var(--color-50)),    /* Vibrant blue, light text */
+    500: (var(--accent-500), var(--color-50)),    /* Primary accent, light text */
+    600: (var(--accent-600), var(--color-50)),    /* Slightly darker, light text */
+    700: (var(--accent-700), var(--color-50)),    /* Rich dark blue, light text */
+    800: (var(--accent-800), var(--color-50)),    /* Deep blue, light text */
+    900: (var(--accent-900), var(--color-50)),    /* Very dark blue, light text */
+    1000: (var(--accent-1000), var(--color-50))   /* Deepest blue, light text */
+);
+
+/**
+ * Base Button Styles
+ *
+ * - Shared styles for all buttons.
+ */
+.btn {
+    padding: 0.5em 1em;
+    font-size: var(--fs-300);
+    font-weight: bold;
+    border-radius: 0.25rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: filter 0.3s ease, color 0.3s ease;
+
+    // Default hover filter for all buttons
+    &:hover {
+        filter: contrast(1.05);
+    }
+}
+
+/**
+ * Generate Button Variants
+ *
+ * - Dynamically creates classes for neutral (`btn-*`) and accent (`btn-accent-*`) colors.
+ */
+@each $shade, $colors in $shades {
+    $bg-color: nth($colors, 1);
+    $text-color: nth($colors, 2);
+
+    .btn-#{$shade} {
+        background-color: #{$bg-color};
+        color: #{$text-color};
+        border: 1px solid #{$bg-color};
+
+        // Adjust hover filter dynamically based on shade
+        &:hover {
+            filter: if($shade <= 400, brightness(0.75), brightness(1.35));
+        }
+    }
+}
+
+@each $shade, $colors in $accents {
+    $bg-color: nth($colors, 1);
+    $text-color: nth($colors, 2);
+
+    .btn-accent-#{$shade} {
+        background-color: #{$bg-color};
+        color: #{$text-color};
+        border: 1px solid #{$bg-color};
+
+        // Adjust hover filter dynamically based on shade
+        &:hover {
+            filter: if($shade <= 400, brightness(0.75), brightness(1.35));
+        }
+    }
+}
+
+/**
+ * Button Size Variants
+ *
+ * - Dynamically generates classes for different button sizes (`btn-sm`, `btn-md`, etc.).
+ */
+ $btn-sizes: (
+    'xs': var(--fs-100), /* Extra Small button */
+    'sm': var(--fs-200), /* Small button */
+    'md': var(--fs-300), /* Medium button (default) */
+    'lg': var(--fs-400), /* Large button */
+    'xl': var(--fs-500)  /* Extra large button */
+);
+
+@each $size, $font-size in $btn-sizes {
+    .btn-#{$size} {
+        font-size: #{$font-size};
+    }
+}
+
+/******************************************************************************
+ * BUTTON COLORS
+ *****************************************************************************/
+
+/**
+ * Button Colors Mapping
+ *
+ * - Maps each color variant to its base color.
+ */
+ $btn-colors: (
+    'red'    : (#e53e3e, #ffffff),   // Red background, white text
+    'green'  : (#38a169, #ffffff),   // Green background, white text
+    'yellow' : (#ecc94b, #000000),   // Yellow background, black text
+    'magenta': (#d53f8c, #ffffff),   // Magenta background, white text
+    'crimson': (#dc143c, #ffffff),   // Crimson background, white text
+    'purple' : (#805ad5, #ffffff),   // Purple background, white text
+    'orange' : (#ed8936, #ffffff)    // Orange background, white text
+);
+
+/**
+ * Generate Button Color Variants
+ *
+ * - Dynamically creates button styles for each color.
+ */
+ @each $color-name, $colors in $btn-colors {
+    $bg-color: nth($colors, 1);
+    $text-color: nth($colors, 2);
+
+    .btn-#{$color-name} {
+        background-color: #{$bg-color};
+        color: #{$text-color};
+        border: 1px solid #{$bg-color};
+        transition: background-color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
+
+        &:hover {
+            background-color: lighten($bg-color, 10%);
+            border-color: lighten($bg-color, 10%);
+            filter: brightness(1.1);
+        }
+
+        &:active {
+            background-color: darken($bg-color, 10%);
+            border-color: darken($bg-color, 10%);
+        }
+
+        &:disabled {
+            background-color: desaturate($bg-color, 20%);
+            border-color: desaturate($bg-color, 20%);
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    }
+}
+

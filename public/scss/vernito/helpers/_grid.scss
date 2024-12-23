@@ -124,6 +124,11 @@
 }
 
 .grid-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-place-center {
     place-content: center;
 }
 

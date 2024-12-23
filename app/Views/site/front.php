@@ -1,7 +1,7 @@
 <?= $this->extend('layout_default') ?>
 <?= $this->section('main') ?>
 
-<div class="container pt-5 pt-sm-2">
+<div class="container">
     <h1>Markpress App - Real-Time Markdown to HTML Converter</h1>
 
     <img src="<?=path_gfx().'logo.svg'?>" alt="MarkPress Logo" loading="lazy" class="mb-4">
@@ -38,6 +38,56 @@ function greet(name) {
 greet('Markpress');
 </code></pre>
 
-</div>
+<section class="mt-5">
+    <h1>Button Size Test</h1>
+    <div class="grid grid-center grid-col-auto-175 grid-center gap-1">
+        <button class="btn btn-xs btn-accent-800">Extra Small Button</button>
+        <button class="btn btn-sm btn-accent-800">Small Button</button>
+        <button class="btn btn-md btn-accent-800">Medium Button</button>
+        <button class="btn btn-lg btn-accent-800">Large Button</button>
+        <button class="btn btn-xl btn-accent-800">Extra Large Button</button>
+    </div>
+
+    <h1>Neutral Color Buttons</h1>
+    <div class="grid grid-col-auto-150 gap-1 mb-2">
+        <button class="btn btn-50">Neutral 50</button>
+        <button class="btn btn-100">Neutral 100</button>
+        <button class="btn btn-200">Neutral 200</button>
+        <button class="btn btn-300">Neutral 300</button>
+        <button class="btn btn-400">Neutral 400</button>
+        <button class="btn btn-500">Neutral 500</button>
+        <button class="btn btn-600">Neutral 600</button>
+        <button class="btn btn-700">Neutral 700</button>
+        <button class="btn btn-800">Neutral 800</button>
+        <button class="btn btn-900">Neutral 900</button>
+        <button class="btn btn-1000">Neutral 1000</button>
+    </div>
+
+    <h1>Accent Color Buttons</h1>
+    <div class="grid grid-col-auto-150 gap-1 mb-2">
+        <button class="btn btn-accent-50">Accent 50</button>
+        <button class="btn btn-accent-100">Accent 100</button>
+        <button class="btn btn-accent-200">Accent 200</button>
+        <button class="btn btn-accent-300">Accent 300</button>
+        <button class="btn btn-accent-400">Accent 400</button>
+        <button class="btn btn-accent-500">Accent 500</button>
+        <button class="btn btn-accent-600">Accent 600</button>
+        <button class="btn btn-accent-700">Accent 700</button>
+        <button class="btn btn-accent-800">Accent 800</button>
+        <button class="btn btn-accent-900">Accent 900</button>
+        <button class="btn btn-accent-1000">Accent 1000</button>
+    </div>
+
+    <h1>Custom Color Buttons</h1>
+    <div class="grid grid-col-auto-150 gap-1 mb-2">
+        <button class="btn btn-red">Red</button>
+        <button class="btn btn-green">Green</button>
+        <button class="btn btn-yellow">Yellow</button>
+        <button class="btn btn-magenta">Magenta</button>
+        <button class="btn btn-crimson">Crimson</button>
+        <button class="btn btn-purple">Purple</button>
+        <button class="btn btn-orange">Orange</button>
+    </div>
+</section>
 
 <?= $this->endSection() ?>

@@ -3502,6 +3502,11 @@ pre::-webkit-scrollbar-thumb:hover {
 }
 
 .grid-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-place-center {
   place-content: center;
 }
 
@@ -3921,6 +3926,9 @@ pre::-webkit-scrollbar-thumb:hover {
 
 /**
  * Raw HTML Embed for CKEditor
+ *
+ * Ensures responsive design for embedded raw HTML and iframe elements
+ * in CKEditor, maintaining a 16:9 aspect ratio and full width.
  */
 .raw-html-embed:not(.ck-widget),
 .raw-html-embed:not(.ck-widget) iframe {
@@ -3928,4 +3936,802 @@ pre::-webkit-scrollbar-thumb:hover {
   width: 100%;
   height: auto;
   overflow: hidden;
+}
+
+/******************************************************************************
+ * EVENTS AND INTERACTIVITY
+ *****************************************************************************/
+/**
+ * Disabled Elements
+ *
+ * - `.disabled`: Makes elements non-interactive and visually subdued.
+ * - `.no-select`: Prevents text selection.
+ * - `.no-events`: Completely disables pointer events.
+ */
+.disabled {
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.no-events {
+  pointer-events: none;
+}
+
+/**
+ * Invisible Elements
+ *
+ * - `.invisible`: Hides elements visually while keeping their space in the DOM.
+ */
+.invisible {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/******************************************************************************
+ * HIDING ELEMENTS
+ *****************************************************************************/
+/**
+ * Hidden Class
+ *
+ * - `.hidden`: Completely hides elements, removing them from the layout.
+ */
+.hidden {
+  display: none !important;
+}
+
+/**
+ * Hide for Large Screens and Smaller
+ *
+ * - `.hide-lg`: Hides elements when the viewport is 1200px or smaller.
+ */
+@media (max-width: 1200px) {
+  .hide-lg {
+    display: none !important;
+  }
+}
+/**
+ * Hide for Medium Screens and Smaller
+ *
+ * - `.hide-md`: Hides elements when the viewport is 990px or smaller.
+ */
+@media (max-width: 990px) {
+  .hide-md {
+    display: none !important;
+  }
+}
+/**
+ * Hide for Small Screens and Smaller
+ *
+ * - `.hide-sm`: Hides elements when the viewport is 750px or smaller.
+ */
+@media (max-width: 750px) {
+  .hide-sm {
+    display: none !important;
+  }
+}
+/**
+ * Hide for Larger than Large Screens
+ *
+ * - `.hide-larger-lg`: Hides elements when the viewport is wider than 1200px.
+ */
+@media (min-width: 1201px) {
+  .hide-larger-lg {
+    display: none !important;
+  }
+}
+/**
+ * Hide for Larger than Medium Screens
+ *
+ * - `.hide-larger-md`: Hides elements when the viewport is wider than 990px.
+ */
+@media (min-width: 991px) {
+  .hide-larger-md {
+    display: none !important;
+  }
+}
+/**
+ * Hide for Larger than Small Screens
+ *
+ * - `.hide-larger-sm`: Hides elements when the viewport is wider than 750px.
+ */
+@media (min-width: 751px) {
+  .hide-larger-sm {
+    display: none !important;
+  }
+}
+/******************************************************************************
+ * DISPLAY UTILITIES
+ *****************************************************************************/
+.display-block {
+  display: block;
+}
+
+.display-contents {
+  display: contents;
+}
+
+.display-inline {
+  display: inline;
+}
+
+.display-table {
+  display: table;
+}
+
+.display-none {
+  display: none;
+}
+
+/******************************************************************************
+ * BORDER RADIUS UTILITIES
+ *****************************************************************************/
+/**
+ * Border Radius Values
+ *
+ * - This map defines commonly used border-radius values for utility classes.
+ * - Each key represents the class suffix, and each value specifies the radius size.
+ *
+ * Available Values:
+ * - `0125`: 0.125rem (2px) - Slightly rounded corners.
+ * - `025`: 0.25rem (4px) - Small rounded corners.
+ * - `0375`: 0.375rem (6px) - Moderately rounded corners.
+ * - `05`: 0.5rem (8px) - Default rounded corners.
+ * - `065`: 0.65rem (10px) - Slightly larger rounded corners.
+ * - `075`: 0.75rem (12px) - Larger rounded corners.
+ * - `1`: 1rem (16px) - Fully rounded corners.
+ * - `pill`: 9999px - Completely circular (pill-shaped) corners.
+ */
+/**
+ * Generate Border Radius Utility Classes
+ *
+ * - Dynamically generates utility classes for each border-radius value in the map.
+ * - Example Usage:
+ *   - `<div class="br-05"></div>` applies `border-radius: 0.5rem;`
+ *   - `<div class="br-pill"></div>` applies `border-radius: 9999px;`
+ */
+.br-0125 {
+  border-radius: 0.125rem;
+}
+
+.br-025 {
+  border-radius: 0.25rem;
+}
+
+.br-0375 {
+  border-radius: 0.375rem;
+}
+
+.br-05 {
+  border-radius: 0.5rem;
+}
+
+.br-065 {
+  border-radius: 0.65rem;
+}
+
+.br-075 {
+  border-radius: 0.75rem;
+}
+
+.br-1 {
+  border-radius: 1rem;
+}
+
+.br-pill {
+  border-radius: 9999px;
+}
+
+/******************************************************************************
+ * SVG ICON UTILITIES
+ *****************************************************************************/
+/**
+ * SVG Icon Base Class
+ *
+ * - `.svg-icon`: A base class for scalable vector graphics (SVG) icons.
+ * - Automatically adjusts width, height, and fill color.
+ *
+ * Default Behavior:
+ * - `width`: 1em
+ * - `height`: 1em
+ * - `fill`: Inherits the current text color (currentcolor).
+ *
+ * Additional Size Modifiers:
+ * - `md`: 1.375em
+ * - `lg`: 1.5em
+ * - `xl`: 1.75em
+ * - `2x` to `10x`: Scales the icon proportionally (e.g., 2em, 3em, ..., 10em).
+ */
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  fill: currentcolor;
+  /**
+   * Preset Size Modifiers
+   *
+   * - `.svg-icon-md`: Medium size (1.375em).
+   * - `.svg-icon-lg`: Large size (1.5em).
+   * - `.svg-icon-xl`: Extra large size (1.75em).
+   */
+  /**
+   * Dynamic Sizes (2x through 10x)
+   *
+   * - Dynamically generates classes `.svg-icon-2x` through `.svg-icon-10x`
+   *   to scale icons proportionally by a multiplier.
+   */
+}
+.svg-icon.svg-icon-md {
+  width: 1.375em;
+  height: 1.375em;
+}
+.svg-icon.svg-icon-lg {
+  width: 1.5em;
+  height: 1.5em;
+}
+.svg-icon.svg-icon-xl {
+  width: 1.75em;
+  height: 1.75em;
+}
+.svg-icon.svg-icon-2x {
+  width: 2em;
+  height: 2em;
+}
+.svg-icon.svg-icon-3x {
+  width: 3em;
+  height: 3em;
+}
+.svg-icon.svg-icon-4x {
+  width: 4em;
+  height: 4em;
+}
+.svg-icon.svg-icon-5x {
+  width: 5em;
+  height: 5em;
+}
+
+/******************************************************************************
+ * POSITION UTILITIES
+ *****************************************************************************/
+/**
+ * Relative Positioning
+ *
+ * - `.pos-relative`: Positions the element relative to its normal static position.
+ * - Allows child elements with `absolute` positioning to be positioned relative to this element.
+ */
+.pos-relative {
+  position: relative;
+}
+
+/**
+ * Absolute Positioning
+ *
+ * - `.pos-absolute`: Positions the element relative to its nearest positioned ancestor
+ *   (an ancestor with `relative`, `absolute`, or `fixed` positioning).
+ * - Removes the element from the normal document flow.
+ */
+.pos-absolute {
+  position: absolute;
+}
+
+/******************************************************************************
+ * BORDER COLOR UTILITIES
+ *****************************************************************************/
+/**
+ * Shades Array
+ *
+ * - Array of color shades corresponding to CSS custom properties.
+ * - Dynamically generates border-top (`bt-*`) and border-bottom (`bb-*`) utility classes.
+ */
+.bt-50 {
+  border-top: 1px solid var(--color-50);
+}
+
+.bb-50 {
+  border-bottom: 1px solid var(--color-50);
+}
+
+.bt-100 {
+  border-top: 1px solid var(--color-100);
+}
+
+.bb-100 {
+  border-bottom: 1px solid var(--color-100);
+}
+
+.bt-200 {
+  border-top: 1px solid var(--color-200);
+}
+
+.bb-200 {
+  border-bottom: 1px solid var(--color-200);
+}
+
+.bt-300 {
+  border-top: 1px solid var(--color-300);
+}
+
+.bb-300 {
+  border-bottom: 1px solid var(--color-300);
+}
+
+.bt-400 {
+  border-top: 1px solid var(--color-400);
+}
+
+.bb-400 {
+  border-bottom: 1px solid var(--color-400);
+}
+
+.bt-500 {
+  border-top: 1px solid var(--color-500);
+}
+
+.bb-500 {
+  border-bottom: 1px solid var(--color-500);
+}
+
+.bt-600 {
+  border-top: 1px solid var(--color-600);
+}
+
+.bb-600 {
+  border-bottom: 1px solid var(--color-600);
+}
+
+.bt-700 {
+  border-top: 1px solid var(--color-700);
+}
+
+.bb-700 {
+  border-bottom: 1px solid var(--color-700);
+}
+
+.bt-800 {
+  border-top: 1px solid var(--color-800);
+}
+
+.bb-800 {
+  border-bottom: 1px solid var(--color-800);
+}
+
+.bt-900 {
+  border-top: 1px solid var(--color-900);
+}
+
+.bb-900 {
+  border-bottom: 1px solid var(--color-900);
+}
+
+.bt-1000 {
+  border-top: 1px solid var(--color-1000);
+}
+
+.bb-1000 {
+  border-bottom: 1px solid var(--color-1000);
+}
+
+/******************************************************************************
+ * BUTTON UTILITIES
+ *****************************************************************************/
+/**
+ * Shades Mapping
+ *
+ * - Map shades to their respective CSS variables for background and text colors.
+ * - Use numeric keys for proper comparison.
+ */
+/**
+ * Base Button Styles
+ *
+ * - Shared styles for all buttons.
+ */
+.btn {
+  padding: 0.5em 1em;
+  font-size: var(--fs-300);
+  font-weight: bold;
+  border-radius: 0.25rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: filter 0.3s ease, color 0.3s ease;
+}
+.btn:hover {
+  filter: contrast(1.05);
+}
+
+/**
+ * Generate Button Variants
+ *
+ * - Dynamically creates classes for neutral (`btn-*`) and accent (`btn-accent-*`) colors.
+ */
+.btn-50 {
+  background-color: var(--color-50);
+  color: var(--color-900);
+  border: 1px solid var(--color-50);
+}
+.btn-50:hover {
+  filter: brightness(0.75);
+}
+
+.btn-100 {
+  background-color: var(--color-100);
+  color: var(--color-900);
+  border: 1px solid var(--color-100);
+}
+.btn-100:hover {
+  filter: brightness(0.75);
+}
+
+.btn-200 {
+  background-color: var(--color-200);
+  color: var(--color-900);
+  border: 1px solid var(--color-200);
+}
+.btn-200:hover {
+  filter: brightness(0.75);
+}
+
+.btn-300 {
+  background-color: var(--color-300);
+  color: var(--color-900);
+  border: 1px solid var(--color-300);
+}
+.btn-300:hover {
+  filter: brightness(0.75);
+}
+
+.btn-400 {
+  background-color: var(--color-400);
+  color: var(--color-900);
+  border: 1px solid var(--color-400);
+}
+.btn-400:hover {
+  filter: brightness(0.75);
+}
+
+.btn-500 {
+  background-color: var(--color-500);
+  color: var(--color-50);
+  border: 1px solid var(--color-500);
+}
+.btn-500:hover {
+  filter: brightness(1.35);
+}
+
+.btn-600 {
+  background-color: var(--color-600);
+  color: var(--color-50);
+  border: 1px solid var(--color-600);
+}
+.btn-600:hover {
+  filter: brightness(1.35);
+}
+
+.btn-700 {
+  background-color: var(--color-700);
+  color: var(--color-50);
+  border: 1px solid var(--color-700);
+}
+.btn-700:hover {
+  filter: brightness(1.35);
+}
+
+.btn-800 {
+  background-color: var(--color-800);
+  color: var(--color-50);
+  border: 1px solid var(--color-800);
+}
+.btn-800:hover {
+  filter: brightness(1.35);
+}
+
+.btn-900 {
+  background-color: var(--color-900);
+  color: var(--color-50);
+  border: 1px solid var(--color-900);
+}
+.btn-900:hover {
+  filter: brightness(1.35);
+}
+
+.btn-1000 {
+  background-color: var(--color-1000);
+  color: var(--color-50);
+  border: 1px solid var(--color-1000);
+}
+.btn-1000:hover {
+  filter: brightness(1.35);
+}
+
+.btn-accent-50 {
+  background-color: var(--accent-50);
+  color: var(--color-900);
+  border: 1px solid var(--accent-50);
+}
+.btn-accent-50:hover {
+  filter: brightness(0.75);
+}
+
+.btn-accent-100 {
+  background-color: var(--accent-100);
+  color: var(--color-900);
+  border: 1px solid var(--accent-100);
+}
+.btn-accent-100:hover {
+  filter: brightness(0.75);
+}
+
+.btn-accent-200 {
+  background-color: var(--accent-200);
+  color: var(--color-900);
+  border: 1px solid var(--accent-200);
+}
+.btn-accent-200:hover {
+  filter: brightness(0.75);
+}
+
+.btn-accent-300 {
+  background-color: var(--accent-300);
+  color: var(--color-900);
+  border: 1px solid var(--accent-300);
+}
+.btn-accent-300:hover {
+  filter: brightness(0.75);
+}
+
+.btn-accent-400 {
+  background-color: var(--accent-400);
+  color: var(--color-50);
+  border: 1px solid var(--accent-400);
+}
+.btn-accent-400:hover {
+  filter: brightness(0.75);
+}
+
+.btn-accent-500 {
+  background-color: var(--accent-500);
+  color: var(--color-50);
+  border: 1px solid var(--accent-500);
+}
+.btn-accent-500:hover {
+  filter: brightness(1.35);
+}
+
+.btn-accent-600 {
+  background-color: var(--accent-600);
+  color: var(--color-50);
+  border: 1px solid var(--accent-600);
+}
+.btn-accent-600:hover {
+  filter: brightness(1.35);
+}
+
+.btn-accent-700 {
+  background-color: var(--accent-700);
+  color: var(--color-50);
+  border: 1px solid var(--accent-700);
+}
+.btn-accent-700:hover {
+  filter: brightness(1.35);
+}
+
+.btn-accent-800 {
+  background-color: var(--accent-800);
+  color: var(--color-50);
+  border: 1px solid var(--accent-800);
+}
+.btn-accent-800:hover {
+  filter: brightness(1.35);
+}
+
+.btn-accent-900 {
+  background-color: var(--accent-900);
+  color: var(--color-50);
+  border: 1px solid var(--accent-900);
+}
+.btn-accent-900:hover {
+  filter: brightness(1.35);
+}
+
+.btn-accent-1000 {
+  background-color: var(--accent-1000);
+  color: var(--color-50);
+  border: 1px solid var(--accent-1000);
+}
+.btn-accent-1000:hover {
+  filter: brightness(1.35);
+}
+
+/**
+ * Button Size Variants
+ *
+ * - Dynamically generates classes for different button sizes (`btn-sm`, `btn-md`, etc.).
+ */
+.btn-xs {
+  font-size: var(--fs-100);
+}
+
+.btn-sm {
+  font-size: var(--fs-200);
+}
+
+.btn-md {
+  font-size: var(--fs-300);
+}
+
+.btn-lg {
+  font-size: var(--fs-400);
+}
+
+.btn-xl {
+  font-size: var(--fs-500);
+}
+
+/******************************************************************************
+ * BUTTON COLORS
+ *****************************************************************************/
+/**
+ * Button Colors Mapping
+ *
+ * - Maps each color variant to its base color.
+ */
+/**
+ * Generate Button Color Variants
+ *
+ * - Dynamically creates button styles for each color.
+ */
+.btn-red {
+  background-color: #e53e3e;
+  color: #ffffff;
+  border: 1px solid #e53e3e;
+  transition: background-color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
+}
+.btn-red:hover {
+  background-color: #eb6b6b;
+  border-color: #eb6b6b;
+  filter: brightness(1.1);
+}
+.btn-red:active {
+  background-color: #d41c1c;
+  border-color: #d41c1c;
+}
+.btn-red:disabled {
+  background-color: #cf5454;
+  border-color: #cf5454;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-green {
+  background-color: #38a169;
+  color: #ffffff;
+  border: 1px solid #38a169;
+  transition: background-color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
+}
+.btn-green:hover {
+  background-color: #4bc182;
+  border-color: #4bc182;
+  filter: brightness(1.1);
+}
+.btn-green:active {
+  background-color: #2b7b50;
+  border-color: #2b7b50;
+}
+.btn-green:disabled {
+  background-color: #4e8b6a;
+  border-color: #4e8b6a;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-yellow {
+  background-color: #ecc94b;
+  color: #000000;
+  border: 1px solid #ecc94b;
+  transition: background-color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
+}
+.btn-yellow:hover {
+  background-color: #f1d779;
+  border-color: #f1d779;
+  filter: brightness(1.1);
+}
+.btn-yellow:active {
+  background-color: #e7bb1d;
+  border-color: #e7bb1d;
+}
+.btn-yellow:disabled {
+  background-color: #d8be5f;
+  border-color: #d8be5f;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-magenta {
+  background-color: #d53f8c;
+  color: #ffffff;
+  border: 1px solid #d53f8c;
+  transition: background-color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
+}
+.btn-magenta:hover {
+  background-color: #de69a5;
+  border-color: #de69a5;
+  filter: brightness(1.1);
+}
+.btn-magenta:active {
+  background-color: #b92872;
+  border-color: #b92872;
+}
+.btn-magenta:disabled {
+  background-color: #be568b;
+  border-color: #be568b;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-crimson {
+  background-color: #dc143c;
+  color: #ffffff;
+  border: 1px solid #dc143c;
+  transition: background-color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
+}
+.btn-crimson:hover {
+  background-color: #ed365b;
+  border-color: #ed365b;
+  filter: brightness(1.1);
+}
+.btn-crimson:active {
+  background-color: #ad102f;
+  border-color: #ad102f;
+}
+.btn-crimson:disabled {
+  background-color: #c42c4a;
+  border-color: #c42c4a;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-purple {
+  background-color: #805ad5;
+  color: #ffffff;
+  border: 1px solid #805ad5;
+  transition: background-color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
+}
+.btn-purple:hover {
+  background-color: #9f83df;
+  border-color: #9f83df;
+  filter: brightness(1.1);
+}
+.btn-purple:active {
+  background-color: #6133c9;
+  border-color: #6133c9;
+}
+.btn-purple:disabled {
+  background-color: #886fc0;
+  border-color: #886fc0;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-orange {
+  background-color: #ed8936;
+  color: #ffffff;
+  border: 1px solid #ed8936;
+  transition: background-color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
+}
+.btn-orange:hover {
+  background-color: #f1a465;
+  border-color: #f1a465;
+  filter: brightness(1.1);
+}
+.btn-orange:active {
+  background-color: #dc6f14;
+  border-color: #dc6f14;
+}
+.btn-orange:disabled {
+  background-color: #d78b4c;
+  border-color: #d78b4c;
+  opacity: 0.6;
+  cursor: not-allowed;
 }
