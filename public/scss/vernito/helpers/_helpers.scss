@@ -37,3 +37,16 @@
 .aspect-golden {
     aspect-ratio: 1.618; /* Golden ratio (1.618:1) */
 }
+
+
+/**
+ * Raw HTML Embed for CKEditor
+ */
+
+ .raw-html-embed:not(.ck-widget),
+ .raw-html-embed:not(.ck-widget) iframe {
+     aspect-ratio: 16 / 9;
+     width: 100%;
+     height: auto;
+     overflow: hidden;
+ }
