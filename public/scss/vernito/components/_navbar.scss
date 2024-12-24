@@ -1,0 +1,41 @@
+/******************************************************************************
+ * NAVBAR STYLING
+ *
+ * Purpose:
+ * - Provides a fixed, responsive navigation bar.
+ * - Aligns content to the left and right sections.
+ * - Dynamically adjusts logo size based on navbar height and padding.
+ *****************************************************************************/
+
+ :root {
+    --navbar-height: 60px; /* Defines the overall height of the navbar */
+    --navbar-logo-padding: 0.75rem; /* Horizontal padding around the logo */
+}
+
+.navbar {
+    position: fixed; /* Keeps the navbar at the top of the viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between; /* Pushes content to edges (left and right sections) */
+    height: var(--navbar-height); /* Ensures consistent navbar height */
+    z-index: 900; /* Places navbar above other elements */
+    background: var(--color-1000); /* Navbar background color */
+
+    &__left,
+    &__right {
+        display: flex;
+    }
+
+    &__logo {
+        display: flex; /* Aligns logo and its content horizontally */
+        align-items: center; /* Centers the logo vertically */
+        padding: 0 var(--navbar-logo-padding); /* Adds space around the logo */
+
+        &-img {
+            height: calc(var(--navbar-height) - 1.33 * var(--navbar-logo-padding)); /* Dynamically scales logo size */
+            width: auto; /* Maintains logo's aspect ratio */
+        }
+    }
+}

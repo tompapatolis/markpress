@@ -18,8 +18,8 @@
  *                                                                            *
  ******************************************************************************/
 
-@use 'reset';
 @use 'colors';
+@use 'reset';
 @use 'typography';
 @use 'helpers/containers';
 @use 'helpers/spacing';
@@ -28,3 +28,4 @@
 @use 'helpers/helpers';
 @use 'components/buttons';
 @use 'components/forms';
+@use 'components/navbar';

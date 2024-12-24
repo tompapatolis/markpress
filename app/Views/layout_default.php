@@ -62,6 +62,7 @@
     </head>
 
     <body class="<?=body_class()?>" id="<?=body_class()?>">
+        <?= $this->include('components/navbar') ?>
         <?= $this->renderSection('main') ?>
     </body>
 </html>

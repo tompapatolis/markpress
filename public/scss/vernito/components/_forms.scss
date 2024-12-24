@@ -33,7 +33,7 @@
 
         &:focus {
             border-color: var(--accent-500);
-            box-shadow: 0 0 0 4px rgba(51, 154, 240, 0.2); /* Subtle focus ring */
+            box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-500) 20%, transparent); /* Subtle focus ring */
         }
 
         /* Remove Chrome autofill background */
@@ -129,7 +129,7 @@
 
         &:focus {
             border-color: var(--accent-500);
-            box-shadow: 0 0 0 4px rgba(51, 154, 240, 0.2); /* Custom focus ring */
+            box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-500) 20%, transparent);
         }
 
         &:hover {
@@ -187,7 +187,7 @@
         }
 
         &:focus + .toggle-label {
-            box-shadow: 0 0 0 4px rgba(51, 154, 240, 0.2); /* Focus ring for accessibility */
+            box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-500) 20%, transparent); /* Focus ring for accessibility */
         }
     }
 

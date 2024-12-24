@@ -49,11 +49,17 @@ $accents: (
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    transition: filter 0.3s ease, color 0.3s ease;
+    transition: filter 0.3s ease;
 
     // Default hover filter for all buttons
     &:hover {
         filter: contrast(1.05);
+    }
+
+    // Default focus outline for all buttons
+    &:focus {
+        outline: 2px solid var(--accent-500); /* Add visible focus outline */
+        outline-offset: 4px; /* Create spacing around the outline */
     }
 }
 
@@ -75,6 +81,10 @@ $accents: (
         &:hover {
             filter: if($shade <= 400, brightness(0.75), brightness(1.35));
         }
+
+        &:focus {
+            outline-color: #{$bg-color};
+        }
     }
 }
 
@@ -90,6 +100,10 @@ $accents: (
         // Adjust hover filter dynamically based on shade
         &:hover {
             filter: if($shade <= 400, brightness(0.75), brightness(1.35));
+        }
+
+        &:focus {
+            outline-color: #{$bg-color};
         }
     }
 }
@@ -122,14 +136,14 @@ $accents: (
  *
  * - Maps each color variant to its base color.
  */
-$btn-colors: (
-    'red'    : (#e53e3e, #ffffff),   // Red background, white text
-    'green'  : (#38a169, #ffffff),   // Green background, white text
-    'yellow' : (#ecc94b, #000000),   // Yellow background, black text
-    'magenta': (#d53f8c, #ffffff),   // Magenta background, white text
-    'crimson': (#dc143c, #ffffff),   // Crimson background, white text
-    'purple' : (#805ad5, #ffffff),   // Purple background, white text
-    'orange' : (#ed8936, #ffffff)    // Orange background, white text
+ $btn-colors: (
+    'red'    : (var(--color-red), #ffffff),      // Red background, white text
+    'green'  : (var(--color-green), #ffffff),    // Green background, white text
+    'yellow' : (var(--color-yellow), #000000),   // Yellow background, black text
+    'magenta': (var(--color-magenta), #ffffff),  // Magenta background, white text
+    'crimson': (var(--color-crimson), #ffffff),  // Crimson background, white text
+    'purple' : (var(--color-purple), #ffffff),   // Purple background, white text
+    'orange' : (var(--color-orange), #ffffff)    // Orange background, white text
 );
 
 /**
@@ -145,22 +159,21 @@ $btn-colors: (
         background-color: #{$bg-color};
         color: #{$text-color};
         border: 1px solid #{$bg-color};
-        transition: background-color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
 
         &:hover {
-            background-color: lighten($bg-color, 10%);
-            border-color: lighten($bg-color, 10%);
-            filter: brightness(1.1);
+            filter: brightness(1.35);
         }
 
         &:active {
-            background-color: darken($bg-color, 10%);
-            border-color: darken($bg-color, 10%);
+            filter: brightness(.75);
+        }
+
+        &:focus {
+            outline-color: #{$bg-color};
         }
 
         &:disabled {
-            background-color: desaturate($bg-color, 20%);
-            border-color: desaturate($bg-color, 20%);
+            filter: grayscale(50%) brightness(0.9); /* Simulate desaturate and dim */
             opacity: 0.6;
             cursor: not-allowed;
         }

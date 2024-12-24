@@ -27,6 +27,16 @@
     --accent-800: #1971c2;   /* Deep blue */
     --accent-900: #1864ab;   /* Very dark blue */
     --accent-1000: #0b5394;  /* Deepest blue */
+
+    /* Status/Utility Colors */
+    --color-red: #e53e3e;     /* Red background (Error/Warning) */
+    --color-green: #38a169;   /* Green background (Success) */
+    --color-yellow: #ecc94b;  /* Yellow background (Warning) */
+    --color-magenta: #d53f8c; /* Magenta background */
+    --color-crimson: #dc143c; /* Crimson background */
+    --color-purple: #805ad5;  /* Purple background */
+    --color-orange: #ed8936;  /* Orange background */
+
 }
 
 .light-mode {
@@ -59,7 +69,3 @@
     --accent-900: #d0ebff;   /* Light blue */
     --accent-1000: #e7f5ff;  /* Very light blue */
 }
-
-// <body class="light-mode">
-//     <!-- Add or remove 'light-mode' class dynamically -->
-// </body>

@@ -54,8 +54,8 @@ html {
 
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #fff;           /* Sets a clean white background */
-    color: #333;                      /* Neutral text color */
+    background-color: var(--color-50); /* Sets a clean light background */
+    color: var(--color-900);          /* Neutral text color */
     text-rendering: optimizeLegibility; /* Enhances font rendering */
 }
 
@@ -150,9 +150,9 @@ q::before, q::after {
  * - Standardizes appearance with minimal styling.
  */
 hr {
-    border: none;              /* Remove border styling */
-    height: 1px;               /* Set height */
-    background-color: #ccc;    /* Neutral separator color */
+    border: none; /* Remove border styling */
+    height: 1px; /* Set height */
+    background-color: var(--color-300); /* Neutral separator color */
 }
 
 /*
@@ -161,8 +161,8 @@ hr {
  * - Enhances focus visibility for accessibility.
  */
 :focus {
-    outline: 2px solid #007BFF; /* Add visible focus outline */
-    outline-offset: 4px;        /* Create spacing around the outline */
+    outline: 2px solid var(--accent-500); /* Add visible focus outline */
+    outline-offset: 4px; /* Create spacing around the outline */
 }
 
 /*
@@ -171,7 +171,7 @@ hr {
  * - Adds a left border and consistent padding for emphasis.
  */
 blockquote {
-    margin-left: 0;            /* Align with surrounding content */
-    padding-left: 1rem;        /* Add left padding */
-    border-left: 4px solid #ccc; /* Left border for emphasis */
+    margin-left: 0; /* Align with surrounding content */
+    padding-left: 1rem; /* Add left padding */
+    border-left: 4px solid var(--color-300); /* Left border for emphasis */
 }
