@@ -8,7 +8,7 @@
  * - Map shades to their respective CSS variables for background and text colors.
  * - Use numeric keys for proper comparison.
  */
- $shades: (
+$shades: (
     50: (var(--color-50), var(--color-900)),      /* Almost white, dark text */
     100: (var(--color-100), var(--color-900)),    /* Very light gray, dark text */
     200: (var(--color-200), var(--color-900)),    /* Light gray, dark text */
@@ -55,12 +55,6 @@ $accents: (
     &:hover {
         filter: contrast(1.05);
     }
-
-    // Default focus outline for all buttons
-    &:focus {
-        outline: 2px solid var(--accent-500); /* Add visible focus outline */
-        outline-offset: 4px; /* Create spacing around the outline */
-    }
 }
 
 /**
@@ -81,10 +75,6 @@ $accents: (
         &:hover {
             filter: if($shade <= 400, brightness(0.75), brightness(1.35));
         }
-
-        &:focus {
-            outline-color: #{$bg-color};
-        }
     }
 }
 
@@ -100,10 +90,6 @@ $accents: (
         // Adjust hover filter dynamically based on shade
         &:hover {
             filter: if($shade <= 400, brightness(0.75), brightness(1.35));
-        }
-
-        &:focus {
-            outline-color: #{$bg-color};
         }
     }
 }
@@ -166,10 +152,6 @@ $accents: (
 
         &:active {
             filter: brightness(.75);
-        }
-
-        &:focus {
-            outline-color: #{$bg-color};
         }
 
         &:disabled {
